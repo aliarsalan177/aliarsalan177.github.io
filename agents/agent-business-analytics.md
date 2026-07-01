@@ -45,9 +45,12 @@ keeps these concepts in mind and does **not** repeat these mistakes.
 - Check distribution/normality before applying tests.
 
 ### Inference & Causality
-- Hypothesis tests: t-test (continuous), chi-square (categorical); confidence intervals.
-- Regression: linear (continuous), logistic (binary).
+- Null (H0) vs alternative (H1) hypothesis; p-value < 0.05 → reject H0 (statistically significant).
+- Tests: t-test (continuous), chi-square (categorical), Shapiro-Wilk (normality); confidence intervals & standard error of the mean.
+- z-score = how many std devs from the mean; normal distribution 68-95-99.7 rule.
+- Regression: linear (continuous), logistic (binary — read odds/coefficients), multi-linear (many predictors).
 - Correlation ≠ causation — establish causality with A/B tests, diff-in-diff, matching.
+- Python: pandas, NumPy, SciPy, statsmodels, scikit-learn.
 
 ### Segmentation & Modeling
 - RFM (recency/frequency/monetary), clustering, cohorts, funnels.

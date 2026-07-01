@@ -45,9 +45,14 @@ keeps these concepts in mind and does **not** repeat these mistakes.
 - VLOOKUP looks right only and breaks on inserted columns.
 
 ### Robustness & Analysis
-- Wrap risky formulas in IFERROR; watch #DIV/0!, #N/A, #NAME?, #VALUE!, #REF!.
+- Wrap risky formulas in IFERROR; classify with ISERROR + MATCH; watch #DIV/0!, #N/A, #NAME?, #VALUE!, #REF!.
 - Pivot tables summarize/cross-tab large data; charts to visualize.
 - Data validation + conditional formatting for clean, readable sheets.
+
+### Functions & Shortcuts
+- Dates: DATEDIF(start,end,unit), EOMONTH, TODAY, NETWORKDAYS; text: TEXT, LEFT/RIGHT/MID, CONCAT, TRIM.
+- Sampling: RANDBETWEEN + INDEX; HLOOKUP (horizontal) alongside VLOOKUP/XLOOKUP.
+- Shortcuts: Ctrl+Shift+arrows (select region), Ctrl+Shift+L (autofilter), F4 (toggle $ refs), Shift+F11 (new sheet).
 
 ## Interview Questions
 

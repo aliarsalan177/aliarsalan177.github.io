@@ -139,7 +139,7 @@
     "title": "Business Analytics",
     "category": "AI & Data",
     "file": "/agents/agent-business-analytics.md",
-    "bytes": 4293,
+    "bytes": 4639,
     "rules": 4,
     "questions": 4
   },
@@ -175,7 +175,7 @@
     "title": "Excel",
     "category": "AI & Data",
     "file": "/agents/agent-excel.md",
-    "bytes": 3481,
+    "bytes": 3843,
     "rules": 4,
     "questions": 3
   },
@@ -286,5 +286,14 @@
     "bytes": 4891,
     "rules": 5,
     "questions": 5
+  },
+  {
+    "slug": "vba",
+    "title": "VBA (Excel Automation)",
+    "category": "AI & Data",
+    "file": "/agents/agent-vba.md",
+    "bytes": 4311,
+    "rules": 4,
+    "questions": 4
   }
 ]
