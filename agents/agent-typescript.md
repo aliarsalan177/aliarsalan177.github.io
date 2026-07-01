@@ -39,6 +39,46 @@ keeps these concepts in mind and does **not** repeat these mistakes.
 - **Generics for reusable, type-safe APIs** — Use generics with constraints (`<T extends ...>`) and utility types (Partial, Pick, Omit, Record) instead of duplicating shapes.
 - **`interface` vs `type`** — Use interfaces for extendable object/contract shapes; use type aliases for unions, tuples and mapped/conditional types.
 
+## Full Cheat Sheet — every concept
+
+### Basic Types & Inference
+- Annotate with `let name: string`, `age: number`, `ok: boolean`; TS infers types when obvious.
+- Annotate function params and public return types; let locals be inferred.
+- Special types: any (opt-out), unknown (safe top type — narrow first), never (impossible), void (no return).
+
+### Arrays, Tuples, Enums
+- Arrays: number[] or Array<number>.
+- Tuples: fixed-length, mixed types — [string, number]; support destructuring.
+- Enums: named constants — enum Color { Red, Green } (or prefer union literal types).
+- Maps: new Map<K, V>().
+
+### Unions, Intersections & Narrowing
+- Union: A | B (either). Intersection: A & B (both).
+- Literal unions model state: type Status = 'idle' | 'loading' | 'error'.
+- Narrow with typeof, instanceof, `in`, equality, or custom type guards (x is Foo).
+- Discriminated unions: a shared literal field lets the compiler exhaustively check each case.
+
+### Interfaces vs Types
+- interface — extendable object contracts; supports declaration merging.
+- type alias — unions, tuples, mapped and conditional types.
+- Optional (`?`), readonly, and index signatures ([key: string]: T) on both.
+
+### Generics
+- Generic functions: function first<T>(arr: T[]): T. Generic classes: class Stack<T> {}.
+- Constrain with `T extends …`; provide defaults with `T = X`.
+- Preserve input↔output type relationships instead of falling back to any.
+
+### Utility & Meta Types
+- Partial, Required, Readonly, Pick<T,K>, Omit<T,K>, Record<K,V>, ReturnType<F>, Parameters<F>, Awaited<T>.
+- keyof T — union of a type's keys; typeof value — the type of a value.
+- Mapped types ({ [K in keyof T]: … }) and conditional types (T extends U ? X : Y).
+
+### Assertions, Classes & Config
+- Assertions: value as Type (unchecked — avoid unless you're sure); non-null value! (use sparingly).
+- Optional chaining a?.b?.c and nullish coalescing a ?? b.
+- Classes: access modifiers public/private/protected, readonly, and constructor shorthand.
+- Always compile with strict: true (plus noUncheckedIndexedAccess) for real safety.
+
 ## Interview Questions
 
 #### Q1. `any` vs `unknown` vs `never`?

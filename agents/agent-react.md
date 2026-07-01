@@ -39,6 +39,56 @@ keeps these concepts in mind and does **not** repeat these mistakes.
 - **Stable, unique keys in lists** — Key list items by a stable id from your data so React can diff correctly.
 - **Memoize intentionally, not reflexively** — Reach for React.memo / useMemo / useCallback when profiling shows a real cost or to keep referential stability for deps.
 
+## Full Cheat Sheet — every concept
+
+### JSX
+- HTML-like syntax in JS; must return a single parent element (or Fragment <>…</>).
+- Attributes are camelCase; use className (not class) and htmlFor (not for).
+- Embed JS expressions with { } ; only expressions, not statements.
+
+### Components & Props
+- Components are capitalized functions returning JSX; functional components are preferred over class.
+- Props pass data parent→child; they're read-only (immutable). Destructure for clarity.
+- children is a special prop for content between a component's tags.
+
+### State — useState
+- const [state, setState] = useState(initial); changing state triggers a re-render.
+- Updates are asynchronous and batched; use the functional form setState(prev => …) when the next value depends on the previous.
+- Never mutate state; always set a new object/array.
+
+### Effects & Lifecycle
+- useEffect(fn, deps) runs after render for side effects (fetch, subscriptions, DOM).
+- Deps: [] = run once on mount; [a,b] = run when a or b change; omitted = every render.
+- Return a cleanup function (unsubscribe, clearTimeout) that runs before re-run and on unmount.
+- Class lifecycle equivalents: componentDidMount / componentDidUpdate / componentWillUnmount.
+
+### Core Hooks
+- useContext(Context) — read a context value (avoids prop drilling).
+- useRef(initial) — mutable box (.current) that persists across renders without causing re-renders; also for DOM refs.
+- useReducer(reducer, init) — for complex/related state transitions.
+- useMemo(fn, deps) — cache an expensive computed value; useCallback(fn, deps) — cache a function reference.
+- Custom hooks — reuse stateful logic; name them use…
+
+### Rules of Hooks
+- Only call hooks at the top level — never in conditions, loops, or nested functions.
+- Only call hooks from React function components or other hooks.
+- This keeps hook call order stable across renders.
+
+### Lists & Keys
+- Render lists with .map(); each element needs a stable, unique key.
+- Key from data id — never the array index for reorderable/filterable lists.
+- Keys help React diff and preserve component state correctly.
+
+### Performance
+- React.memo(Component) — skip re-render when props are shallowly equal.
+- useMemo / useCallback — keep values/functions referentially stable for memoized children and effect deps.
+- Optimize intentionally — measure first; needless memoization adds overhead.
+
+### Forms & Context
+- Controlled components: value + onChange bind an input to state (single source of truth).
+- Context: createContext → <Provider value> → useContext to consume; good for themes/auth/locale.
+- Don't overuse context for frequently-changing values (causes wide re-renders).
+
 ## Interview Questions
 
 #### Q1. Why can't you mutate state directly?

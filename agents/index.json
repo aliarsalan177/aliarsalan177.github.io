@@ -13,7 +13,7 @@
     "title": "TypeScript",
     "category": "Languages",
     "file": "/agents/agent-typescript.md",
-    "bytes": 4111,
+    "bytes": 6218,
     "rules": 5,
     "questions": 5
   },
@@ -22,7 +22,7 @@
     "title": "React",
     "category": "Frontend",
     "file": "/agents/agent-react.md",
-    "bytes": 4046,
+    "bytes": 6772,
     "rules": 5,
     "questions": 5
   },

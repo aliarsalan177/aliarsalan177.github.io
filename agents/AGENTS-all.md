@@ -295,6 +295,46 @@ keeps these concepts in mind and does **not** repeat these mistakes.
 - **Generics for reusable, type-safe APIs** — Use generics with constraints (`<T extends ...>`) and utility types (Partial, Pick, Omit, Record) instead of duplicating shapes.
 - **`interface` vs `type`** — Use interfaces for extendable object/contract shapes; use type aliases for unions, tuples and mapped/conditional types.
 
+## Full Cheat Sheet — every concept
+
+### Basic Types & Inference
+- Annotate with `let name: string`, `age: number`, `ok: boolean`; TS infers types when obvious.
+- Annotate function params and public return types; let locals be inferred.
+- Special types: any (opt-out), unknown (safe top type — narrow first), never (impossible), void (no return).
+
+### Arrays, Tuples, Enums
+- Arrays: number[] or Array<number>.
+- Tuples: fixed-length, mixed types — [string, number]; support destructuring.
+- Enums: named constants — enum Color { Red, Green } (or prefer union literal types).
+- Maps: new Map<K, V>().
+
+### Unions, Intersections & Narrowing
+- Union: A | B (either). Intersection: A & B (both).
+- Literal unions model state: type Status = 'idle' | 'loading' | 'error'.
+- Narrow with typeof, instanceof, `in`, equality, or custom type guards (x is Foo).
+- Discriminated unions: a shared literal field lets the compiler exhaustively check each case.
+
+### Interfaces vs Types
+- interface — extendable object contracts; supports declaration merging.
+- type alias — unions, tuples, mapped and conditional types.
+- Optional (`?`), readonly, and index signatures ([key: string]: T) on both.
+
+### Generics
+- Generic functions: function first<T>(arr: T[]): T. Generic classes: class Stack<T> {}.
+- Constrain with `T extends …`; provide defaults with `T = X`.
+- Preserve input↔output type relationships instead of falling back to any.
+
+### Utility & Meta Types
+- Partial, Required, Readonly, Pick<T,K>, Omit<T,K>, Record<K,V>, ReturnType<F>, Parameters<F>, Awaited<T>.
+- keyof T — union of a type's keys; typeof value — the type of a value.
+- Mapped types ({ [K in keyof T]: … }) and conditional types (T extends U ? X : Y).
+
+### Assertions, Classes & Config
+- Assertions: value as Type (unchecked — avoid unless you're sure); non-null value! (use sparingly).
+- Optional chaining a?.b?.c and nullish coalescing a ?? b.
+- Classes: access modifiers public/private/protected, readonly, and constructor shorthand.
+- Always compile with strict: true (plus noUncheckedIndexedAccess) for real safety.
+
 ## Interview Questions
 
 #### Q1. `any` vs `unknown` vs `never`?
@@ -359,6 +399,56 @@ keeps these concepts in mind and does **not** repeat these mistakes.
 - **useEffect is for synchronizing with the outside world** — Use effects for subscriptions, network, and DOM side effects; return a cleanup; list every dependency.
 - **Stable, unique keys in lists** — Key list items by a stable id from your data so React can diff correctly.
 - **Memoize intentionally, not reflexively** — Reach for React.memo / useMemo / useCallback when profiling shows a real cost or to keep referential stability for deps.
+
+## Full Cheat Sheet — every concept
+
+### JSX
+- HTML-like syntax in JS; must return a single parent element (or Fragment <>…</>).
+- Attributes are camelCase; use className (not class) and htmlFor (not for).
+- Embed JS expressions with { } ; only expressions, not statements.
+
+### Components & Props
+- Components are capitalized functions returning JSX; functional components are preferred over class.
+- Props pass data parent→child; they're read-only (immutable). Destructure for clarity.
+- children is a special prop for content between a component's tags.
+
+### State — useState
+- const [state, setState] = useState(initial); changing state triggers a re-render.
+- Updates are asynchronous and batched; use the functional form setState(prev => …) when the next value depends on the previous.
+- Never mutate state; always set a new object/array.
+
+### Effects & Lifecycle
+- useEffect(fn, deps) runs after render for side effects (fetch, subscriptions, DOM).
+- Deps: [] = run once on mount; [a,b] = run when a or b change; omitted = every render.
+- Return a cleanup function (unsubscribe, clearTimeout) that runs before re-run and on unmount.
+- Class lifecycle equivalents: componentDidMount / componentDidUpdate / componentWillUnmount.
+
+### Core Hooks
+- useContext(Context) — read a context value (avoids prop drilling).
+- useRef(initial) — mutable box (.current) that persists across renders without causing re-renders; also for DOM refs.
+- useReducer(reducer, init) — for complex/related state transitions.
+- useMemo(fn, deps) — cache an expensive computed value; useCallback(fn, deps) — cache a function reference.
+- Custom hooks — reuse stateful logic; name them use…
+
+### Rules of Hooks
+- Only call hooks at the top level — never in conditions, loops, or nested functions.
+- Only call hooks from React function components or other hooks.
+- This keeps hook call order stable across renders.
+
+### Lists & Keys
+- Render lists with .map(); each element needs a stable, unique key.
+- Key from data id — never the array index for reorderable/filterable lists.
+- Keys help React diff and preserve component state correctly.
+
+### Performance
+- React.memo(Component) — skip re-render when props are shallowly equal.
+- useMemo / useCallback — keep values/functions referentially stable for memoized children and effect deps.
+- Optimize intentionally — measure first; needless memoization adds overhead.
+
+### Forms & Context
+- Controlled components: value + onChange bind an input to state (single source of truth).
+- Context: createContext → <Provider value> → useContext to consume; good for themes/auth/locale.
+- Don't overuse context for frequently-changing values (causes wide re-renders).
 
 ## Interview Questions
 
