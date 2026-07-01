@@ -34,6 +34,32 @@ keeps these concepts in mind and does **not** repeat these mistakes.
 - **Index for your access patterns** — Index columns used in WHERE/JOIN/ORDER BY; read the query plan to confirm they're used.
 - **WHERE filters rows, HAVING filters groups** — Filter individual rows in WHERE, then filter aggregated groups in HAVING after GROUP BY.
 
+## Full Cheat Sheet — every concept
+
+### Query Basics
+- SELECT cols FROM table WHERE filter ORDER BY col ASC/DESC LIMIT n.
+- Order of evaluation: FROM → WHERE → GROUP BY → HAVING → SELECT → ORDER BY → LIMIT.
+- DISTINCT removes duplicate rows.
+
+### Grouping & Aggregates
+- GROUP BY collapses rows; aggregates: COUNT, SUM, AVG, MIN, MAX (ignore NULLs).
+- WHERE filters rows (no aggregates); HAVING filters groups (aggregates allowed).
+
+### Joins
+- INNER JOIN = matches in both; LEFT/RIGHT JOIN = all of one side + matches (NULLs otherwise).
+- FULL OUTER JOIN = all rows from both.
+- Always specify the ON condition — a missing one causes a cartesian product.
+
+### Structure & Integrity
+- Primary key uniquely identifies a row; foreign key links tables.
+- Normalization removes redundancy; indexes speed reads (cost writes).
+- Transactions are ACID (Atomic, Consistent, Isolated, Durable).
+
+### Gotchas
+- NULL: use IS NULL / IS NOT NULL, and COALESCE() to default.
+- UNION dedupes; UNION ALL keeps duplicates.
+- Subqueries run first and feed the outer query.
+
 ## Interview Questions
 
 #### Q1. INNER JOIN vs LEFT JOIN?

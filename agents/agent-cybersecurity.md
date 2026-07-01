@@ -34,6 +34,26 @@ keeps these concepts in mind and does **not** repeat these mistakes.
 - **Handle secrets and crypto correctly** — Hash passwords with a slow salted KDF (bcrypt/argon2), encrypt in transit and at rest, use vetted libraries.
 - **Authenticate then authorize** — Verify identity (MFA) and separately check permissions on every request, server-side.
 
+## Full Cheat Sheet — every concept
+
+### Principles
+- CIA triad: Confidentiality, Integrity, Availability.
+- Least privilege, defense in depth, assume breach, separation of duties.
+
+### Threats & Attacks
+- Phishing/social engineering, malware, DDoS, MITM, data breach.
+- Web: SQL injection & XSS (untrusted input treated as code), CSRF.
+
+### Identity & Crypto
+- Authentication (who) with MFA vs authorization (what) — check both server-side.
+- Symmetric (shared key, bulk) vs asymmetric (key pair, exchange/signatures); TLS combines both.
+- Hash passwords with salted bcrypt/argon2; encrypt in transit & at rest; never roll your own crypto.
+
+### Defense & Response
+- Firewalls, VPN, IDS/IPS, antivirus, WAF.
+- Validate/sanitize input; parameterized queries; output encoding; CSP.
+- Incident response: prepare → detect → contain → eradicate → recover → learn.
+
 ## Interview Questions
 
 #### Q1. What is the CIA triad?

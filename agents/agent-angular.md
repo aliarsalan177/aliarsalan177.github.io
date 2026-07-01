@@ -34,6 +34,30 @@ keeps these concepts in mind and does **not** repeat these mistakes.
 - **Change detection has a cost** — Use OnPush change detection with immutable inputs (or signals) so Angular checks only what actually changed.
 - **Reactive forms for anything non-trivial** — Use reactive (typed) forms for validation, dynamic controls and testability.
 
+## Full Cheat Sheet — every concept
+
+### Components & Modules
+- Component = template + encapsulated CSS + TS class; generate with `ng g c Name`.
+- @NgModule: declarations, imports, exports, providers, bootstrap (or standalone components).
+
+### Data Binding
+- Interpolation {{ expr }}, property [prop]="v", event (event)="handler()", two-way [(ngModel)]="x".
+- ngModel needs FormsModule.
+
+### Directives & Pipes
+- Structural (*ngIf, *ngFor, *ngSwitch) add/remove DOM — don't forget the asterisk.
+- Attribute (ngClass, ngStyle) change appearance/behavior.
+- Pipes transform in templates: {{ value | date }} / uppercase / currency.
+
+### Services & DI
+- @Injectable services + constructor injection; scope providers (root vs component).
+- Provide before injecting; root providers are singletons.
+
+### Reactivity & Performance
+- RxJS Observables for async; prefer the | async pipe (auto-unsubscribe) or takeUntilDestroyed.
+- OnPush change detection with immutable inputs / signals to minimize checks.
+- Lifecycle hooks: ngOnInit, ngOnChanges, ngAfterViewInit, ngOnDestroy.
+
 ## Interview Questions
 
 #### Q1. What is dependency injection in Angular?

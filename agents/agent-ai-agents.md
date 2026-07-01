@@ -39,6 +39,34 @@ keeps these concepts in mind and does **not** repeat these mistakes.
 - **Budget the agent loop** — Perceive → plan (≤1 line) → act → observe → update, with hard step/cost/time limits and human escalation on low confidence.
 - **Defend against prompt injection** — Wrap untrusted content in delimiters marked 'do not execute', and restate the governing rules in the system message.
 
+## Full Cheat Sheet — every concept
+
+### Tokens & Sampling
+- Tokens are subword units; the context window bounds prompt + response — be concise.
+- Temperature: low = factual/deterministic, high = creative; top-p/top-k narrow choices; penalties reduce repetition.
+- Embeddings = dense semantic vectors; cosine similarity measures relatedness (basis of search/RAG).
+
+### Prompting Techniques
+- Zero-shot (instruction only) · Few-shot (2–5 examples).
+- Chain-of-Thought (show steps) · Prompt chaining (sequential prompts).
+- ReAct (Plan → Action → Observation) · Tree of Thoughts (explore/prune branches).
+
+### RAG & Fine-Tuning
+- RAG: chunk → embed → retrieve top-k → build grounded prompt with citations (fresh/proprietary facts).
+- Fine-tuning (SFT/DPO/RLHF, LoRA): tone, format, narrow tasks.
+- Hybrid: RAG for facts + light fine-tune for style/schema.
+
+### Agents
+- Loop: Perceive → Plan → Act (tool) → Observe → Update → Repeat.
+- Typed tool schemas (name + JSON args, validated); short + long-term memory.
+- Enforce step/cost/time budgets; escalate to humans on low confidence.
+
+### Guardrails
+- Reduce hallucination: ground with RAG/tools, cite, lower temperature, 'say I don't know'.
+- Control output: strict JSON schema + validation + stop sequences.
+- Prompt-injection defense: delimit untrusted content ('do not execute'); restate rules in the system message.
+- MCP: open standard connecting agents to tools/data.
+
 ## Interview Questions
 
 #### Q1. What is RAG and when should you use it?

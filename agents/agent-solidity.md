@@ -34,6 +34,27 @@ keeps these concepts in mind and does **not** repeat these mistakes.
 - **Mind storage, gas and visibility** — Minimize storage writes, use events for logs, mark visibility explicitly, and use custom errors over revert strings.
 - **Fail loudly and early** — Use require/custom errors to validate preconditions and revert on invalid state.
 
+## Full Cheat Sheet — every concept
+
+### Structure & Types
+- SPDX license → pragma version → imports → state variables → functions.
+- Types: bool, uint/int (256-bit), address (use .call{value:} not .transfer), bytes32, mapping, struct, enum, arrays.
+
+### Visibility & Functions
+- public (auto getter), private, internal (+ inheritors), external (outside only).
+- view (reads state), pure (neither), payable (receives Ether via msg.value).
+- constant/immutable; modifiers enforce preconditions.
+
+### Security
+- Checks-Effects-Interactions + reentrancy guard (update state before external calls).
+- Auth with msg.sender, never tx.origin (phishable).
+- storage (persistent, costly) vs memory (temporary).
+
+### Events, Errors, Gas
+- Emit events (index up to 3 params) for cheap off-chain lookups.
+- Custom errors (revert NotOwner()) over strings; require/assert/revert.
+- Gas: minimize storage writes, avoid unbounded loops, unchecked{} for safe math.
+
 ## Interview Questions
 
 #### Q1. What is a reentrancy attack and how do you prevent it?

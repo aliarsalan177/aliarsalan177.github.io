@@ -29,6 +29,24 @@ keeps these concepts in mind and does **not** repeat these mistakes.
 - **Pick the right scan for the job** — Use -sS (stealth SYN) for TCP, -sU for UDP services, and scope ports with -p / -F / -p-.
 - **Add detection, then verify** — Layer -sV (versions) and -O (OS) and targeted NSE scripts, then confirm findings manually.
 
+## Full Cheat Sheet — every concept
+
+### Host Discovery
+- nmap <ip>; ping sweep `-sn`; targets: ranges (1-100), subnets (/24), lists (-iL file).
+
+### Scan Types
+- -sS SYN (stealth, default TCP), -sT full connect (detectable), -sU UDP.
+- Ports: -p 80,443 / -p 1-100 / -p- (all 65535) / -F (top 100).
+
+### Detection
+- -sV service/version, -O OS (needs 1 open + 1 closed port), -A aggressive (all, noisy).
+- NSE scripts: --script <category> (needs sudo; verify findings).
+
+### Timing, Output, Ethics
+- Timing -T0..-T5 (paranoid→insane); slower = stealthier.
+- Output: -oN file.txt (normal), -oX (XML), -oG (grepable).
+- Only scan systems you own or have written authorization to test.
+
 ## Interview Questions
 
 #### Q1. What's the difference between a SYN scan and a TCP connect scan?

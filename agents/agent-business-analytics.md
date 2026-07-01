@@ -34,6 +34,29 @@ keeps these concepts in mind and does **not** repeat these mistakes.
 - **Choose robust summary statistics** — Use the median for skewed data, report dispersion (std dev), and check distribution before applying tests.
 - **Measure what matters** — Define a few actionable KPIs tied to outcomes; segment (RFM, cohorts, funnels) to find the story.
 
+## Full Cheat Sheet — every concept
+
+### Types of Analytics
+- Descriptive (what happened) · Diagnostic (why) · Predictive (what's next) · Prescriptive (what to do).
+
+### Statistics
+- Central tendency: mean (symmetric), median (robust to skew), mode (categorical).
+- Dispersion: standard deviation vs the mean; correlation ∈ [-1, +1].
+- Check distribution/normality before applying tests.
+
+### Inference & Causality
+- Hypothesis tests: t-test (continuous), chi-square (categorical); confidence intervals.
+- Regression: linear (continuous), logistic (binary).
+- Correlation ≠ causation — establish causality with A/B tests, diff-in-diff, matching.
+
+### Segmentation & Modeling
+- RFM (recency/frequency/monetary), clustering, cohorts, funnels.
+- Random forest (ensemble), time-series forecasting (e.g. Prophet).
+
+### Practice
+- Define a few actionable KPIs; clean data first; visualize clearly.
+- Avoid vanity metrics and cluttered dashboards.
+
 ## Interview Questions
 
 #### Q1. What are the four types of analytics?

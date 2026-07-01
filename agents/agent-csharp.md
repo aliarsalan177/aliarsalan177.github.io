@@ -34,6 +34,33 @@ keeps these concepts in mind and does **not** repeat these mistakes.
 - **Enable nullable reference types** — Turn on #nullable to make nullability explicit and catch null-deref bugs at compile time.
 - **Prefer LINQ, but mind execution** — Express queries declaratively with LINQ; remember it's lazily evaluated until materialized (ToList/Count).
 
+## Full Cheat Sheet — every concept
+
+### Types & Memory
+- Value types (int, struct, enum) store data directly, copied on assignment.
+- Reference types (class, string, array) store a heap reference, shared on assignment.
+- records give value-based equality + immutability; `with` for non-destructive copies.
+
+### Classes & Members
+- Classes = blueprints; auto-properties { get; set; }; partial classes split across files.
+- Interfaces define contracts; inheritance + polymorphism via virtual/override.
+- Access: public/private/protected/internal.
+
+### Generics & Collections
+- Generics <T> for reusable, type-safe code without boxing.
+- Arrays (fixed), List<T> (dynamic), Dictionary<K,V> (key→value).
+- switch requires break/return per case (no implicit fall-through).
+
+### Async & LINQ
+- async methods return Task/Task<T>; await frees the thread; don't block with .Result/.Wait().
+- LINQ: declarative queries (Where/Select/OrderBy); deferred until enumerated (ToList/Count).
+- Delegates & events model callbacks/pub-sub.
+
+### Safety & Errors
+- Enable nullable reference types (#nullable enable) to catch null derefs at compile time.
+- Catch specific exceptions before general ones; use try/catch/finally.
+- Prefer dependency injection for loose coupling.
+
 ## Interview Questions
 
 #### Q1. Value types vs reference types?

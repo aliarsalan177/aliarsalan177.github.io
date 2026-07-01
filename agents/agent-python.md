@@ -34,6 +34,38 @@ keeps these concepts in mind and does **not** repeat these mistakes.
 - **Prefer comprehensions and built-ins** — Use list/dict/set comprehensions and generators (yield) for clear, memory-efficient iteration.
 - **Use context managers for resources** — Open files/connections with `with` so they close even on exceptions; catch specific exceptions.
 
+## Full Cheat Sheet — every concept
+
+### Data Types
+- Numbers: int/float; // floor division, % remainder, ** power.
+- Strings: immutable; slice [start:end:step]; f-strings f"{x}".
+- Booleans: falsy = None, 0, '', [], {}, ().
+
+### Collections
+- list (mutable), tuple (immutable), dict (key→value), set (unique).
+- dict.get(key, default) avoids KeyError; use `in` for membership.
+- Copies: list.copy()/[:] are shallow — use copy.deepcopy for nested.
+
+### Comprehensions & Built-ins
+- [x*2 for x in xs if x>0]; also set/dict comprehensions.
+- Generators (yield) for lazy, memory-efficient iteration.
+- Built-ins: map, filter, zip, enumerate, sorted, any, all, sum.
+
+### Functions & Args
+- Order: positional → *args → keyword-only → **kwargs.
+- *args splats an iterable to positionals; **kwargs a dict to keywords.
+- NEVER use a mutable default (def f(x, acc=[])) — use None and create inside.
+
+### Advanced & OOP
+- Decorators wrap functions (@decorator); closures capture enclosing scope.
+- Classes: __init__, self, inheritance, @classmethod / @staticmethod, dunder methods.
+- Scope is LEGB (Local → Enclosing → Global → Built-in); use global/nonlocal to rebind.
+
+### Resources & Errors
+- Context managers: `with open(...) as f:` guarantees cleanup.
+- Catch specific exceptions (except ValueError:), not bare except.
+- try/except/else/finally for full control.
+
 ## Interview Questions
 
 #### Q1. Why are mutable default arguments dangerous?

@@ -510,6 +510,30 @@ keeps these concepts in mind and does **not** repeat these mistakes.
 - **Change detection has a cost** — Use OnPush change detection with immutable inputs (or signals) so Angular checks only what actually changed.
 - **Reactive forms for anything non-trivial** — Use reactive (typed) forms for validation, dynamic controls and testability.
 
+## Full Cheat Sheet — every concept
+
+### Components & Modules
+- Component = template + encapsulated CSS + TS class; generate with `ng g c Name`.
+- @NgModule: declarations, imports, exports, providers, bootstrap (or standalone components).
+
+### Data Binding
+- Interpolation {{ expr }}, property [prop]="v", event (event)="handler()", two-way [(ngModel)]="x".
+- ngModel needs FormsModule.
+
+### Directives & Pipes
+- Structural (*ngIf, *ngFor, *ngSwitch) add/remove DOM — don't forget the asterisk.
+- Attribute (ngClass, ngStyle) change appearance/behavior.
+- Pipes transform in templates: {{ value | date }} / uppercase / currency.
+
+### Services & DI
+- @Injectable services + constructor injection; scope providers (root vs component).
+- Provide before injecting; root providers are singletons.
+
+### Reactivity & Performance
+- RxJS Observables for async; prefer the | async pipe (auto-unsubscribe) or takeUntilDestroyed.
+- OnPush change detection with immutable inputs / signals to minimize checks.
+- Lifecycle hooks: ngOnInit, ngOnChanges, ngAfterViewInit, ngOnDestroy.
+
 ## Interview Questions
 
 #### Q1. What is dependency injection in Angular?
@@ -567,6 +591,27 @@ keeps these concepts in mind and does **not** repeat these mistakes.
 - **Design for both platforms** — Branch with Platform.select / Platform.OS and test on iOS and Android; respect safe areas.
 - **Keep the JS thread free** — Memoize rows, use native driver for animations (Reanimated), and offload heavy work.
 
+## Full Cheat Sheet — every concept
+
+### Core Components
+- View (≈ div), Text (all text must be inside it), Image, ScrollView, TextInput.
+- Pressable / TouchableOpacity for touch via onPress.
+
+### Styling & Layout
+- Styles are JS objects (StyleSheet.create), camelCase props (backgroundColor).
+- Flexbox is the layout system (flexDirection defaults to column); units are dp.
+- No CSS files / no DOM.
+
+### Lists & Performance
+- FlatList / SectionList virtualize long lists (keyExtractor, getItemLayout).
+- Don't map huge arrays inside ScrollView — it mounts everything.
+- Memoize rows; animate with the native driver (Reanimated); keep the JS thread free.
+
+### Platform & Practices
+- Platform.OS / Platform.select or .ios.tsx / .android.tsx for platform code; respect safe areas.
+- Navigation via React Navigation (native stack).
+- Use TypeScript, error boundaries, and accessibility labels.
+
 ## Interview Questions
 
 #### Q1. How does React Native differ from React for web?
@@ -620,6 +665,25 @@ keeps these concepts in mind and does **not** repeat these mistakes.
 - **Space on a consistent scale** — Adopt an 8px spacing system and a modular type scale so rhythm stays consistent and predictable.
 - **Accessibility is a requirement, not a checkbox** — Meet WCAG contrast (4.5:1 body text), give visible focus states, label controls, and size touch targets ≥44px.
 - **Systematize with a design system** — Build up from tokens (color, type, spacing) to components to patterns so the product stays coherent as it grows.
+
+## Full Cheat Sheet — every concept
+
+### Hierarchy & Typography
+- Hierarchy via size, weight, color, position, whitespace — guide the eye to what matters.
+- Typefaces: serif / sans-serif / display / mono; use a modular type scale (e.g. 1.618).
+
+### Color & Contrast
+- Schemes: monochromatic, analogous, complementary, split-complementary, triadic, tetradic.
+- Meet WCAG contrast (4.5:1 body text); never rely on color alone.
+
+### Spacing, Grid, Layout
+- 8px base unit; increment spacing by it for rhythm.
+- 12-column grids: columns, gutters, margins; responsive breakpoints ~600/768/1024/1280.
+
+### Accessibility & Systems
+- Visible focus states, adequate touch targets (~44px), labels for screen readers.
+- Design systems (atomic): tokens → components → patterns; keep it consistent and evolving.
+- Avoid: over-complication, skipping user testing, inconsistent patterns, ignoring a11y.
 
 ## Interview Questions
 
@@ -679,6 +743,34 @@ keeps these concepts in mind and does **not** repeat these mistakes.
 - **Type your tools** — Give tools typed argument schemas and validate before executing; the model returns name + JSON args.
 - **Budget the agent loop** — Perceive → plan (≤1 line) → act → observe → update, with hard step/cost/time limits and human escalation on low confidence.
 - **Defend against prompt injection** — Wrap untrusted content in delimiters marked 'do not execute', and restate the governing rules in the system message.
+
+## Full Cheat Sheet — every concept
+
+### Tokens & Sampling
+- Tokens are subword units; the context window bounds prompt + response — be concise.
+- Temperature: low = factual/deterministic, high = creative; top-p/top-k narrow choices; penalties reduce repetition.
+- Embeddings = dense semantic vectors; cosine similarity measures relatedness (basis of search/RAG).
+
+### Prompting Techniques
+- Zero-shot (instruction only) · Few-shot (2–5 examples).
+- Chain-of-Thought (show steps) · Prompt chaining (sequential prompts).
+- ReAct (Plan → Action → Observation) · Tree of Thoughts (explore/prune branches).
+
+### RAG & Fine-Tuning
+- RAG: chunk → embed → retrieve top-k → build grounded prompt with citations (fresh/proprietary facts).
+- Fine-tuning (SFT/DPO/RLHF, LoRA): tone, format, narrow tasks.
+- Hybrid: RAG for facts + light fine-tune for style/schema.
+
+### Agents
+- Loop: Perceive → Plan → Act (tool) → Observe → Update → Repeat.
+- Typed tool schemas (name + JSON args, validated); short + long-term memory.
+- Enforce step/cost/time budgets; escalate to humans on low confidence.
+
+### Guardrails
+- Reduce hallucination: ground with RAG/tools, cite, lower temperature, 'say I don't know'.
+- Control output: strict JSON schema + validation + stop sequences.
+- Prompt-injection defense: delimit untrusted content ('do not execute'); restate rules in the system message.
+- MCP: open standard connecting agents to tools/data.
 
 ## Interview Questions
 
@@ -740,6 +832,35 @@ keeps these concepts in mind and does **not** repeat these mistakes.
 - **Stream large payloads** — Pipe files/HTTP bodies through streams so memory stays flat regardless of size.
 - **Config via environment, secrets out of code** — Read config from process.env; commit package-lock.json for reproducible installs.
 
+## Full Cheat Sheet — every concept
+
+### Runtime & Event Loop
+- Node runs V8 + libuv; JS is single-threaded but I/O is delegated (thread pool / OS) and non-blocking.
+- The event loop schedules callbacks when operations complete — many connections without a thread each.
+- Never block the loop with sync CPU work; offload to worker threads or a queue.
+
+### Modules & npm
+- CommonJS: require() / module.exports (sync). ESM: import/export (.mjs or "type":"module").
+- package.json defines the project; commit package-lock.json for reproducible installs.
+- Keep secrets out of package.json and the repo.
+
+### Core Modules
+- fs (files), http/https (servers), path (OS-safe paths), process (argv/env), events (EventEmitter), crypto, stream, os.
+
+### EventEmitter & Streams
+- EventEmitter: emitter.on('event', cb) / emitter.emit('event'); the backbone of many Node APIs.
+- Streams process data in chunks (readable/writable/duplex/transform); pipe() large data to keep memory flat.
+- Buffers hold binary data.
+
+### Async & Errors
+- Prefer async/await; await inside try/catch and attach .catch to promises.
+- Listen for 'error' on streams/emitters; unhandled rejections can crash the process.
+
+### Config, Scaling, Express
+- Read config from process.env per environment.
+- Scale across cores with the cluster module / PM2 / worker_threads.
+- Express maps HTTP verbs to routes (GET/POST/PUT/DELETE) with middleware; close DB connections properly.
+
 ## Interview Questions
 
 #### Q1. How does Node handle concurrency if it's single-threaded?
@@ -796,6 +917,38 @@ keeps these concepts in mind and does **not** repeat these mistakes.
 - **Know mutability and copies** — Use copy.deepcopy for nested structures; remember list slicing/`.copy()` are shallow.
 - **Prefer comprehensions and built-ins** — Use list/dict/set comprehensions and generators (yield) for clear, memory-efficient iteration.
 - **Use context managers for resources** — Open files/connections with `with` so they close even on exceptions; catch specific exceptions.
+
+## Full Cheat Sheet — every concept
+
+### Data Types
+- Numbers: int/float; // floor division, % remainder, ** power.
+- Strings: immutable; slice [start:end:step]; f-strings f"{x}".
+- Booleans: falsy = None, 0, '', [], {}, ().
+
+### Collections
+- list (mutable), tuple (immutable), dict (key→value), set (unique).
+- dict.get(key, default) avoids KeyError; use `in` for membership.
+- Copies: list.copy()/[:] are shallow — use copy.deepcopy for nested.
+
+### Comprehensions & Built-ins
+- [x*2 for x in xs if x>0]; also set/dict comprehensions.
+- Generators (yield) for lazy, memory-efficient iteration.
+- Built-ins: map, filter, zip, enumerate, sorted, any, all, sum.
+
+### Functions & Args
+- Order: positional → *args → keyword-only → **kwargs.
+- *args splats an iterable to positionals; **kwargs a dict to keywords.
+- NEVER use a mutable default (def f(x, acc=[])) — use None and create inside.
+
+### Advanced & OOP
+- Decorators wrap functions (@decorator); closures capture enclosing scope.
+- Classes: __init__, self, inheritance, @classmethod / @staticmethod, dunder methods.
+- Scope is LEGB (Local → Enclosing → Global → Built-in); use global/nonlocal to rebind.
+
+### Resources & Errors
+- Context managers: `with open(...) as f:` guarantees cleanup.
+- Catch specific exceptions (except ValueError:), not bare except.
+- try/except/else/finally for full control.
 
 ## Interview Questions
 
@@ -854,6 +1007,33 @@ keeps these concepts in mind and does **not** repeat these mistakes.
 - **Model absence and failure in the type system** — Use Option<T> for maybe-present values and Result<T,E> for fallible ops; propagate with `?`.
 - **Traits over inheritance** — Define shared behavior with traits and generics with trait bounds.
 
+## Full Cheat Sheet — every concept
+
+### Ownership
+- Every value has one owner; dropped when the owner leaves scope.
+- Assigning/passing a non-Copy value moves it — the original is invalidated.
+- Clone for a deep copy; Copy types (integers, bool) copy implicitly.
+
+### Borrowing & Lifetimes
+- &T immutable borrow, &mut T mutable borrow; lend without moving.
+- Rule: many & OR one &mut at a time — never both.
+- Lifetimes ('a) ensure references never outlive their data (no dangling).
+
+### Types & Mutability
+- Bindings immutable by default; opt in with `mut`.
+- Structs group data (impl blocks add methods); enums are one-of variants with data.
+- Pattern matching with `match` is exhaustive (compiler-checked).
+
+### Traits & Generics
+- Traits define shared behavior (like interfaces); implement for any type.
+- Generics with trait bounds (T: Display) — monomorphized at compile time.
+- Composition over inheritance (Rust has no class inheritance).
+
+### Errors & Tooling
+- Option<T> for maybe-present; Result<T,E> for fallible; no null, no exceptions.
+- Propagate errors with `?`; avoid unwrap()/expect() in real paths (they panic).
+- Cargo: cargo build / run / test / check; the borrow checker enforces safety at compile time.
+
 ## Interview Questions
 
 #### Q1. What is ownership in Rust?
@@ -910,6 +1090,27 @@ keeps these concepts in mind and does **not** repeat these mistakes.
 - **Authenticate with msg.sender** — Gate privileged functions on msg.sender (the immediate caller) via modifiers.
 - **Mind storage, gas and visibility** — Minimize storage writes, use events for logs, mark visibility explicitly, and use custom errors over revert strings.
 - **Fail loudly and early** — Use require/custom errors to validate preconditions and revert on invalid state.
+
+## Full Cheat Sheet — every concept
+
+### Structure & Types
+- SPDX license → pragma version → imports → state variables → functions.
+- Types: bool, uint/int (256-bit), address (use .call{value:} not .transfer), bytes32, mapping, struct, enum, arrays.
+
+### Visibility & Functions
+- public (auto getter), private, internal (+ inheritors), external (outside only).
+- view (reads state), pure (neither), payable (receives Ether via msg.value).
+- constant/immutable; modifiers enforce preconditions.
+
+### Security
+- Checks-Effects-Interactions + reentrancy guard (update state before external calls).
+- Auth with msg.sender, never tx.origin (phishable).
+- storage (persistent, costly) vs memory (temporary).
+
+### Events, Errors, Gas
+- Emit events (index up to 3 params) for cheap off-chain lookups.
+- Custom errors (revert NotOwner()) over strings; require/assert/revert.
+- Gas: minimize storage writes, avoid unbounded loops, unchecked{} for safe math.
 
 ## Interview Questions
 
@@ -968,6 +1169,31 @@ keeps these concepts in mind and does **not** repeat these mistakes.
 - **Learn the core patterns** — Two pointers and sliding window for arrays/strings, BFS/DFS for graphs/trees, DP for overlapping subproblems.
 - **Watch recursion depth** — Bound recursion or convert to iteration with an explicit stack for deep inputs.
 
+## Full Cheat Sheet — every concept
+
+### Big-O
+- Time & space growth: O(1) < O(log n) < O(n) < O(n log n) < O(n²) < O(2ⁿ) < O(n!).
+- Analyze worst case; watch nested loops (O(n²)) and hidden costs.
+
+### Core Structures
+- Array: O(1) index, O(n) search/insert-middle.
+- Hash table: O(1) avg lookup/insert/delete; O(n) worst (collisions).
+- Linked list: O(1) prepend/append, O(n) lookup. Stack (LIFO) / Queue (FIFO): O(1) ends.
+
+### Trees, Heaps, Graphs
+- BST: O(log n) avg, O(n) worst (unbalanced); AVL/Red-Black self-balance.
+- Heap: priority queue, O(log n) ops.
+- Graphs: adjacency list/matrix; BFS (queue, shortest path) & DFS (stack/recursion), both O(V+E).
+
+### Algorithms
+- Sorting: bubble/selection/insertion O(n²); merge O(n log n) stable; quick O(n log n) avg in-place.
+- Searching: linear O(n); binary O(log n) on sorted data.
+
+### Patterns
+- Two pointers (sorted arrays), sliding window (substrings/subarrays).
+- BFS/DFS (graphs/trees), recursion (watch stack depth).
+- Dynamic programming: overlapping subproblems + memoization/tabulation.
+
 ## Interview Questions
 
 #### Q1. Why are hash tables O(1) average but O(n) worst case?
@@ -1025,6 +1251,26 @@ keeps these concepts in mind and does **not** repeat these mistakes.
 - **Handle secrets and crypto correctly** — Hash passwords with a slow salted KDF (bcrypt/argon2), encrypt in transit and at rest, use vetted libraries.
 - **Authenticate then authorize** — Verify identity (MFA) and separately check permissions on every request, server-side.
 
+## Full Cheat Sheet — every concept
+
+### Principles
+- CIA triad: Confidentiality, Integrity, Availability.
+- Least privilege, defense in depth, assume breach, separation of duties.
+
+### Threats & Attacks
+- Phishing/social engineering, malware, DDoS, MITM, data breach.
+- Web: SQL injection & XSS (untrusted input treated as code), CSRF.
+
+### Identity & Crypto
+- Authentication (who) with MFA vs authorization (what) — check both server-side.
+- Symmetric (shared key, bulk) vs asymmetric (key pair, exchange/signatures); TLS combines both.
+- Hash passwords with salted bcrypt/argon2; encrypt in transit & at rest; never roll your own crypto.
+
+### Defense & Response
+- Firewalls, VPN, IDS/IPS, antivirus, WAF.
+- Validate/sanitize input; parameterized queries; output encoding; CSP.
+- Incident response: prepare → detect → contain → eradicate → recover → learn.
+
 ## Interview Questions
 
 #### Q1. What is the CIA triad?
@@ -1076,6 +1322,24 @@ keeps these concepts in mind and does **not** repeat these mistakes.
 - **Authorization first** — Only scan networks you own or have explicit written permission to test.
 - **Pick the right scan for the job** — Use -sS (stealth SYN) for TCP, -sU for UDP services, and scope ports with -p / -F / -p-.
 - **Add detection, then verify** — Layer -sV (versions) and -O (OS) and targeted NSE scripts, then confirm findings manually.
+
+## Full Cheat Sheet — every concept
+
+### Host Discovery
+- nmap <ip>; ping sweep `-sn`; targets: ranges (1-100), subnets (/24), lists (-iL file).
+
+### Scan Types
+- -sS SYN (stealth, default TCP), -sT full connect (detectable), -sU UDP.
+- Ports: -p 80,443 / -p 1-100 / -p- (all 65535) / -F (top 100).
+
+### Detection
+- -sV service/version, -O OS (needs 1 open + 1 closed port), -A aggressive (all, noisy).
+- NSE scripts: --script <category> (needs sudo; verify findings).
+
+### Timing, Output, Ethics
+- Timing -T0..-T5 (paranoid→insane); slower = stealthier.
+- Output: -oN file.txt (normal), -oX (XML), -oG (grepable).
+- Only scan systems you own or have written authorization to test.
 
 ## Interview Questions
 
@@ -1131,6 +1395,27 @@ keeps these concepts in mind and does **not** repeat these mistakes.
 - **Least-privilege permissions** — Set the minimum chmod/chown needed; use sudo deliberately for single commands.
 - **Manage processes and services** — Inspect with ps aux/top, signal with kill, and run services via systemctl; schedule with cron.
 
+## Full Cheat Sheet — every concept
+
+### Navigation & Files
+- ls (-l -a -h), cd (~ home, - previous), pwd.
+- mkdir -p, cp -r, mv -i, rm -r (rm -rf forces), touch.
+
+### Permissions
+- chmod symbolic or octal (r=4 w=2 x=1): 755 dirs/execs, 644 files.
+- chown user:group file; least privilege — avoid chmod 777.
+
+### Viewing & Searching
+- cat, less/more, head/tail; grep (-i -n -r); find by name/size/type.
+
+### Processes & Services
+- ps aux, top; kill <pid> (SIGTERM), kill -9 last resort.
+- systemctl start/stop/restart/enable; schedule with cron (crontab -e).
+
+### Pipes, Redirection, Net
+- | pipe; > overwrite, >> append, 2>&1 merge stderr.
+- ssh, scp, curl/wget; apt install/update; man <cmd> for docs.
+
 ## Interview Questions
 
 #### Q1. What do chmod 755 and 644 mean?
@@ -1184,6 +1469,29 @@ keeps these concepts in mind and does **not** repeat these mistakes.
 - **Correlation is not causation** — Establish causality with experiments (A/B tests) or quasi-experimental methods (diff-in-diff, matching).
 - **Choose robust summary statistics** — Use the median for skewed data, report dispersion (std dev), and check distribution before applying tests.
 - **Measure what matters** — Define a few actionable KPIs tied to outcomes; segment (RFM, cohorts, funnels) to find the story.
+
+## Full Cheat Sheet — every concept
+
+### Types of Analytics
+- Descriptive (what happened) · Diagnostic (why) · Predictive (what's next) · Prescriptive (what to do).
+
+### Statistics
+- Central tendency: mean (symmetric), median (robust to skew), mode (categorical).
+- Dispersion: standard deviation vs the mean; correlation ∈ [-1, +1].
+- Check distribution/normality before applying tests.
+
+### Inference & Causality
+- Hypothesis tests: t-test (continuous), chi-square (categorical); confidence intervals.
+- Regression: linear (continuous), logistic (binary).
+- Correlation ≠ causation — establish causality with A/B tests, diff-in-diff, matching.
+
+### Segmentation & Modeling
+- RFM (recency/frequency/monetary), clustering, cohorts, funnels.
+- Random forest (ensemble), time-series forecasting (e.g. Prophet).
+
+### Practice
+- Define a few actionable KPIs; clean data first; visualize clearly.
+- Avoid vanity metrics and cluttered dashboards.
 
 ## Interview Questions
 
@@ -1242,6 +1550,29 @@ keeps these concepts in mind and does **not** repeat these mistakes.
 - **Guard shared state** — Protect shared data with a sync.Mutex (defer Unlock) or hand ownership through a channel.
 - **Interfaces are satisfied implicitly** — Define small interfaces and let types satisfy them by implementing methods; compose with embedding.
 
+## Full Cheat Sheet — every concept
+
+### Concurrency
+- Goroutines: `go fn()` — lightweight Go-managed threads; main doesn't wait automatically.
+- Channels: ch <- v send, <-ch receive; unbuffered blocks until received; buffered holds capacity.
+- sync.WaitGroup (Add/Done/Wait) to wait; `select` to multiplex channels.
+- sync.Mutex (Lock/defer Unlock) to guard shared state; avoid concurrent map writes (data race).
+
+### Data
+- Arrays fixed ([3]int); slices dynamic ([]int) over an array — append() to grow.
+- Maps: make(map[K]V); comma-ok: v, ok := m[k].
+- Structs group fields; capitalized names are exported (public).
+
+### Interfaces & Types
+- Interfaces are satisfied implicitly — implement the methods, no `implements`.
+- Compose via embedding; don't mix pointer and value receivers on one type.
+- Zero values: 0, false, "", nil (uninitialized is usable).
+
+### Errors & Idioms
+- No exceptions: return (value, error) and check err immediately.
+- Wrap with fmt.Errorf("...: %w", err); custom errors implement Error() string.
+- defer runs on function return (LIFO) for cleanup; all args are passed by value (use pointers to mutate).
+
 ## Interview Questions
 
 #### Q1. What are goroutines and channels?
@@ -1298,6 +1629,33 @@ keeps these concepts in mind and does **not** repeat these mistakes.
 - **async/await all the way** — Return Task/Task<T> and await async calls so threads aren't blocked; avoid mixing sync and async.
 - **Enable nullable reference types** — Turn on #nullable to make nullability explicit and catch null-deref bugs at compile time.
 - **Prefer LINQ, but mind execution** — Express queries declaratively with LINQ; remember it's lazily evaluated until materialized (ToList/Count).
+
+## Full Cheat Sheet — every concept
+
+### Types & Memory
+- Value types (int, struct, enum) store data directly, copied on assignment.
+- Reference types (class, string, array) store a heap reference, shared on assignment.
+- records give value-based equality + immutability; `with` for non-destructive copies.
+
+### Classes & Members
+- Classes = blueprints; auto-properties { get; set; }; partial classes split across files.
+- Interfaces define contracts; inheritance + polymorphism via virtual/override.
+- Access: public/private/protected/internal.
+
+### Generics & Collections
+- Generics <T> for reusable, type-safe code without boxing.
+- Arrays (fixed), List<T> (dynamic), Dictionary<K,V> (key→value).
+- switch requires break/return per case (no implicit fall-through).
+
+### Async & LINQ
+- async methods return Task/Task<T>; await frees the thread; don't block with .Result/.Wait().
+- LINQ: declarative queries (Where/Select/OrderBy); deferred until enumerated (ToList/Count).
+- Delegates & events model callbacks/pub-sub.
+
+### Safety & Errors
+- Enable nullable reference types (#nullable enable) to catch null derefs at compile time.
+- Catch specific exceptions before general ones; use try/catch/finally.
+- Prefer dependency injection for loose coupling.
 
 ## Interview Questions
 
@@ -1356,6 +1714,32 @@ keeps these concepts in mind and does **not** repeat these mistakes.
 - **Index for your access patterns** — Index columns used in WHERE/JOIN/ORDER BY; read the query plan to confirm they're used.
 - **WHERE filters rows, HAVING filters groups** — Filter individual rows in WHERE, then filter aggregated groups in HAVING after GROUP BY.
 
+## Full Cheat Sheet — every concept
+
+### Query Basics
+- SELECT cols FROM table WHERE filter ORDER BY col ASC/DESC LIMIT n.
+- Order of evaluation: FROM → WHERE → GROUP BY → HAVING → SELECT → ORDER BY → LIMIT.
+- DISTINCT removes duplicate rows.
+
+### Grouping & Aggregates
+- GROUP BY collapses rows; aggregates: COUNT, SUM, AVG, MIN, MAX (ignore NULLs).
+- WHERE filters rows (no aggregates); HAVING filters groups (aggregates allowed).
+
+### Joins
+- INNER JOIN = matches in both; LEFT/RIGHT JOIN = all of one side + matches (NULLs otherwise).
+- FULL OUTER JOIN = all rows from both.
+- Always specify the ON condition — a missing one causes a cartesian product.
+
+### Structure & Integrity
+- Primary key uniquely identifies a row; foreign key links tables.
+- Normalization removes redundancy; indexes speed reads (cost writes).
+- Transactions are ACID (Atomic, Consistent, Isolated, Durable).
+
+### Gotchas
+- NULL: use IS NULL / IS NOT NULL, and COALESCE() to default.
+- UNION dedupes; UNION ALL keeps duplicates.
+- Subqueries run first and feed the outer query.
+
 ## Interview Questions
 
 #### Q1. INNER JOIN vs LEFT JOIN?
@@ -1413,6 +1797,21 @@ keeps these concepts in mind and does **not** repeat these mistakes.
 - **Wrap risky formulas** — Guard against errors with IFERROR and combine conditions with IF+AND/OR for clarity.
 - **Summarize with pivot tables** — Use pivot tables to aggregate and explore large tables without fragile nested formulas.
 
+## Full Cheat Sheet — every concept
+
+### Formulas & References
+- SUM, AVERAGE, IF, COUNTIF, SUMIF; combine IF + AND/OR.
+- Relative (A1) shift on copy; absolute ($A$1) stay fixed; mixed ($A1 / A$1); F4 cycles.
+
+### Lookups
+- Prefer XLOOKUP or INDEX+MATCH (any direction, survive column moves).
+- VLOOKUP looks right only and breaks on inserted columns.
+
+### Robustness & Analysis
+- Wrap risky formulas in IFERROR; watch #DIV/0!, #N/A, #NAME?, #VALUE!, #REF!.
+- Pivot tables summarize/cross-tab large data; charts to visualize.
+- Data validation + conditional formatting for clean, readable sheets.
+
 ## Interview Questions
 
 #### Q1. Relative vs absolute cell references?
@@ -1466,6 +1865,27 @@ keeps these concepts in mind and does **not** repeat these mistakes.
 - **Identity & access management** — Enforce MFA, least privilege, and role-based access; separate duties for sensitive actions.
 - **Use the right crypto for the job** — Hash with salted KDFs, encrypt in transit (TLS) and at rest, and manage keys properly.
 - **Defense in depth + prepare to respond** — Layer controls (network, host, app, data) and have an incident response plan: prepare, detect, contain, eradicate, recover.
+
+## Full Cheat Sheet — every concept
+
+### Risk & Governance
+- CIA triad; risk = likelihood × impact; treat by mitigate/transfer/accept/avoid.
+- Policies, standards, compliance (GDPR/PCI/HIPAA), security awareness.
+
+### Identity & Access
+- AAA (authentication, authorization, accounting); MFA; RBAC; least privilege; separation of duties.
+
+### Cryptography
+- Symmetric (AES) vs asymmetric (RSA/ECC); hashing (SHA-2) + salted KDFs for passwords.
+- PKI, certificates, TLS; proper key management/rotation.
+
+### Network & Threats
+- Firewalls, VPN, IDS/IPS, segmentation, zero trust.
+- Attacks: phishing, malware, MITM, DoS/DDoS, injection; defense in depth.
+
+### Operations
+- Vulnerability assessment & pentesting; patch management.
+- Incident response lifecycle; logging/monitoring; backups & disaster recovery.
 
 ## Interview Questions
 

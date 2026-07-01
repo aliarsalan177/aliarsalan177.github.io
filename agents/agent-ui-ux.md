@@ -34,6 +34,25 @@ keeps these concepts in mind and does **not** repeat these mistakes.
 - **Accessibility is a requirement, not a checkbox** — Meet WCAG contrast (4.5:1 body text), give visible focus states, label controls, and size touch targets ≥44px.
 - **Systematize with a design system** — Build up from tokens (color, type, spacing) to components to patterns so the product stays coherent as it grows.
 
+## Full Cheat Sheet — every concept
+
+### Hierarchy & Typography
+- Hierarchy via size, weight, color, position, whitespace — guide the eye to what matters.
+- Typefaces: serif / sans-serif / display / mono; use a modular type scale (e.g. 1.618).
+
+### Color & Contrast
+- Schemes: monochromatic, analogous, complementary, split-complementary, triadic, tetradic.
+- Meet WCAG contrast (4.5:1 body text); never rely on color alone.
+
+### Spacing, Grid, Layout
+- 8px base unit; increment spacing by it for rhythm.
+- 12-column grids: columns, gutters, margins; responsive breakpoints ~600/768/1024/1280.
+
+### Accessibility & Systems
+- Visible focus states, adequate touch targets (~44px), labels for screen readers.
+- Design systems (atomic): tokens → components → patterns; keep it consistent and evolving.
+- Avoid: over-complication, skipping user testing, inconsistent patterns, ignoring a11y.
+
 ## Interview Questions
 
 #### Q1. What is visual hierarchy and how do you create it?

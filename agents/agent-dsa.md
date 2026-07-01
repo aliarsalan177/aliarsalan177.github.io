@@ -34,6 +34,31 @@ keeps these concepts in mind and does **not** repeat these mistakes.
 - **Learn the core patterns** — Two pointers and sliding window for arrays/strings, BFS/DFS for graphs/trees, DP for overlapping subproblems.
 - **Watch recursion depth** — Bound recursion or convert to iteration with an explicit stack for deep inputs.
 
+## Full Cheat Sheet — every concept
+
+### Big-O
+- Time & space growth: O(1) < O(log n) < O(n) < O(n log n) < O(n²) < O(2ⁿ) < O(n!).
+- Analyze worst case; watch nested loops (O(n²)) and hidden costs.
+
+### Core Structures
+- Array: O(1) index, O(n) search/insert-middle.
+- Hash table: O(1) avg lookup/insert/delete; O(n) worst (collisions).
+- Linked list: O(1) prepend/append, O(n) lookup. Stack (LIFO) / Queue (FIFO): O(1) ends.
+
+### Trees, Heaps, Graphs
+- BST: O(log n) avg, O(n) worst (unbalanced); AVL/Red-Black self-balance.
+- Heap: priority queue, O(log n) ops.
+- Graphs: adjacency list/matrix; BFS (queue, shortest path) & DFS (stack/recursion), both O(V+E).
+
+### Algorithms
+- Sorting: bubble/selection/insertion O(n²); merge O(n log n) stable; quick O(n log n) avg in-place.
+- Searching: linear O(n); binary O(log n) on sorted data.
+
+### Patterns
+- Two pointers (sorted arrays), sliding window (substrings/subarrays).
+- BFS/DFS (graphs/trees), recursion (watch stack depth).
+- Dynamic programming: overlapping subproblems + memoization/tabulation.
+
 ## Interview Questions
 
 #### Q1. Why are hash tables O(1) average but O(n) worst case?

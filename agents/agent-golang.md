@@ -34,6 +34,29 @@ keeps these concepts in mind and does **not** repeat these mistakes.
 - **Guard shared state** — Protect shared data with a sync.Mutex (defer Unlock) or hand ownership through a channel.
 - **Interfaces are satisfied implicitly** — Define small interfaces and let types satisfy them by implementing methods; compose with embedding.
 
+## Full Cheat Sheet — every concept
+
+### Concurrency
+- Goroutines: `go fn()` — lightweight Go-managed threads; main doesn't wait automatically.
+- Channels: ch <- v send, <-ch receive; unbuffered blocks until received; buffered holds capacity.
+- sync.WaitGroup (Add/Done/Wait) to wait; `select` to multiplex channels.
+- sync.Mutex (Lock/defer Unlock) to guard shared state; avoid concurrent map writes (data race).
+
+### Data
+- Arrays fixed ([3]int); slices dynamic ([]int) over an array — append() to grow.
+- Maps: make(map[K]V); comma-ok: v, ok := m[k].
+- Structs group fields; capitalized names are exported (public).
+
+### Interfaces & Types
+- Interfaces are satisfied implicitly — implement the methods, no `implements`.
+- Compose via embedding; don't mix pointer and value receivers on one type.
+- Zero values: 0, false, "", nil (uninitialized is usable).
+
+### Errors & Idioms
+- No exceptions: return (value, error) and check err immediately.
+- Wrap with fmt.Errorf("...: %w", err); custom errors implement Error() string.
+- defer runs on function return (LIFO) for cleanup; all args are passed by value (use pointers to mutate).
+
 ## Interview Questions
 
 #### Q1. What are goroutines and channels?

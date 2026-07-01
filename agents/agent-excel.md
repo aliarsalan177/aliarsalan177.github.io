@@ -34,6 +34,21 @@ keeps these concepts in mind and does **not** repeat these mistakes.
 - **Wrap risky formulas** — Guard against errors with IFERROR and combine conditions with IF+AND/OR for clarity.
 - **Summarize with pivot tables** — Use pivot tables to aggregate and explore large tables without fragile nested formulas.
 
+## Full Cheat Sheet — every concept
+
+### Formulas & References
+- SUM, AVERAGE, IF, COUNTIF, SUMIF; combine IF + AND/OR.
+- Relative (A1) shift on copy; absolute ($A$1) stay fixed; mixed ($A1 / A$1); F4 cycles.
+
+### Lookups
+- Prefer XLOOKUP or INDEX+MATCH (any direction, survive column moves).
+- VLOOKUP looks right only and breaks on inserted columns.
+
+### Robustness & Analysis
+- Wrap risky formulas in IFERROR; watch #DIV/0!, #N/A, #NAME?, #VALUE!, #REF!.
+- Pivot tables summarize/cross-tab large data; charts to visualize.
+- Data validation + conditional formatting for clean, readable sheets.
+
 ## Interview Questions
 
 #### Q1. Relative vs absolute cell references?

@@ -34,6 +34,27 @@ keeps these concepts in mind and does **not** repeat these mistakes.
 - **Least-privilege permissions** — Set the minimum chmod/chown needed; use sudo deliberately for single commands.
 - **Manage processes and services** — Inspect with ps aux/top, signal with kill, and run services via systemctl; schedule with cron.
 
+## Full Cheat Sheet — every concept
+
+### Navigation & Files
+- ls (-l -a -h), cd (~ home, - previous), pwd.
+- mkdir -p, cp -r, mv -i, rm -r (rm -rf forces), touch.
+
+### Permissions
+- chmod symbolic or octal (r=4 w=2 x=1): 755 dirs/execs, 644 files.
+- chown user:group file; least privilege — avoid chmod 777.
+
+### Viewing & Searching
+- cat, less/more, head/tail; grep (-i -n -r); find by name/size/type.
+
+### Processes & Services
+- ps aux, top; kill <pid> (SIGTERM), kill -9 last resort.
+- systemctl start/stop/restart/enable; schedule with cron (crontab -e).
+
+### Pipes, Redirection, Net
+- | pipe; > overwrite, >> append, 2>&1 merge stderr.
+- ssh, scp, curl/wget; apt install/update; man <cmd> for docs.
+
 ## Interview Questions
 
 #### Q1. What do chmod 755 and 644 mean?

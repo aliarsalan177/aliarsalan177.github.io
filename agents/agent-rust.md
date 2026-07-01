@@ -34,6 +34,33 @@ keeps these concepts in mind and does **not** repeat these mistakes.
 - **Model absence and failure in the type system** — Use Option<T> for maybe-present values and Result<T,E> for fallible ops; propagate with `?`.
 - **Traits over inheritance** — Define shared behavior with traits and generics with trait bounds.
 
+## Full Cheat Sheet — every concept
+
+### Ownership
+- Every value has one owner; dropped when the owner leaves scope.
+- Assigning/passing a non-Copy value moves it — the original is invalidated.
+- Clone for a deep copy; Copy types (integers, bool) copy implicitly.
+
+### Borrowing & Lifetimes
+- &T immutable borrow, &mut T mutable borrow; lend without moving.
+- Rule: many & OR one &mut at a time — never both.
+- Lifetimes ('a) ensure references never outlive their data (no dangling).
+
+### Types & Mutability
+- Bindings immutable by default; opt in with `mut`.
+- Structs group data (impl blocks add methods); enums are one-of variants with data.
+- Pattern matching with `match` is exhaustive (compiler-checked).
+
+### Traits & Generics
+- Traits define shared behavior (like interfaces); implement for any type.
+- Generics with trait bounds (T: Display) — monomorphized at compile time.
+- Composition over inheritance (Rust has no class inheritance).
+
+### Errors & Tooling
+- Option<T> for maybe-present; Result<T,E> for fallible; no null, no exceptions.
+- Propagate errors with `?`; avoid unwrap()/expect() in real paths (they panic).
+- Cargo: cargo build / run / test / check; the borrow checker enforces safety at compile time.
+
 ## Interview Questions
 
 #### Q1. What is ownership in Rust?

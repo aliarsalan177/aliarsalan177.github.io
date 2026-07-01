@@ -34,6 +34,27 @@ keeps these concepts in mind and does **not** repeat these mistakes.
 - **Design for both platforms** — Branch with Platform.select / Platform.OS and test on iOS and Android; respect safe areas.
 - **Keep the JS thread free** — Memoize rows, use native driver for animations (Reanimated), and offload heavy work.
 
+## Full Cheat Sheet — every concept
+
+### Core Components
+- View (≈ div), Text (all text must be inside it), Image, ScrollView, TextInput.
+- Pressable / TouchableOpacity for touch via onPress.
+
+### Styling & Layout
+- Styles are JS objects (StyleSheet.create), camelCase props (backgroundColor).
+- Flexbox is the layout system (flexDirection defaults to column); units are dp.
+- No CSS files / no DOM.
+
+### Lists & Performance
+- FlatList / SectionList virtualize long lists (keyExtractor, getItemLayout).
+- Don't map huge arrays inside ScrollView — it mounts everything.
+- Memoize rows; animate with the native driver (Reanimated); keep the JS thread free.
+
+### Platform & Practices
+- Platform.OS / Platform.select or .ios.tsx / .android.tsx for platform code; respect safe areas.
+- Navigation via React Navigation (native stack).
+- Use TypeScript, error boundaries, and accessibility labels.
+
 ## Interview Questions
 
 #### Q1. How does React Native differ from React for web?

@@ -34,6 +34,35 @@ keeps these concepts in mind and does **not** repeat these mistakes.
 - **Stream large payloads** — Pipe files/HTTP bodies through streams so memory stays flat regardless of size.
 - **Config via environment, secrets out of code** — Read config from process.env; commit package-lock.json for reproducible installs.
 
+## Full Cheat Sheet — every concept
+
+### Runtime & Event Loop
+- Node runs V8 + libuv; JS is single-threaded but I/O is delegated (thread pool / OS) and non-blocking.
+- The event loop schedules callbacks when operations complete — many connections without a thread each.
+- Never block the loop with sync CPU work; offload to worker threads or a queue.
+
+### Modules & npm
+- CommonJS: require() / module.exports (sync). ESM: import/export (.mjs or "type":"module").
+- package.json defines the project; commit package-lock.json for reproducible installs.
+- Keep secrets out of package.json and the repo.
+
+### Core Modules
+- fs (files), http/https (servers), path (OS-safe paths), process (argv/env), events (EventEmitter), crypto, stream, os.
+
+### EventEmitter & Streams
+- EventEmitter: emitter.on('event', cb) / emitter.emit('event'); the backbone of many Node APIs.
+- Streams process data in chunks (readable/writable/duplex/transform); pipe() large data to keep memory flat.
+- Buffers hold binary data.
+
+### Async & Errors
+- Prefer async/await; await inside try/catch and attach .catch to promises.
+- Listen for 'error' on streams/emitters; unhandled rejections can crash the process.
+
+### Config, Scaling, Express
+- Read config from process.env per environment.
+- Scale across cores with the cluster module / PM2 / worker_threads.
+- Express maps HTTP verbs to routes (GET/POST/PUT/DELETE) with middleware; close DB connections properly.
+
 ## Interview Questions
 
 #### Q1. How does Node handle concurrency if it's single-threaded?

@@ -34,6 +34,27 @@ keeps these concepts in mind and does **not** repeat these mistakes.
 - **Use the right crypto for the job** — Hash with salted KDFs, encrypt in transit (TLS) and at rest, and manage keys properly.
 - **Defense in depth + prepare to respond** — Layer controls (network, host, app, data) and have an incident response plan: prepare, detect, contain, eradicate, recover.
 
+## Full Cheat Sheet — every concept
+
+### Risk & Governance
+- CIA triad; risk = likelihood × impact; treat by mitigate/transfer/accept/avoid.
+- Policies, standards, compliance (GDPR/PCI/HIPAA), security awareness.
+
+### Identity & Access
+- AAA (authentication, authorization, accounting); MFA; RBAC; least privilege; separation of duties.
+
+### Cryptography
+- Symmetric (AES) vs asymmetric (RSA/ECC); hashing (SHA-2) + salted KDFs for passwords.
+- PKI, certificates, TLS; proper key management/rotation.
+
+### Network & Threats
+- Firewalls, VPN, IDS/IPS, segmentation, zero trust.
+- Attacks: phishing, malware, MITM, DoS/DDoS, injection; defense in depth.
+
+### Operations
+- Vulnerability assessment & pentesting; patch management.
+- Incident response lifecycle; logging/monitoring; backups & disaster recovery.
+
 ## Interview Questions
 
 #### Q1. What is the CIA triad?
