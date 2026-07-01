@@ -43,6 +43,7 @@ keeps these concepts in mind and does **not** repeat these mistakes.
 
 ### Core
 - Tensors (n-dim arrays); eager execution by default; runs on CPU/GPU/TPU.
+- tf.constant (immutable) vs tf.Variable (trainable); attributes: shape, rank (ndim), size; reshape/expand_dims.
 - TF 2.x centers on Keras; tf.function compiles Python to a graph for speed.
 
 ### Building Models (Keras)
@@ -60,9 +61,11 @@ keeps these concepts in mind and does **not** repeat these mistakes.
 - Overfitting: dropout, L1/L2, early stopping.
 
 ### Tooling
-- Callbacks: ModelCheckpoint, EarlyStopping, TensorBoard, ReduceLROnPlateau.
-- Save/load: model.save() / load_model() (SavedModel/Keras format).
-- Transfer learning via tf.keras.applications; deploy with TF Serving / TFLite / TF.js.
+- Callbacks: ModelCheckpoint, EarlyStopping, TensorBoard, ReduceLROnPlateau, LearningRateScheduler.
+- Custom training: tf.GradientTape records ops for autodiff (manual gradient/apply).
+- Hyperparameter tuning: Keras Tuner (RandomSearch, Hyperband, BayesianOptimization).
+- Transfer learning: load tf.keras.applications, freeze base layers, fine-tune; save/load model or weights.
+- Deploy with TF Serving / TFLite / TF.js; launch TensorBoard for metrics/graphs.
 
 ## Interview Questions
 

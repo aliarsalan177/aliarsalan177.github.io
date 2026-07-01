@@ -42,16 +42,19 @@ keeps these concepts in mind and does **not** repeat these mistakes.
 ## Full Cheat Sheet — every concept
 
 ### Core Concepts
-- GameObject + Components; Transform (position/rotation/scale); Scenes; Prefabs (reusable templates).
+- GameObject + Components; Transform (position/rotation/scale, Quaternion for rotation); Scenes; Prefabs.
 - Scripting in C# via MonoBehaviour; ScriptableObjects for data assets.
+- [SerializeField] exposes private fields in the Inspector; public fields serialize by default.
+- Manage objects: Instantiate() / Destroy(); GameObject.Find / FindWithTag / GetComponent<T>().
 
 ### Lifecycle
 - Awake → OnEnable → Start (setup); Update (per frame); FixedUpdate (physics); LateUpdate (post).
-- OnCollisionEnter/OnTriggerEnter for collisions; OnDestroy for cleanup.
+- Order of execution matters; OnDestroy for cleanup; coroutines (yield) for timed sequences.
 
 ### Physics & Input
 - Rigidbody + Colliders; apply forces in FixedUpdate; isTrigger for overlap detection.
-- Input System (or legacy Input); raycasting; layers & tags.
+- Collision events: OnCollisionEnter/Stay/Exit and OnTriggerEnter/Stay/Exit (+ 2D variants).
+- Input System (or legacy Input); raycasting; layers & tags; UnityEvents for custom event hooks.
 
 ### Performance
 - Cache GetComponent/references; object pooling; minimize allocations & GC.

@@ -61,6 +61,30 @@ keeps these concepts in mind and does **not** repeat these mistakes.
 - Propagate errors with `?`; avoid unwrap()/expect() in real paths (they panic).
 - Cargo: cargo build / run / test / check; the borrow checker enforces safety at compile time.
 
+### Collections & Strings
+- Vec<T> (growable array), HashMap<K,V>, HashSet, arrays [T; N], slices &[T].
+- String (owned, growable) vs &str (borrowed string slice).
+- Constants (const), shadowing, tuples, destructuring assignment.
+
+### Closures & Iterators
+- Closures capture environment: Fn (borrow), FnMut (mutate), FnOnce (consume).
+- Iterators are lazy: .iter()/.into_iter(); adapters .map/.filter/.collect/.fold; for loops call into_iter().
+
+### Smart Pointers
+- Box<T> heap allocation / recursive types; Rc<T> shared ownership (single-thread).
+- RefCell<T> interior mutability (runtime borrow checks); combine Rc<RefCell<T>>.
+- Arc<T> is the thread-safe Rc; Deref/Drop traits.
+
+### Concurrency
+- thread::spawn + join; move closures to transfer ownership into threads.
+- Share with Arc<Mutex<T>> (lock to access); message-pass with channels (mpsc).
+- Fearless concurrency: the borrow checker prevents data races at compile time; async/await for I/O.
+
+### Traits, Generics & Macros
+- Trait objects (dyn Trait) vs generics with bounds; associated types; Default/Copy/Clone/From/Into.
+- From/Into & TryFrom/TryInto for conversions; pattern-matching enums exhaustively.
+- Declarative macros (macro_rules!) with fragment specifiers; doctests & /// documentation comments.
+
 ## Interview Questions
 
 #### Q1. What is ownership in Rust?
@@ -74,6 +98,15 @@ Option<T> encodes presence/absence and Result<T,E> encodes success/failure in th
 
 #### Q4. What are lifetimes?
 Annotations that tell the compiler how long references must remain valid so it can guarantee no reference outlives the data it points to, preventing dangling references.
+
+#### Q5. Box vs Rc vs RefCell?
+Box<T> is single-owner heap allocation (recursive types). Rc<T> allows multiple owners (reference-counted, single-threaded). RefCell<T> moves borrow checking to runtime for interior mutability; Rc<RefCell<T>> combines shared ownership + mutation. Arc<Mutex<T>> is the thread-safe equivalent.
+
+#### Q6. How does Rust achieve 'fearless concurrency'?
+The ownership and borrowing rules are enforced across threads too, so data races are caught at compile time. You share state with Arc<Mutex<T>> or pass messages over channels, and move closures transfer ownership into threads.
+
+#### Q7. Fn vs FnMut vs FnOnce?
+Traits for closures by how they capture: Fn borrows immutably, FnMut borrows mutably, FnOnce takes ownership and can be called once. The compiler infers the least restrictive that fits.
 
 ---
 

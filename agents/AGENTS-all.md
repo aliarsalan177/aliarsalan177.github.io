@@ -1119,6 +1119,30 @@ keeps these concepts in mind and does **not** repeat these mistakes.
 - Propagate errors with `?`; avoid unwrap()/expect() in real paths (they panic).
 - Cargo: cargo build / run / test / check; the borrow checker enforces safety at compile time.
 
+### Collections & Strings
+- Vec<T> (growable array), HashMap<K,V>, HashSet, arrays [T; N], slices &[T].
+- String (owned, growable) vs &str (borrowed string slice).
+- Constants (const), shadowing, tuples, destructuring assignment.
+
+### Closures & Iterators
+- Closures capture environment: Fn (borrow), FnMut (mutate), FnOnce (consume).
+- Iterators are lazy: .iter()/.into_iter(); adapters .map/.filter/.collect/.fold; for loops call into_iter().
+
+### Smart Pointers
+- Box<T> heap allocation / recursive types; Rc<T> shared ownership (single-thread).
+- RefCell<T> interior mutability (runtime borrow checks); combine Rc<RefCell<T>>.
+- Arc<T> is the thread-safe Rc; Deref/Drop traits.
+
+### Concurrency
+- thread::spawn + join; move closures to transfer ownership into threads.
+- Share with Arc<Mutex<T>> (lock to access); message-pass with channels (mpsc).
+- Fearless concurrency: the borrow checker prevents data races at compile time; async/await for I/O.
+
+### Traits, Generics & Macros
+- Trait objects (dyn Trait) vs generics with bounds; associated types; Default/Copy/Clone/From/Into.
+- From/Into & TryFrom/TryInto for conversions; pattern-matching enums exhaustively.
+- Declarative macros (macro_rules!) with fragment specifiers; doctests & /// documentation comments.
+
 ## Interview Questions
 
 #### Q1. What is ownership in Rust?
@@ -1132,6 +1156,15 @@ Option<T> encodes presence/absence and Result<T,E> encodes success/failure in th
 
 #### Q4. What are lifetimes?
 Annotations that tell the compiler how long references must remain valid so it can guarantee no reference outlives the data it points to, preventing dangling references.
+
+#### Q5. Box vs Rc vs RefCell?
+Box<T> is single-owner heap allocation (recursive types). Rc<T> allows multiple owners (reference-counted, single-threaded). RefCell<T> moves borrow checking to runtime for interior mutability; Rc<RefCell<T>> combines shared ownership + mutation. Arc<Mutex<T>> is the thread-safe equivalent.
+
+#### Q6. How does Rust achieve 'fearless concurrency'?
+The ownership and borrowing rules are enforced across threads too, so data races are caught at compile time. You share state with Arc<Mutex<T>> or pass messages over channels, and move closures transfer ownership into threads.
+
+#### Q7. Fn vs FnMut vs FnOnce?
+Traits for closures by how they capture: Fn borrows immutably, FnMut borrows mutably, FnOnce takes ownership and can be called once. The compiler infers the least restrictive that fits.
 
 ---
 
@@ -2823,9 +2856,10 @@ keeps these concepts in mind and does **not** repeat these mistakes.
 - Hierarchies, calculated tables, date/calendar table for time intelligence.
 
 ### DAX
-- Measures (query-time) vs calculated columns (row-time); aggregations SUM/AVERAGE/COUNT.
-- CALCULATE (modify filter context), FILTER, ALL, RELATED; iterators SUMX/AVERAGEX.
-- Time intelligence: TOTALYTD, SAMEPERIODLASTYEAR, DATEADD.
+- Measures (query-time) vs calculated columns (row-time); aggregations SUM/AVERAGE/COUNT/DISTINCTCOUNT.
+- Evaluation context: row context (iterators) vs filter context (CALCULATE modifies it), FILTER, ALL, RELATED.
+- Iterators SUMX/AVERAGEX/RANKX; DIVIDE (safe division); VAR … RETURN for readable, optimized DAX.
+- Time intelligence: TOTALYTD, SAMEPERIODLASTYEAR, DATEADD; a marked date table is required.
 
 ### Visuals & Sharing
 - Charts, tables, cards, maps, slicers; custom visuals from marketplace; drill-through & bookmarks.
@@ -2904,6 +2938,7 @@ keeps these concepts in mind and does **not** repeat these mistakes.
 
 ### Core
 - Tensors (n-dim arrays); eager execution by default; runs on CPU/GPU/TPU.
+- tf.constant (immutable) vs tf.Variable (trainable); attributes: shape, rank (ndim), size; reshape/expand_dims.
 - TF 2.x centers on Keras; tf.function compiles Python to a graph for speed.
 
 ### Building Models (Keras)
@@ -2921,9 +2956,11 @@ keeps these concepts in mind and does **not** repeat these mistakes.
 - Overfitting: dropout, L1/L2, early stopping.
 
 ### Tooling
-- Callbacks: ModelCheckpoint, EarlyStopping, TensorBoard, ReduceLROnPlateau.
-- Save/load: model.save() / load_model() (SavedModel/Keras format).
-- Transfer learning via tf.keras.applications; deploy with TF Serving / TFLite / TF.js.
+- Callbacks: ModelCheckpoint, EarlyStopping, TensorBoard, ReduceLROnPlateau, LearningRateScheduler.
+- Custom training: tf.GradientTape records ops for autodiff (manual gradient/apply).
+- Hyperparameter tuning: Keras Tuner (RandomSearch, Hyperband, BayesianOptimization).
+- Transfer learning: load tf.keras.applications, freeze base layers, fine-tune; save/load model or weights.
+- Deploy with TF Serving / TFLite / TF.js; launch TensorBoard for metrics/graphs.
 
 ## Interview Questions
 
@@ -2993,16 +3030,19 @@ keeps these concepts in mind and does **not** repeat these mistakes.
 ## Full Cheat Sheet — every concept
 
 ### Core Concepts
-- GameObject + Components; Transform (position/rotation/scale); Scenes; Prefabs (reusable templates).
+- GameObject + Components; Transform (position/rotation/scale, Quaternion for rotation); Scenes; Prefabs.
 - Scripting in C# via MonoBehaviour; ScriptableObjects for data assets.
+- [SerializeField] exposes private fields in the Inspector; public fields serialize by default.
+- Manage objects: Instantiate() / Destroy(); GameObject.Find / FindWithTag / GetComponent<T>().
 
 ### Lifecycle
 - Awake → OnEnable → Start (setup); Update (per frame); FixedUpdate (physics); LateUpdate (post).
-- OnCollisionEnter/OnTriggerEnter for collisions; OnDestroy for cleanup.
+- Order of execution matters; OnDestroy for cleanup; coroutines (yield) for timed sequences.
 
 ### Physics & Input
 - Rigidbody + Colliders; apply forces in FixedUpdate; isTrigger for overlap detection.
-- Input System (or legacy Input); raycasting; layers & tags.
+- Collision events: OnCollisionEnter/Stay/Exit and OnTriggerEnter/Stay/Exit (+ 2D variants).
+- Input System (or legacy Input); raycasting; layers & tags; UnityEvents for custom event hooks.
 
 ### Performance
 - Cache GetComponent/references; object pooling; minimize allocations & GC.

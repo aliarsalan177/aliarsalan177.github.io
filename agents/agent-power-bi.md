@@ -55,9 +55,10 @@ keeps these concepts in mind and does **not** repeat these mistakes.
 - Hierarchies, calculated tables, date/calendar table for time intelligence.
 
 ### DAX
-- Measures (query-time) vs calculated columns (row-time); aggregations SUM/AVERAGE/COUNT.
-- CALCULATE (modify filter context), FILTER, ALL, RELATED; iterators SUMX/AVERAGEX.
-- Time intelligence: TOTALYTD, SAMEPERIODLASTYEAR, DATEADD.
+- Measures (query-time) vs calculated columns (row-time); aggregations SUM/AVERAGE/COUNT/DISTINCTCOUNT.
+- Evaluation context: row context (iterators) vs filter context (CALCULATE modifies it), FILTER, ALL, RELATED.
+- Iterators SUMX/AVERAGEX/RANKX; DIVIDE (safe division); VAR … RETURN for readable, optimized DAX.
+- Time intelligence: TOTALYTD, SAMEPERIODLASTYEAR, DATEADD; a marked date table is required.
 
 ### Visuals & Sharing
 - Charts, tables, cards, maps, slicers; custom visuals from marketplace; drill-through & bookmarks.

@@ -85,9 +85,9 @@
     "title": "Rust",
     "category": "Languages",
     "file": "/agents/agent-rust.md",
-    "bytes": 4366,
+    "bytes": 6464,
     "rules": 4,
-    "questions": 4
+    "questions": 7
   },
   {
     "slug": "solidity",
@@ -265,7 +265,7 @@
     "title": "Power BI",
     "category": "AI & Data",
     "file": "/agents/agent-power-bi.md",
-    "bytes": 5324,
+    "bytes": 5499,
     "rules": 5,
     "questions": 5
   },
@@ -274,7 +274,7 @@
     "title": "TensorFlow & Keras",
     "category": "AI & Data",
     "file": "/agents/agent-tensorflow.md",
-    "bytes": 5234,
+    "bytes": 5575,
     "rules": 5,
     "questions": 5
   },
@@ -283,7 +283,7 @@
     "title": "Unity (Game Dev)",
     "category": "Frontend",
     "file": "/agents/agent-unity.md",
-    "bytes": 4891,
+    "bytes": 5236,
     "rules": 5,
     "questions": 5
   },
