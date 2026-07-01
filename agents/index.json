@@ -1,0 +1,191 @@
+[
+  {
+    "slug": "javascript",
+    "title": "JavaScript (Advanced Concepts)",
+    "category": "Languages",
+    "file": "/agents/agent-javascript.md",
+    "bytes": 5201,
+    "rules": 6,
+    "questions": 6
+  },
+  {
+    "slug": "typescript",
+    "title": "TypeScript",
+    "category": "Languages",
+    "file": "/agents/agent-typescript.md",
+    "bytes": 4111,
+    "rules": 5,
+    "questions": 5
+  },
+  {
+    "slug": "react",
+    "title": "React",
+    "category": "Frontend",
+    "file": "/agents/agent-react.md",
+    "bytes": 4046,
+    "rules": 5,
+    "questions": 5
+  },
+  {
+    "slug": "angular",
+    "title": "Angular",
+    "category": "Frontend",
+    "file": "/agents/agent-angular.md",
+    "bytes": 3478,
+    "rules": 4,
+    "questions": 4
+  },
+  {
+    "slug": "react-native",
+    "title": "React Native",
+    "category": "Frontend",
+    "file": "/agents/agent-react-native.md",
+    "bytes": 2967,
+    "rules": 4,
+    "questions": 3
+  },
+  {
+    "slug": "ui-ux",
+    "title": "UI/UX Design",
+    "category": "Frontend",
+    "file": "/agents/agent-ui-ux.md",
+    "bytes": 3035,
+    "rules": 4,
+    "questions": 3
+  },
+  {
+    "slug": "ai-agents",
+    "title": "AI & LLM Agents",
+    "category": "AI & Data",
+    "file": "/agents/agent-ai-agents.md",
+    "bytes": 4161,
+    "rules": 5,
+    "questions": 5
+  },
+  {
+    "slug": "nodejs",
+    "title": "Node.js",
+    "category": "Backend & Infra",
+    "file": "/agents/agent-nodejs.md",
+    "bytes": 3113,
+    "rules": 4,
+    "questions": 4
+  },
+  {
+    "slug": "python",
+    "title": "Python",
+    "category": "Languages",
+    "file": "/agents/agent-python.md",
+    "bytes": 3136,
+    "rules": 4,
+    "questions": 4
+  },
+  {
+    "slug": "rust",
+    "title": "Rust",
+    "category": "Languages",
+    "file": "/agents/agent-rust.md",
+    "bytes": 3130,
+    "rules": 4,
+    "questions": 4
+  },
+  {
+    "slug": "solidity",
+    "title": "Solidity & Smart Contracts",
+    "category": "Languages",
+    "file": "/agents/agent-solidity.md",
+    "bytes": 3221,
+    "rules": 4,
+    "questions": 4
+  },
+  {
+    "slug": "dsa",
+    "title": "Data Structures & Algorithms",
+    "category": "CS & Security",
+    "file": "/agents/agent-dsa.md",
+    "bytes": 3213,
+    "rules": 4,
+    "questions": 4
+  },
+  {
+    "slug": "cybersecurity",
+    "title": "Cybersecurity",
+    "category": "CS & Security",
+    "file": "/agents/agent-cybersecurity.md",
+    "bytes": 3203,
+    "rules": 4,
+    "questions": 4
+  },
+  {
+    "slug": "nmap",
+    "title": "Nmap (Network Scanning)",
+    "category": "CS & Security",
+    "file": "/agents/agent-nmap.md",
+    "bytes": 2536,
+    "rules": 3,
+    "questions": 3
+  },
+  {
+    "slug": "linux",
+    "title": "Linux Command Line",
+    "category": "Backend & Infra",
+    "file": "/agents/agent-linux.md",
+    "bytes": 2855,
+    "rules": 4,
+    "questions": 3
+  },
+  {
+    "slug": "business-analytics",
+    "title": "Business Analytics",
+    "category": "AI & Data",
+    "file": "/agents/agent-business-analytics.md",
+    "bytes": 3340,
+    "rules": 4,
+    "questions": 4
+  },
+  {
+    "slug": "golang",
+    "title": "Go (Golang)",
+    "category": "Languages",
+    "file": "/agents/agent-golang.md",
+    "bytes": 3208,
+    "rules": 4,
+    "questions": 4
+  },
+  {
+    "slug": "csharp",
+    "title": "C#",
+    "category": "Languages",
+    "file": "/agents/agent-csharp.md",
+    "bytes": 3242,
+    "rules": 4,
+    "questions": 4
+  },
+  {
+    "slug": "sql",
+    "title": "SQL",
+    "category": "Backend & Infra",
+    "file": "/agents/agent-sql.md",
+    "bytes": 3146,
+    "rules": 4,
+    "questions": 4
+  },
+  {
+    "slug": "excel",
+    "title": "Excel",
+    "category": "AI & Data",
+    "file": "/agents/agent-excel.md",
+    "bytes": 2881,
+    "rules": 4,
+    "questions": 3
+  },
+  {
+    "slug": "security-plus",
+    "title": "Security+ (Fundamentals)",
+    "category": "CS & Security",
+    "file": "/agents/agent-security-plus.md",
+    "bytes": 3207,
+    "rules": 4,
+    "questions": 4
+  }
+]
