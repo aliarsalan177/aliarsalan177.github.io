@@ -36,8 +36,14 @@ keeps these concepts in mind and does **not** repeat these mistakes.
 
 ## Full Cheat Sheet — every concept
 
+### CLI & Project
+- npm i -g @angular/cli; ng new my-app; ng serve (dev); ng build (prod).
+- Generate: ng g c Name (component), ng g s Name (service), ng g d/p/m (directive/pipe/module).
+- ng add @angular/material installs + configures Angular-optimized packages.
+
 ### Components & Modules
 - Component = template + encapsulated CSS + TS class; generate with `ng g c Name`.
+- Files: .component.html/.css/.ts/.spec.ts; decorated with @Component, registered to a module.
 - @NgModule: declarations, imports, exports, providers, bootstrap (or standalone components).
 
 ### Data Binding
@@ -56,7 +62,8 @@ keeps these concepts in mind and does **not** repeat these mistakes.
 ### Reactivity & Performance
 - RxJS Observables for async; prefer the | async pipe (auto-unsubscribe) or takeUntilDestroyed.
 - OnPush change detection with immutable inputs / signals to minimize checks.
-- Lifecycle hooks: ngOnInit, ngOnChanges, ngAfterViewInit, ngOnDestroy.
+- Full lifecycle: ngOnChanges → ngOnInit → ngDoCheck → ngAfterContentInit/Checked → ngAfterViewInit/Checked → ngOnDestroy.
+- @Injectable providedIn: 'root' (app-wide singleton), module providers, or component providers.
 
 ## Interview Questions
 

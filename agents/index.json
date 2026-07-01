@@ -31,7 +31,7 @@
     "title": "Angular",
     "category": "Frontend",
     "file": "/agents/agent-angular.md",
-    "bytes": 4551,
+    "bytes": 5069,
     "rules": 4,
     "questions": 4
   },
@@ -55,12 +55,12 @@
   },
   {
     "slug": "ai-agents",
-    "title": "AI & LLM Agents",
+    "title": "AI, ML & LLM Engineering",
     "category": "AI & Data",
     "file": "/agents/agent-ai-agents.md",
-    "bytes": 5614,
+    "bytes": 9686,
     "rules": 5,
-    "questions": 5
+    "questions": 10
   },
   {
     "slug": "nodejs",
