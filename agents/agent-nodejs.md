@@ -46,8 +46,9 @@ keeps these concepts in mind and does **not** repeat these mistakes.
 - package.json defines the project; commit package-lock.json for reproducible installs.
 - Keep secrets out of package.json and the repo.
 
-### Core Modules
+### Core Modules & Globals
 - fs (files), http/https (servers), path (OS-safe paths), process (argv/env), events (EventEmitter), crypto, stream, os.
+- Globals: global, process, __dirname, __filename, Buffer, setTimeout/setInterval; node REPL for quick eval.
 
 ### EventEmitter & Streams
 - EventEmitter: emitter.on('event', cb) / emitter.emit('event'); the backbone of many Node APIs.

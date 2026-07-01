@@ -67,7 +67,7 @@
     "title": "Node.js",
     "category": "Backend & Infra",
     "file": "/agents/agent-nodejs.md",
-    "bytes": 4555,
+    "bytes": 4674,
     "rules": 4,
     "questions": 4
   },
@@ -94,7 +94,7 @@
     "title": "Solidity & Smart Contracts",
     "category": "Languages",
     "file": "/agents/agent-solidity.md",
-    "bytes": 4180,
+    "bytes": 4867,
     "rules": 4,
     "questions": 4
   },
@@ -112,7 +112,7 @@
     "title": "Cybersecurity",
     "category": "CS & Security",
     "file": "/agents/agent-cybersecurity.md",
-    "bytes": 4077,
+    "bytes": 4542,
     "rules": 4,
     "questions": 4
   },
@@ -157,7 +157,7 @@
     "title": "C#",
     "category": "Languages",
     "file": "/agents/agent-csharp.md",
-    "bytes": 4502,
+    "bytes": 4660,
     "rules": 4,
     "questions": 4
   },

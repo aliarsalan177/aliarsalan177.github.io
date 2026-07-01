@@ -53,8 +53,9 @@ keeps these concepts in mind and does **not** repeat these mistakes.
 
 ### Async & LINQ
 - async methods return Task/Task<T>; await frees the thread; don't block with .Result/.Wait().
-- LINQ: declarative queries (Where/Select/OrderBy); deferred until enumerated (ToList/Count).
-- Delegates & events model callbacks/pub-sub.
+- LINQ: declarative queries (Where/Select/OrderBy) or query syntax; deferred until enumerated (ToList/Count).
+- Delegates, events, Func<>/Action<> + lambdas ((a,b)=>a+b) for callbacks/pub-sub.
+- Extension methods add methods to existing types (need `using` of their namespace); nameof, attributes.
 
 ### Safety & Errors
 - Enable nullable reference types (#nullable enable) to catch null derefs at compile time.

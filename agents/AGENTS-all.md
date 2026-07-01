@@ -901,8 +901,9 @@ keeps these concepts in mind and does **not** repeat these mistakes.
 - package.json defines the project; commit package-lock.json for reproducible installs.
 - Keep secrets out of package.json and the repo.
 
-### Core Modules
+### Core Modules & Globals
 - fs (files), http/https (servers), path (OS-safe paths), process (argv/env), events (EventEmitter), crypto, stream, os.
+- Globals: global, process, __dirname, __filename, Buffer, setTimeout/setInterval; node REPL for quick eval.
 
 ### EventEmitter & Streams
 - EventEmitter: emitter.on('event', cb) / emitter.emit('event'); the backbone of many Node APIs.
@@ -1169,6 +1170,16 @@ keeps these concepts in mind and does **not** repeat these mistakes.
 - Custom errors (revert NotOwner()) over strings; require/assert/revert.
 - Gas: minimize storage writes, avoid unbounded loops, unchecked{} for safe math.
 
+### Ether Transfer & Low-level Calls
+- Prefer addr.call{value: x}("") + check success (handle reentrancy) over .transfer (2300-gas cap, reverts).
+- delegatecall runs external code in THIS contract's storage context (proxies/libraries — dangerous); staticcall is read-only.
+- keccak256 + abi.encode / abi.encodeWithSelector for hashing and low-level function calls.
+
+### Fallback & Special Functions
+- receive() external payable {} handles plain Ether; fallback() external [payable] {} handles unknown calls/data.
+- constant (compile-time) vs immutable (set in constructor); nested mappings mapping(a => mapping(b => c)).
+- Special arrays: bytes (packed) and string (no index/length).
+
 ## Interview Questions
 
 #### Q1. What is a reentrancy attack and how do you prevent it?
@@ -1324,9 +1335,15 @@ keeps these concepts in mind and does **not** repeat these mistakes.
 - Hash passwords with salted bcrypt/argon2; encrypt in transit & at rest; never roll your own crypto.
 
 ### Defense & Response
-- Firewalls, VPN, IDS/IPS, antivirus, WAF.
+- Firewalls (host/network), VPN, IDS (detect) vs IPS (detect + block), antivirus, WAF, honeypots.
 - Validate/sanitize input; parameterized queries; output encoding; CSP.
 - Incident response: prepare → detect → contain → eradicate → recover → learn.
+
+### Key Terms
+- Malware types: virus, worm, trojan, ransomware, RAT, keylogger, spyware.
+- CVE (catalogued vulnerability) + CVSS (severity score); vulnerability = a code flaw that may be exploitable.
+- Red team (offensive) vs blue team (defensive); pentest → report; social engineering (phishing #1 threat).
+- DLP (data loss prevention), 2FA/MFA, PKI/certificate authority, packet sniffing, insider threat.
 
 ## Interview Questions
 
@@ -1706,8 +1723,9 @@ keeps these concepts in mind and does **not** repeat these mistakes.
 
 ### Async & LINQ
 - async methods return Task/Task<T>; await frees the thread; don't block with .Result/.Wait().
-- LINQ: declarative queries (Where/Select/OrderBy); deferred until enumerated (ToList/Count).
-- Delegates & events model callbacks/pub-sub.
+- LINQ: declarative queries (Where/Select/OrderBy) or query syntax; deferred until enumerated (ToList/Count).
+- Delegates, events, Func<>/Action<> + lambdas ((a,b)=>a+b) for callbacks/pub-sub.
+- Extension methods add methods to existing types (need `using` of their namespace); nameof, attributes.
 
 ### Safety & Errors
 - Enable nullable reference types (#nullable enable) to catch null derefs at compile time.

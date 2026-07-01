@@ -55,6 +55,16 @@ keeps these concepts in mind and does **not** repeat these mistakes.
 - Custom errors (revert NotOwner()) over strings; require/assert/revert.
 - Gas: minimize storage writes, avoid unbounded loops, unchecked{} for safe math.
 
+### Ether Transfer & Low-level Calls
+- Prefer addr.call{value: x}("") + check success (handle reentrancy) over .transfer (2300-gas cap, reverts).
+- delegatecall runs external code in THIS contract's storage context (proxies/libraries — dangerous); staticcall is read-only.
+- keccak256 + abi.encode / abi.encodeWithSelector for hashing and low-level function calls.
+
+### Fallback & Special Functions
+- receive() external payable {} handles plain Ether; fallback() external [payable] {} handles unknown calls/data.
+- constant (compile-time) vs immutable (set in constructor); nested mappings mapping(a => mapping(b => c)).
+- Special arrays: bytes (packed) and string (no index/length).
+
 ## Interview Questions
 
 #### Q1. What is a reentrancy attack and how do you prevent it?

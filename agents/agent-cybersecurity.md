@@ -50,9 +50,15 @@ keeps these concepts in mind and does **not** repeat these mistakes.
 - Hash passwords with salted bcrypt/argon2; encrypt in transit & at rest; never roll your own crypto.
 
 ### Defense & Response
-- Firewalls, VPN, IDS/IPS, antivirus, WAF.
+- Firewalls (host/network), VPN, IDS (detect) vs IPS (detect + block), antivirus, WAF, honeypots.
 - Validate/sanitize input; parameterized queries; output encoding; CSP.
 - Incident response: prepare → detect → contain → eradicate → recover → learn.
+
+### Key Terms
+- Malware types: virus, worm, trojan, ransomware, RAT, keylogger, spyware.
+- CVE (catalogued vulnerability) + CVSS (severity score); vulnerability = a code flaw that may be exploitable.
+- Red team (offensive) vs blue team (defensive); pentest → report; social engineering (phishing #1 threat).
+- DLP (data loss prevention), 2FA/MFA, PKI/certificate authority, packet sniffing, insider threat.
 
 ## Interview Questions
 
