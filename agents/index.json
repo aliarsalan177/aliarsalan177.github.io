@@ -4,9 +4,9 @@
     "title": "JavaScript (Advanced Concepts)",
     "category": "Languages",
     "file": "/agents/agent-javascript.md",
-    "bytes": 5201,
-    "rules": 6,
-    "questions": 6
+    "bytes": 18797,
+    "rules": 13,
+    "questions": 17
   },
   {
     "slug": "typescript",
