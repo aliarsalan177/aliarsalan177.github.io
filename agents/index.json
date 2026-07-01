@@ -187,5 +187,77 @@
     "bytes": 4018,
     "rules": 4,
     "questions": 4
+  },
+  {
+    "slug": "php",
+    "title": "PHP (Modern / Vanilla)",
+    "category": "Languages",
+    "file": "/agents/agent-php.md",
+    "bytes": 4969,
+    "rules": 5,
+    "questions": 5
+  },
+  {
+    "slug": "laravel",
+    "title": "Laravel",
+    "category": "Backend & Infra",
+    "file": "/agents/agent-laravel.md",
+    "bytes": 5605,
+    "rules": 6,
+    "questions": 5
+  },
+  {
+    "slug": "magento",
+    "title": "Magento 2",
+    "category": "Backend & Infra",
+    "file": "/agents/agent-magento.md",
+    "bytes": 5215,
+    "rules": 5,
+    "questions": 5
+  },
+  {
+    "slug": "nextjs",
+    "title": "Next.js (App Router)",
+    "category": "Frontend",
+    "file": "/agents/agent-nextjs.md",
+    "bytes": 5052,
+    "rules": 5,
+    "questions": 5
+  },
+  {
+    "slug": "scss",
+    "title": "SCSS & CSS Architecture",
+    "category": "Frontend",
+    "file": "/agents/agent-scss.md",
+    "bytes": 5138,
+    "rules": 5,
+    "questions": 5
+  },
+  {
+    "slug": "tailwind",
+    "title": "Tailwind CSS",
+    "category": "Frontend",
+    "file": "/agents/agent-tailwind.md",
+    "bytes": 5004,
+    "rules": 5,
+    "questions": 5
+  },
+  {
+    "slug": "system-design",
+    "title": "System Design & Architecture",
+    "category": "Architecture & Systems",
+    "file": "/agents/agent-system-design.md",
+    "bytes": 6202,
+    "rules": 5,
+    "questions": 5
+  },
+  {
+    "slug": "infrastructure",
+    "title": "Infrastructure — Cloud to Code",
+    "category": "Architecture & Systems",
+    "file": "/agents/agent-infrastructure.md",
+    "bytes": 5540,
+    "rules": 5,
+    "questions": 5
   }
 ]

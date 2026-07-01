@@ -1,6 +1,6 @@
 # AGENTS — Engineering Guides (All Topics)
 
-> 21 topics · Curated by Ali Arsalan · https://aliarsalan177.github.io/guides/
+> 29 topics · Curated by Ali Arsalan · https://aliarsalan177.github.io/guides/
 
 # Agent Guide — JavaScript (Advanced Concepts)
 
@@ -1900,6 +1900,731 @@ Authentication verifies who you are (passwords, MFA, biometrics); authorization 
 
 #### Q4. How do you handle a security incident?
 Follow an IR lifecycle: preparation, identification/detection, containment, eradication, recovery, and lessons learned — to limit damage and prevent recurrence.
+
+---
+
+_Curated by Ali Arsalan · https://aliarsalan177.github.io · Generated from the Engineering Guides._
+
+
+<hr>
+
+# Agent Guide — PHP (Modern / Vanilla)
+
+> Modern PHP 8+ is typed, fast and Composer-driven. Write strict, secure, PSR-compliant code — not the legacy stuff of old.
+> Category: Languages · Source: https://aliarsalan177.github.io/guides/php/
+
+## Purpose
+
+A field guide for **AI coding agents** (and engineers): the concepts to apply and the
+mistakes to avoid when building with PHP (Modern / Vanilla). Load this into your agent's context so it
+keeps these concepts in mind and does **not** repeat these mistakes.
+
+## Rules — Apply / Avoid
+
+### 1. Write typed, strict modern PHP
+- ✅ **APPLY:** Add declare(strict_types=1), type-hint params/returns, use enums, readonly props, and named arguments (PHP 8+).
+- ⛔ **AVOID:** Loose, untyped legacy style with `@` error suppression and implicit type juggling.
+
+### 2. Never trust input — escape by context
+- ✅ **APPLY:** Validate/filter input; use prepared statements (PDO/mysqli) for SQL; htmlspecialchars() on output.
+- ⛔ **AVOID:** String-concatenated SQL and echoing raw user input — SQL injection and XSS.
+
+### 3. Use Composer + PSR standards
+- ✅ **APPLY:** Manage deps with Composer, autoload via PSR-4, follow PSR-12 style; don't reinvent libraries.
+- ⛔ **AVOID:** Manual require chains and copy-pasted vendor code with no autoloading or dependency management.
+
+### 4. Handle errors with exceptions
+- ✅ **APPLY:** Throw/catch typed exceptions; log server-side; return safe messages to users.
+- ⛔ **AVOID:** Suppressing errors with @, exposing stack traces, or leaving display_errors on in production.
+
+### 5. Hash secrets and manage config
+- ✅ **APPLY:** password_hash()/password_verify() (bcrypt/argon2); keep secrets in env, not code.
+- ⛔ **AVOID:** md5/sha1 for passwords, hard-coded credentials, and committing .env.
+
+## Cheat Reference — concepts to remember
+
+- **Write typed, strict modern PHP** — Add declare(strict_types=1), type-hint params/returns, use enums, readonly props, and named arguments (PHP 8+).
+- **Never trust input — escape by context** — Validate/filter input; use prepared statements (PDO/mysqli) for SQL; htmlspecialchars() on output.
+- **Use Composer + PSR standards** — Manage deps with Composer, autoload via PSR-4, follow PSR-12 style; don't reinvent libraries.
+- **Handle errors with exceptions** — Throw/catch typed exceptions; log server-side; return safe messages to users.
+- **Hash secrets and manage config** — password_hash()/password_verify() (bcrypt/argon2); keep secrets in env, not code.
+
+## Full Cheat Sheet — every concept
+
+### Language Basics
+- declare(strict_types=1); scalar types (int, float, string, bool), arrays, objects, null.
+- Variables $x; arrays (indexed & associative); string interpolation "$x" and heredoc.
+- == juggles types, === strict; the spaceship <=> for comparison.
+
+### Modern PHP 8+
+- Constructor property promotion, readonly properties, enums, union/intersection types.
+- match (strict, returns a value), nullsafe ?->, named args, first-class callable syntax.
+- Attributes (#[Route(...)]); the JIT compiler.
+
+### OOP
+- class/interface/trait/abstract; visibility public/protected/private; static; final.
+- Namespaces + PSR-4 autoloading via Composer.
+- Exceptions: try/catch/finally, custom exception classes.
+
+### Security (critical)
+- SQL: PDO prepared statements with bound params; whitelist dynamic identifiers.
+- XSS: htmlspecialchars() on output; CSRF tokens on forms.
+- Passwords: password_hash()/password_verify(); never unserialize()/eval()/extract() untrusted data.
+- Config: env vars for secrets; APP debug off in prod; file perms tight.
+
+### Tooling & Standards
+- Composer (deps + autoload), PSR-4/PSR-12; PHPUnit/Pest for tests.
+- Static analysis (PHPStan/Psalm), formatting (PHP-CS-Fixer).
+
+## Interview Questions
+
+#### Q1. == vs === in PHP?
+== compares with type juggling (0 == 'a' was true before PHP 8); === compares value and type with no coercion. Prefer === to avoid surprising conversions (PHP 8 also fixed many juggling quirks).
+
+#### Q2. How do you prevent SQL injection in PHP?
+Use prepared statements with bound parameters via PDO or mysqli, never concatenate user input into SQL. Validate and whitelist anything that can't be bound (like column names).
+
+#### Q3. What are PSR standards and Composer?
+PSRs are PHP-FIG recommendations (PSR-4 autoloading, PSR-12 coding style, PSR-7 HTTP messages). Composer is the dependency manager that autoloads packages and your code per PSR-4.
+
+#### Q4. What's new in modern PHP (8.x)?
+Typed properties, union types, enums, readonly properties, named arguments, match expressions, nullsafe operator (?->), constructor property promotion, attributes, and the JIT compiler.
+
+#### Q5. How should passwords be stored?
+With password_hash() (bcrypt/argon2, salted and slow) and verified with password_verify() — never md5/sha1 or plaintext.
+
+---
+
+_Curated by Ali Arsalan · https://aliarsalan177.github.io · Generated from the Engineering Guides._
+
+
+<hr>
+
+# Agent Guide — Laravel
+
+> Batteries-included PHP framework: Eloquent, Blade, queues, and elegant APIs. Lean on the conventions and its built-in security (aligned with OWASP).
+> Category: Backend & Infra · Source: https://aliarsalan177.github.io/guides/laravel/
+
+## Purpose
+
+A field guide for **AI coding agents** (and engineers): the concepts to apply and the
+mistakes to avoid when building with Laravel. Load this into your agent's context so it
+keeps these concepts in mind and does **not** repeat these mistakes.
+
+## Rules — Apply / Avoid
+
+### 1. Guard against mass assignment
+- ✅ **APPLY:** Fill models from $request->validated() or ->only([...]); set $fillable explicitly.
+- ⛔ **AVOID:** Model::create($request->all()) with empty $guarded / unguarded models — attackers can set any column.
+
+### 2. Query safely with Eloquent
+- ✅ **APPLY:** Use Eloquent/Query Builder (parameterized by default); for raw SQL, bind values: whereRaw('x = ?', [$v]).
+- ⛔ **AVOID:** Interpolating input into raw queries or letting users choose column names without a whitelist.
+
+### 3. Escape output & keep CSRF on
+- ✅ **APPLY:** Use Blade {{ }} (auto-escapes) and @csrf on POST forms; keep VerifyCsrfToken on web routes.
+- ⛔ **AVOID:** {!! !!} on untrusted data (XSS) and disabling CSRF except for stateless APIs/webhooks.
+
+### 4. Authorize with policies/gates
+- ✅ **APPLY:** Centralize permissions in Policies/Gates; use Sanctum (SPA/tokens) or Passport (OAuth2) for APIs.
+- ⛔ **AVOID:** Ad-hoc permission checks scattered in controllers, or trusting the client.
+
+### 5. Harden config & production
+- ✅ **APPLY:** APP_DEBUG=false in prod, run key:generate, encrypt cookies, set secure/httpOnly/sameSite, throttle routes, add security headers.
+- ⛔ **AVOID:** Debug mode on in production, committing .env, and unbounded (unthrottled) endpoints.
+
+### 6. Offload slow work to queues
+- ✅ **APPLY:** Dispatch jobs to queues (mail, images, webhooks); use events/listeners and the scheduler.
+- ⛔ **AVOID:** Doing slow work inside the request/response cycle and blocking users.
+
+## Cheat Reference — concepts to remember
+
+- **Guard against mass assignment** — Fill models from $request->validated() or ->only([...]); set $fillable explicitly.
+- **Query safely with Eloquent** — Use Eloquent/Query Builder (parameterized by default); for raw SQL, bind values: whereRaw('x = ?', [$v]).
+- **Escape output & keep CSRF on** — Use Blade {{ }} (auto-escapes) and @csrf on POST forms; keep VerifyCsrfToken on web routes.
+- **Authorize with policies/gates** — Centralize permissions in Policies/Gates; use Sanctum (SPA/tokens) or Passport (OAuth2) for APIs.
+- **Harden config & production** — APP_DEBUG=false in prod, run key:generate, encrypt cookies, set secure/httpOnly/sameSite, throttle routes, add security headers.
+- **Offload slow work to queues** — Dispatch jobs to queues (mail, images, webhooks); use events/listeners and the scheduler.
+
+## Full Cheat Sheet — every concept
+
+### MVC & Routing
+- Routes (web.php/api.php) → Controllers → Views (Blade) / JSON resources.
+- Route model binding; middleware groups (web, api); resource controllers.
+
+### Eloquent ORM
+- Models, migrations, factories, seeders; relationships (hasMany, belongsTo, morphTo).
+- $fillable/$guarded for mass assignment; eager load with with() to avoid N+1.
+- Query Builder + Eloquent are parameterized; bind raw queries.
+
+### Requests & Validation
+- Form Requests / $request->validate(); use validated()/only(), not all().
+- Blade {{ }} escapes; {!! !!} only for trusted HTML.
+
+### Auth & Authorization
+- Starter kits: Breeze, Fortify, Jetstream. APIs: Sanctum / Passport.
+- Gates & Policies for authorization; guards (session/token) + providers (eloquent/database).
+
+### Security (OWASP)
+- APP_DEBUG=false; key:generate; EncryptCookies; secure/httpOnly/sameSite cookies.
+- CSRF (@csrf, VerifyCsrfToken); throttle middleware (rate limiting); validate uploads + basename().
+- Security headers (CSP, HSTS, X-Frame-Options); never unserialize/eval/extract untrusted data.
+
+### Async & Ecosystem
+- Queues & Jobs, Events/Listeners, Task Scheduler; Cache, Broadcasting, Notifications.
+- Artisan CLI; Tinker; Telescope/Horizon; Pest/PHPUnit tests.
+
+## Interview Questions
+
+#### Q1. How does Laravel prevent mass-assignment vulnerabilities?
+Models restrict which attributes can be bulk-assigned via $fillable (allowlist) or $guarded (blocklist). Best practice is to fill from validated input ($request->validated()) rather than $request->all().
+
+#### Q2. How does Blade protect against XSS?
+{{ $var }} auto-escapes output with htmlspecialchars. Only {!! $var !!} outputs raw HTML — use it exclusively for trusted content, never untrusted user input.
+
+#### Q3. Sanctum vs Passport?
+Sanctum is lightweight token/SPA cookie auth for first-party apps and simple API tokens; Passport is a full OAuth2 server for third-party API access. Pick Sanctum unless you need OAuth2 flows.
+
+#### Q4. What is Eloquent and how does it avoid SQL injection?
+Eloquent is Laravel's ActiveRecord ORM; it and the Query Builder use PDO prepared statements with bound parameters by default, so ordinary queries are injection-safe. Raw queries must bind values explicitly.
+
+#### Q5. Key production hardening steps in Laravel?
+APP_DEBUG=false, generate APP_KEY, keep CSRF + EncryptCookies middleware, set secure cookie flags, apply throttle middleware, validate file uploads, and add security headers (CSP, HSTS, X-Frame-Options).
+
+---
+
+_Curated by Ali Arsalan · https://aliarsalan177.github.io · Generated from the Engineering Guides._
+
+
+<hr>
+
+# Agent Guide — Magento 2
+
+> Enterprise e-commerce on a modular, DI-driven PHP architecture. Extend the right way — plugins and DI, never core edits.
+> Category: Backend & Infra · Source: https://aliarsalan177.github.io/guides/magento/
+
+## Purpose
+
+A field guide for **AI coding agents** (and engineers): the concepts to apply and the
+mistakes to avoid when building with Magento 2. Load this into your agent's context so it
+keeps these concepts in mind and does **not** repeat these mistakes.
+
+## Rules — Apply / Avoid
+
+### 1. Never edit core; extend via modules
+- ✅ **APPLY:** Build custom modules; change behavior with plugins (interceptors), preferences, and events/observers.
+- ⛔ **AVOID:** Editing vendor/magento core files — upgrades wipe them and it breaks the platform.
+
+### 2. Use dependency injection, not ObjectManager
+- ✅ **APPLY:** Inject dependencies via the constructor and di.xml; use factories/proxies for non-injectables.
+- ⛔ **AVOID:** Calling ObjectManager::getInstance() directly in business code — it hides deps and is an anti-pattern.
+
+### 3. Prefer plugins over rewrites
+- ✅ **APPLY:** Use before/after/around plugins to modify public methods without replacing whole classes.
+- ⛔ **AVOID:** Class preferences (rewrites) when a plugin would do — rewrites collide and are fragile across modules.
+
+### 4. Respect service contracts & indexing/cache
+- ✅ **APPLY:** Program against Api/ service-contract interfaces and repositories; keep indexers and cache in mind.
+- ⛔ **AVOID:** Direct SQL/resource-model hacks, and forgetting to reindex / flush cache after data or config changes.
+
+### 5. Optimize for performance
+- ✅ **APPLY:** Use Varnish full-page cache, Redis (session/cache), OpenSearch, production mode, and flat/async indexing.
+- ⛔ **AVOID:** Running developer mode in production and uncached, unindexed catalog queries at scale.
+
+## Cheat Reference — concepts to remember
+
+- **Never edit core; extend via modules** — Build custom modules; change behavior with plugins (interceptors), preferences, and events/observers.
+- **Use dependency injection, not ObjectManager** — Inject dependencies via the constructor and di.xml; use factories/proxies for non-injectables.
+- **Prefer plugins over rewrites** — Use before/after/around plugins to modify public methods without replacing whole classes.
+- **Respect service contracts & indexing/cache** — Program against Api/ service-contract interfaces and repositories; keep indexers and cache in mind.
+- **Optimize for performance** — Use Varnish full-page cache, Redis (session/cache), OpenSearch, production mode, and flat/async indexing.
+
+## Full Cheat Sheet — every concept
+
+### Module Structure
+- app/code/Vendor/Module with registration.php + etc/module.xml.
+- etc/di.xml (DI, plugins, preferences), events.xml, acl.xml, adminhtml/frontend areas.
+- Model/ ResourceModel/ Api/ Block/ Controller/ view/ Setup or declarative schema (db_schema.xml).
+
+### Dependency Injection
+- Constructor injection; di.xml for preferences, plugins, virtual types.
+- Factories for non-injectable (entity) objects; Proxies for lazy/expensive deps.
+- Never use ObjectManager in business logic.
+
+### Extension Points
+- Plugins (before/after/around) on public methods; Observers on events; Preferences (rewrite, last resort).
+- UI Components (grids/forms) via XML; layout XML + templates (.phtml) + ViewModels.
+
+### Data & APIs
+- Service contracts (Api/ interfaces) + repositories; data interfaces.
+- REST & GraphQL; declarative schema (db_schema.xml) + data/schema patches.
+
+### Performance & Ops
+- Modes: default/developer/production; bin/magento setup:di:compile, setup:static-content:deploy.
+- Varnish FPC, Redis cache/session, OpenSearch; indexers (bin/magento indexer:reindex); cache:flush.
+
+## Interview Questions
+
+#### Q1. How do you customize Magento 2 without touching core?
+Create a custom module and change behavior with plugins (interceptors), event observers, preferences (class rewrites as a last resort), and configuration via di.xml/XML — so upgrades don't overwrite your changes.
+
+#### Q2. Plugin (interceptor) vs preference?
+A plugin wraps a public method (before/after/around) to modify inputs, outputs, or flow without replacing the class, so multiple modules can coexist. A preference replaces the whole class implementation and can conflict — use it only when a plugin can't.
+
+#### Q3. Why avoid ObjectManager directly?
+It hides dependencies, breaks testability, and bypasses Magento's DI. Inject dependencies through the constructor (resolved via di.xml); use factories for objects you must create at runtime.
+
+#### Q4. What are service contracts?
+Api/ interfaces (data interfaces + service interfaces like repositories) that define a stable public API for a module, decoupling callers from implementation and enabling web APIs (REST/GraphQL).
+
+#### Q5. Key Magento 2 performance levers?
+Production mode, Varnish full-page cache, Redis for cache/sessions, OpenSearch/Elasticsearch, proper indexing (schedule/async), composer autoloader optimization, and a CDN for static/media.
+
+---
+
+_Curated by Ali Arsalan · https://aliarsalan177.github.io · Generated from the Engineering Guides._
+
+
+<hr>
+
+# Agent Guide — Next.js (App Router)
+
+> React framework with the App Router, Server Components, and file-based routing. Default to the server, fetch on the server, ship less JS.
+> Category: Frontend · Source: https://aliarsalan177.github.io/guides/nextjs/
+
+## Purpose
+
+A field guide for **AI coding agents** (and engineers): the concepts to apply and the
+mistakes to avoid when building with Next.js (App Router). Load this into your agent's context so it
+keeps these concepts in mind and does **not** repeat these mistakes.
+
+## Rules — Apply / Avoid
+
+### 1. Server Components by default
+- ✅ **APPLY:** Keep components server-rendered; add 'use client' only where you need state, effects, or browser APIs.
+- ⛔ **AVOID:** Slapping 'use client' at the top of the tree — it ships everything to the browser and kills the benefit.
+
+### 2. Fetch data on the server
+- ✅ **APPLY:** await data directly in server components; use fetch caching / revalidate and Suspense for streaming.
+- ⛔ **AVOID:** useEffect fetch waterfalls for data you could load on the server; leaking secrets into client bundles.
+
+### 3. Use the file-based conventions
+- ✅ **APPLY:** Organize with app/ segments: layout, page, loading, error, route handlers; colocate components.
+- ⛔ **AVOID:** Fighting the router with ad-hoc structures; putting server-only code in client components.
+
+### 4. Mutate with Server Actions / Route Handlers
+- ✅ **APPLY:** Use server actions or route handlers for mutations; revalidatePath/Tag to refresh cached data.
+- ⛔ **AVOID:** Building throwaway API endpoints for everything when a server action fits; forgetting to revalidate.
+
+### 5. Optimize assets and metadata
+- ✅ **APPLY:** next/image, next/font, and the Metadata API (+ generateStaticParams for static export).
+- ⛔ **AVOID:** Unoptimized <img>, layout-shifting fonts, and missing SEO metadata.
+
+## Cheat Reference — concepts to remember
+
+- **Server Components by default** — Keep components server-rendered; add 'use client' only where you need state, effects, or browser APIs.
+- **Fetch data on the server** — await data directly in server components; use fetch caching / revalidate and Suspense for streaming.
+- **Use the file-based conventions** — Organize with app/ segments: layout, page, loading, error, route handlers; colocate components.
+- **Mutate with Server Actions / Route Handlers** — Use server actions or route handlers for mutations; revalidatePath/Tag to refresh cached data.
+- **Optimize assets and metadata** — next/image, next/font, and the Metadata API (+ generateStaticParams for static export).
+
+## Full Cheat Sheet — every concept
+
+### App Router Files
+- app/segment/: layout.tsx, page.tsx, loading.tsx, error.tsx, not-found.tsx, route.ts, template.tsx.
+- Dynamic segments [id], catch-all [...slug], route groups (group), private _folder.
+- generateStaticParams + generateMetadata for static/SEO.
+
+### Rendering
+- Server Components default (no JS shipped); 'use client' for interactivity.
+- Streaming with Suspense + loading.js; partial prerendering.
+- SSG / SSR / ISR (revalidate); output: 'export' for fully static sites.
+
+### Data & Mutations
+- await fetch in server components; caching via { cache, next: { revalidate, tags } }.
+- Server Actions ('use server') for mutations; Route Handlers (route.ts) for APIs.
+- revalidatePath / revalidateTag to refresh cached data.
+
+### Optimization & Config
+- next/image (responsive, lazy), next/font (no layout shift), next/script.
+- Metadata API + JSON-LD; Middleware (edge) for auth/redirects.
+- Env: NEXT_PUBLIC_ exposed to client; everything else server-only.
+
+## Interview Questions
+
+#### Q1. Server Components vs Client Components?
+Server Components render on the server with zero JS shipped and can fetch data/secrets directly; Client Components ('use client') run in the browser for interactivity (state, effects, events). Default to server, opt into client at the leaves.
+
+#### Q2. How does data fetching work in the App Router?
+You await data directly in async server components. fetch is cached by default with control via { cache, next: { revalidate, tags } }; Suspense + loading.js stream UI while data loads.
+
+#### Q3. What are Server Actions?
+Async functions marked 'use server' that run on the server and can be called from components/forms to mutate data without hand-writing an API route, then revalidatePath/revalidateTag to refresh caches.
+
+#### Q4. SSG vs SSR vs ISR?
+Static Generation prerenders at build (fast, cacheable); SSR renders per request (fresh, dynamic); Incremental Static Regeneration rebuilds static pages on a revalidate interval — best of both for content that changes occasionally.
+
+#### Q5. How do special files work (layout, page, loading, error)?
+Each route segment can have layout.tsx (shared UI/state across children), page.tsx (the route UI), loading.tsx (Suspense fallback), error.tsx (error boundary), and route.ts (API handler).
+
+---
+
+_Curated by Ali Arsalan · https://aliarsalan177.github.io · Generated from the Engineering Guides._
+
+
+<hr>
+
+# Agent Guide — SCSS & CSS Architecture
+
+> Sass power features plus a scalable methodology (BEM, 7-1, ITCSS). Structure styles so they stay maintainable at scale — the way design systems like ScandiPWA do.
+> Category: Frontend · Source: https://aliarsalan177.github.io/guides/scss/
+
+## Purpose
+
+A field guide for **AI coding agents** (and engineers): the concepts to apply and the
+mistakes to avoid when building with SCSS & CSS Architecture. Load this into your agent's context so it
+keeps these concepts in mind and does **not** repeat these mistakes.
+
+## Rules — Apply / Avoid
+
+### 1. Name with BEM to avoid collisions
+- ✅ **APPLY:** Use Block__Element--Modifier naming so styles are flat, predictable, and scoped by convention.
+- ⛔ **AVOID:** Deeply nested selectors and generic names (.title, .active) that leak and fight specificity.
+
+### 2. Keep nesting shallow
+- ✅ **APPLY:** Nest at most 2–3 levels; use & for BEM elements/modifiers, not to mirror the DOM.
+- ⛔ **AVOID:** 5-level nested selectors that explode specificity and are impossible to override.
+
+### 3. Structure files (7-1 / ITCSS / component-colocated)
+- ✅ **APPLY:** Split into abstracts (variables/mixins), base, components, layout, pages; or colocate a .style.scss per component (ScandiPWA style).
+- ⛔ **AVOID:** One giant stylesheet, or duplicating variables/mixins across files with no single source of truth.
+
+### 4. Tokenize with variables & maps
+- ✅ **APPLY:** Centralize colors, spacing, breakpoints as variables/maps and CSS custom properties; reuse via mixins/functions.
+- ⛔ **AVOID:** Magic numbers and hard-coded hex values scattered everywhere.
+
+### 5. Prefer @use over @import
+- ✅ **APPLY:** Use the modern module system (@use/@forward) with namespaces; keep partials (_name.scss).
+- ⛔ **AVOID:** The deprecated @import (global scope, duplicate output, load-order bugs).
+
+## Cheat Reference — concepts to remember
+
+- **Name with BEM to avoid collisions** — Use Block__Element--Modifier naming so styles are flat, predictable, and scoped by convention.
+- **Keep nesting shallow** — Nest at most 2–3 levels; use & for BEM elements/modifiers, not to mirror the DOM.
+- **Structure files (7-1 / ITCSS / component-colocated)** — Split into abstracts (variables/mixins), base, components, layout, pages; or colocate a .style.scss per component (ScandiPWA style).
+- **Tokenize with variables & maps** — Centralize colors, spacing, breakpoints as variables/maps and CSS custom properties; reuse via mixins/functions.
+- **Prefer @use over @import** — Use the modern module system (@use/@forward) with namespaces; keep partials (_name.scss).
+
+## Full Cheat Sheet — every concept
+
+### Sass Features
+- Variables ($x), maps, nesting, partials (_file.scss), @use/@forward (not @import).
+- @mixin/@include, @function/@return, %placeholder/@extend.
+- @if/@each/@for, math, color functions; interpolation #{$x}.
+
+### BEM Naming
+- Block (.Card), Element (.Card__title), Modifier (.Card--featured / .Card__title--large).
+- Flat, low-specificity selectors; & to build element/modifier names.
+
+### Architecture Patterns
+- 7-1: abstracts, base, components, layout, pages, themes, vendors.
+- ITCSS: layers by specificity (settings → tools → generic → elements → objects → components → utilities).
+- Component-colocated (ScandiPWA): Component.style.scss beside Component; one block per component.
+
+### Tokens & Theming
+- Centralize colors/spacing/breakpoints as variables/maps + CSS custom properties for runtime theming.
+- Responsive mixins for breakpoints; spacing scale (e.g. 8px) not magic numbers.
+
+## Interview Questions
+
+#### Q1. What is BEM and why use it?
+Block__Element--Modifier is a naming methodology that keeps selectors flat and self-documenting, avoiding specificity wars and name collisions. .Button, .Button__icon, .Button--primary make ownership and intent obvious.
+
+#### Q2. Why keep SCSS nesting shallow?
+Deep nesting produces long, highly specific selectors that are hard to override and tightly couple CSS to DOM structure. Two-to-three levels (mostly for BEM elements/modifiers via &) keeps specificity low and styles reusable.
+
+#### Q3. @use vs @import in Sass?
+@import is deprecated: it dumps everything into the global scope and can duplicate output. @use loads a module once with a namespace (and @forward re-exports), giving encapsulation and predictable load order.
+
+#### Q4. How do you structure SCSS for a large app?
+Either a global architecture (7-1: abstracts/base/components/layout/pages/themes/vendors, or ITCSS by specificity) or component-colocated styles (a Component.style.scss next to each component, as ScandiPWA does) with shared tokens/mixins in abstracts.
+
+#### Q5. SCSS mixins vs functions vs placeholders?
+Mixins (@mixin/@include) output reusable declaration blocks (can take args); functions (@function/@return) compute values; placeholders (%name/@extend) share rules without output until extended. Prefer mixins over @extend to avoid selector-grouping surprises.
+
+---
+
+_Curated by Ali Arsalan · https://aliarsalan177.github.io · Generated from the Engineering Guides._
+
+
+<hr>
+
+# Agent Guide — Tailwind CSS
+
+> Utility-first CSS that scales via constraints. Compose utilities, extract components, and theme with tokens instead of writing custom CSS.
+> Category: Frontend · Source: https://aliarsalan177.github.io/guides/tailwind/
+
+## Purpose
+
+A field guide for **AI coding agents** (and engineers): the concepts to apply and the
+mistakes to avoid when building with Tailwind CSS. Load this into your agent's context so it
+keeps these concepts in mind and does **not** repeat these mistakes.
+
+## Rules — Apply / Avoid
+
+### 1. Utility-first, extract when repeated
+- ✅ **APPLY:** Compose utilities in markup; when a pattern repeats, extract a component (React) or use @apply sparingly.
+- ⛔ **AVOID:** Recreating a full custom CSS layer, or wrapping every element in @apply (you lose the utility benefits).
+
+### 2. Theme through config/tokens
+- ✅ **APPLY:** Define colors, spacing, fonts in the theme (tailwind.config or @theme in v4) and use semantic tokens.
+- ⛔ **AVOID:** Hard-coded arbitrary values everywhere ([#3b82f6], [13px]) that bypass your design system.
+
+### 3. Compose classes safely
+- ✅ **APPLY:** Merge conditional classes with clsx + tailwind-merge (cn helper) so later utilities win predictably.
+- ⛔ **AVOID:** String-concatenating classes that produce conflicts (p-2 and p-4 both present) with no resolution.
+
+### 4. Use state & responsive variants
+- ✅ **APPLY:** Prefix with responsive (md:) and state (hover:, focus:, dark:, group-hover:) variants instead of custom CSS.
+- ⛔ **AVOID:** Writing media queries and pseudo-class CSS by hand when a variant exists.
+
+### 5. Rely on JIT purging
+- ✅ **APPLY:** Ensure content paths are configured so unused classes are purged; keep class names statically analyzable.
+- ⛔ **AVOID:** Building class names dynamically (`text-${color}-500`) — the purge can't see them and they vanish in prod.
+
+## Cheat Reference — concepts to remember
+
+- **Utility-first, extract when repeated** — Compose utilities in markup; when a pattern repeats, extract a component (React) or use @apply sparingly.
+- **Theme through config/tokens** — Define colors, spacing, fonts in the theme (tailwind.config or @theme in v4) and use semantic tokens.
+- **Compose classes safely** — Merge conditional classes with clsx + tailwind-merge (cn helper) so later utilities win predictably.
+- **Use state & responsive variants** — Prefix with responsive (md:) and state (hover:, focus:, dark:, group-hover:) variants instead of custom CSS.
+- **Rely on JIT purging** — Ensure content paths are configured so unused classes are purged; keep class names statically analyzable.
+
+## Full Cheat Sheet — every concept
+
+### Core Idea
+- Utility-first: compose classes (flex, p-4, text-lg, bg-accent) in markup.
+- Constraints from the theme give consistency; JIT purges unused classes.
+
+### Layout & Spacing
+- Flex/grid (flex, grid, gap-4), spacing scale (p-*, m-*, space-x-*), sizing (w-*, h-*, max-w-*).
+- Position, z-index, overflow utilities.
+
+### Variants
+- Responsive: sm: md: lg: xl: 2xl: (mobile-first).
+- State: hover: focus: active: disabled: dark: group-hover: peer-*.
+- Arbitrary values [13px] and arbitrary properties as escape hatches (sparingly).
+
+### Theming & Tooling (v4)
+- v4: @import "tailwindcss" + @theme tokens (CSS-first config); v3: tailwind.config.js theme.extend.
+- Compose classes with clsx + tailwind-merge (cn helper).
+- @layer/@apply for small extractions; plugins (typography, forms) for extras.
+
+## Interview Questions
+
+#### Q1. What does 'utility-first' mean and what's the trade-off?
+You style by composing small single-purpose classes in markup instead of writing custom CSS. Benefits: speed, consistency via constraints, no naming/specificity battles, tiny purged CSS. Trade-off: verbose markup — mitigated by extracting components.
+
+#### Q2. How do you avoid repeating utility strings?
+Extract reusable components (the primary approach in React), use @apply for small shared patterns, or compose with a cn() helper. Design tokens in the theme keep values consistent.
+
+#### Q3. Why use tailwind-merge with clsx?
+clsx builds conditional class strings, but conflicting utilities (p-2 vs p-4) both remain. tailwind-merge resolves conflicts so the last one wins — the common cn() helper composes both.
+
+#### Q4. How does Tailwind keep the CSS bundle small?
+The JIT engine scans your content files and generates only the classes you actually use, purging the rest. This requires class names to be complete strings it can detect — not dynamically constructed.
+
+#### Q5. Tailwind vs traditional CSS/SCSS?
+Tailwind trades semantic class names for utility composition and a constrained design system, reducing custom CSS and naming overhead. SCSS/BEM gives semantic, centralized styles better for complex bespoke design. Many teams combine: Tailwind for app UI, custom CSS for edge cases.
+
+---
+
+_Curated by Ali Arsalan · https://aliarsalan177.github.io · Generated from the Engineering Guides._
+
+
+<hr>
+
+# Agent Guide — System Design & Architecture
+
+> Designing systems that scale, plus the everyday architecture that keeps a codebase sane: folder structure, naming, DB and API design.
+> Category: Architecture & Systems · Source: https://aliarsalan177.github.io/guides/system-design/
+
+## Purpose
+
+A field guide for **AI coding agents** (and engineers): the concepts to apply and the
+mistakes to avoid when building with System Design & Architecture. Load this into your agent's context so it
+keeps these concepts in mind and does **not** repeat these mistakes.
+
+## Rules — Apply / Avoid
+
+### 1. Design from requirements & constraints
+- ✅ **APPLY:** Clarify functional + non-functional needs (scale, latency, consistency), estimate load, then choose components.
+- ⛔ **AVOID:** Jumping to a microservices/Kafka diagram before you understand the actual requirements and scale.
+
+### 2. Scale with statelessness, caching & queues
+- ✅ **APPLY:** Keep app servers stateless (scale horizontally behind a load balancer), cache hot reads, and use queues to smooth spikes.
+- ⛔ **AVOID:** Sticky server state, hammering the DB for every read, and doing slow work synchronously in the request path.
+
+### 3. Model data for access patterns
+- ✅ **APPLY:** Normalize for integrity, denormalize/index for read performance; pick SQL vs NoSQL by consistency & query needs.
+- ⛔ **AVOID:** One-size-fits-all schemas, missing indexes on filtered columns, and N+1 queries.
+
+### 4. Consistent, predictable structure & naming
+- ✅ **APPLY:** Organize by feature/domain, colocate related files, and name consistently (PascalCase components, kebab-case files/routes, plural table names).
+- ⛔ **AVOID:** Mixing casing conventions, dumping everything in one folder, and vague names (utils.js, data.ts, Manager).
+
+### 5. Design clear API contracts
+- ✅ **APPLY:** Use consistent REST resources (or GraphQL schema), proper status codes, versioning, pagination, and validation.
+- ⛔ **AVOID:** Chatty, inconsistent endpoints, leaking internal models, and breaking changes with no versioning.
+
+## Cheat Reference — concepts to remember
+
+- **Design from requirements & constraints** — Clarify functional + non-functional needs (scale, latency, consistency), estimate load, then choose components.
+- **Scale with statelessness, caching & queues** — Keep app servers stateless (scale horizontally behind a load balancer), cache hot reads, and use queues to smooth spikes.
+- **Model data for access patterns** — Normalize for integrity, denormalize/index for read performance; pick SQL vs NoSQL by consistency & query needs.
+- **Consistent, predictable structure & naming** — Organize by feature/domain, colocate related files, and name consistently (PascalCase components, kebab-case files/routes, plural table names).
+- **Design clear API contracts** — Use consistent REST resources (or GraphQL schema), proper status codes, versioning, pagination, and validation.
+
+## Full Cheat Sheet — every concept
+
+### Scalability Building Blocks
+- Load balancer + stateless app servers (horizontal scale); vertical vs horizontal scaling.
+- Caching layers: CDN (edge), Redis/Memcached (app), DB query cache; cache invalidation strategy.
+- Async: message queues (SQS/Kafka/RabbitMQ), workers, event-driven; rate limiting & backpressure.
+
+### Data & DB Design
+- Normalization (1NF–3NF) for integrity; denormalize + index for reads.
+- Primary/foreign keys, indexes on filtered/joined columns; avoid N+1.
+- Scaling: replication (read replicas), sharding/partitioning; SQL vs NoSQL by consistency & pattern.
+- Transactions & ACID vs BASE/eventual consistency; CAP trade-offs.
+
+### Architecture Styles
+- Monolith (simple, one deploy) → modular monolith → microservices (independent scale/deploy, more ops).
+- Layered / hexagonal / clean architecture; separation of concerns; one-way dependencies.
+- Sync (REST/GraphQL/gRPC) vs async (events); API gateway; BFF.
+
+### File / Folder & Naming
+- Feature/domain-based folders; colocate component + style + test + types.
+- Naming: PascalCase components/classes, camelCase vars/functions, kebab-case files/routes/URLs, plural DB tables, snake_case columns.
+- index files for public API of a module; keep imports flowing inward.
+
+### API Design
+- REST: resource nouns, proper verbs + status codes, pagination, filtering, versioning (/v1).
+- GraphQL: typed schema, resolvers, avoid over/under-fetching; validate all input.
+- Idempotency, error format consistency, auth (OAuth2/JWT), rate limits.
+
+### Reliability
+- Redundancy & failover, health checks, graceful degradation, circuit breakers, retries with backoff.
+- Observability: logs, metrics, traces, alerts; SLAs/SLOs.
+
+## Interview Questions
+
+#### Q1. How do you approach a system design question?
+Clarify requirements (functional + non-functional), estimate scale (QPS, data size), define the API and data model, sketch the high-level architecture (LB, app tier, cache, DB, queue), then dig into bottlenecks, trade-offs, and failure modes.
+
+#### Q2. How do you scale a read-heavy system?
+Add caching (CDN, Redis), read replicas, and denormalized read models; keep app servers stateless behind a load balancer; use pagination and indexes. Introduce queues/async for writes and heavy work.
+
+#### Q3. SQL vs NoSQL — how do you choose?
+SQL for strong consistency, relations, and complex queries/transactions; NoSQL (document/key-value/wide-column) for massive scale, flexible schemas, and simple access patterns. Match the store to the access pattern; polyglot persistence is common.
+
+#### Q4. What's the CAP theorem?
+Under a network partition, a distributed system can guarantee at most two of Consistency, Availability, Partition tolerance — since partitions happen, you effectively trade consistency vs availability (CP vs AP).
+
+#### Q5. How should you structure a project's files/folders?
+Prefer feature/domain-based grouping (colocate component, styles, tests, logic) over type-based once the app grows, keep a consistent naming convention, and enforce clear module boundaries so dependencies flow one way.
+
+---
+
+_Curated by Ali Arsalan · https://aliarsalan177.github.io · Generated from the Engineering Guides._
+
+
+<hr>
+
+# Agent Guide — Infrastructure — Cloud to Code
+
+> The path from a git push to production: containers, CI/CD, Infrastructure as Code, environments, and observability.
+> Category: Architecture & Systems · Source: https://aliarsalan177.github.io/guides/infrastructure/
+
+## Purpose
+
+A field guide for **AI coding agents** (and engineers): the concepts to apply and the
+mistakes to avoid when building with Infrastructure — Cloud to Code. Load this into your agent's context so it
+keeps these concepts in mind and does **not** repeat these mistakes.
+
+## Rules — Apply / Avoid
+
+### 1. Infrastructure as Code
+- ✅ **APPLY:** Define infra declaratively (Terraform/Pulumi/CloudFormation) in version control; review and apply via pipelines.
+- ⛔ **AVOID:** Click-ops in the cloud console — undocumented, unrepeatable, and impossible to review or roll back.
+
+### 2. Containerize for parity
+- ✅ **APPLY:** Package apps in Docker (small, multi-stage images); orchestrate with Kubernetes/ECS for scaling and self-healing.
+- ⛔ **AVOID:** 'Works on my machine' snowflake servers and fat images with secrets baked in.
+
+### 3. Automate CI/CD
+- ✅ **APPLY:** On push: lint, test, build, scan, then deploy through environments (dev → staging → prod) with rollbacks.
+- ⛔ **AVOID:** Manual, ad-hoc deploys with no tests or gates — the classic source of production incidents.
+
+### 4. Config & secrets by environment
+- ✅ **APPLY:** Externalize config via env vars; store secrets in a manager (Vault, AWS Secrets Manager, SSM), not in code.
+- ⛔ **AVOID:** Hard-coded credentials, committing .env, and per-environment code branches.
+
+### 5. Observe and secure everything
+- ✅ **APPLY:** Ship logs, metrics, traces and alerts; least-privilege IAM, network segmentation, TLS, and automated backups.
+- ⛔ **AVOID:** Deploying blind with no monitoring, over-broad IAM roles, and untested backups.
+
+## Cheat Reference — concepts to remember
+
+- **Infrastructure as Code** — Define infra declaratively (Terraform/Pulumi/CloudFormation) in version control; review and apply via pipelines.
+- **Containerize for parity** — Package apps in Docker (small, multi-stage images); orchestrate with Kubernetes/ECS for scaling and self-healing.
+- **Automate CI/CD** — On push: lint, test, build, scan, then deploy through environments (dev → staging → prod) with rollbacks.
+- **Config & secrets by environment** — Externalize config via env vars; store secrets in a manager (Vault, AWS Secrets Manager, SSM), not in code.
+- **Observe and secure everything** — Ship logs, metrics, traces and alerts; least-privilege IAM, network segmentation, TLS, and automated backups.
+
+## Full Cheat Sheet — every concept
+
+### Cloud Foundations
+- Providers: AWS/GCP/Azure; compute (EC2/VMs, containers, serverless/Lambda), storage (S3/blob), managed DBs.
+- Networking: VPC, subnets, security groups, load balancers, DNS, CDN.
+- IAM: least-privilege roles/policies; regions & availability zones for HA.
+
+### Containers & Orchestration
+- Docker: multi-stage builds, small base images, .dockerignore, no secrets in layers.
+- Kubernetes/ECS: deployments, services, ingress, autoscaling, health probes, self-healing.
+- Registries; image scanning; resource limits/requests.
+
+### IaC & Config
+- Terraform/Pulumi/CloudFormation in git; plan → review → apply via pipeline; remote state.
+- 12-factor config via env vars; secrets in Vault/Secrets Manager/SSM.
+- Immutable infrastructure; environment parity (dev/staging/prod).
+
+### CI/CD
+- Pipeline: install → lint → test → build → scan → deploy → verify.
+- GitHub Actions/GitLab CI/Jenkins; artifact/image build; environment gates & approvals.
+- Deploy strategies: rolling, blue-green, canary; automated rollback.
+
+### Observability & Reliability
+- Logs (ELK/Loki), metrics (Prometheus/Grafana/CloudWatch), traces (OpenTelemetry), alerting.
+- SLIs/SLOs/SLAs; on-call/runbooks; incident response.
+- Backups + tested restores, DR plan, TLS everywhere, WAF/DDoS protection.
+
+## Interview Questions
+
+#### Q1. What is Infrastructure as Code and why use it?
+Defining infrastructure (servers, networks, databases) in declarative, version-controlled files (Terraform, CloudFormation) so environments are repeatable, reviewable, and auditable — instead of manual console changes.
+
+#### Q2. Walk through a CI/CD pipeline.
+On a push/PR: install deps, lint, run tests, build artifacts (e.g. a Docker image), scan for vulnerabilities, then deploy to staging and (after approval/gates) production — with automated rollback on failure.
+
+#### Q3. Containers vs virtual machines?
+VMs virtualize hardware with a full guest OS (heavier, stronger isolation); containers share the host kernel and package just the app + deps (lightweight, fast, portable). Containers give environment parity and density; orchestrators manage them at scale.
+
+#### Q4. How do you manage secrets and config across environments?
+Externalize config as environment variables per environment, and keep secrets in a dedicated manager (Vault, AWS Secrets Manager/SSM, sealed secrets) injected at runtime — never committed to the repo or baked into images.
+
+#### Q5. Blue-green vs canary deployments?
+Blue-green keeps two environments and switches traffic all at once (instant rollback). Canary shifts a small percentage of traffic to the new version, watches metrics, then ramps up — limiting blast radius of a bad release.
 
 ---
 
