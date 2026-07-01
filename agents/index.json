@@ -259,5 +259,32 @@
     "bytes": 5540,
     "rules": 5,
     "questions": 5
+  },
+  {
+    "slug": "power-bi",
+    "title": "Power BI",
+    "category": "AI & Data",
+    "file": "/agents/agent-power-bi.md",
+    "bytes": 5324,
+    "rules": 5,
+    "questions": 5
+  },
+  {
+    "slug": "tensorflow",
+    "title": "TensorFlow & Keras",
+    "category": "AI & Data",
+    "file": "/agents/agent-tensorflow.md",
+    "bytes": 5234,
+    "rules": 5,
+    "questions": 5
+  },
+  {
+    "slug": "unity",
+    "title": "Unity (Game Dev)",
+    "category": "Frontend",
+    "file": "/agents/agent-unity.md",
+    "bytes": 4891,
+    "rules": 5,
+    "questions": 5
   }
 ]

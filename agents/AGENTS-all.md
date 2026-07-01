@@ -1,6 +1,6 @@
 # AGENTS — Engineering Guides (All Topics)
 
-> 29 topics · Curated by Ali Arsalan · https://aliarsalan177.github.io/guides/
+> 32 topics · Curated by Ali Arsalan · https://aliarsalan177.github.io/guides/
 
 # Agent Guide — JavaScript (Advanced Concepts)
 
@@ -2625,6 +2625,276 @@ Externalize config as environment variables per environment, and keep secrets in
 
 #### Q5. Blue-green vs canary deployments?
 Blue-green keeps two environments and switches traffic all at once (instant rollback). Canary shifts a small percentage of traffic to the new version, watches metrics, then ramps up — limiting blast radius of a bad release.
+
+---
+
+_Curated by Ali Arsalan · https://aliarsalan177.github.io · Generated from the Engineering Guides._
+
+
+<hr>
+
+# Agent Guide — Power BI
+
+> Microsoft's BI platform: connect, model, and visualize data. Master Power Query (ETL), a star-schema model, and DAX.
+> Category: AI & Data · Source: https://aliarsalan177.github.io/guides/power-bi/
+
+## Purpose
+
+A field guide for **AI coding agents** (and engineers): the concepts to apply and the
+mistakes to avoid when building with Power BI. Load this into your agent's context so it
+keeps these concepts in mind and does **not** repeat these mistakes.
+
+## Rules — Apply / Avoid
+
+### 1. Shape data in Power Query first
+- ✅ **APPLY:** Do cleaning/typing/shaping in Power Query (M) — the ETL layer — before it hits the model.
+- ⛔ **AVOID:** Loading raw, wide, messy tables and patching them with fragile DAX later.
+
+### 2. Model as a star schema
+- ✅ **APPLY:** Build fact tables surrounded by dimension tables with single-direction 1-to-many relationships.
+- ⛔ **AVOID:** Flat one-big-table models and many-to-many/bidirectional relationships that break filter logic and performance.
+
+### 3. Measures over calculated columns
+- ✅ **APPLY:** Use DAX measures (computed at query time, respect filter context) for aggregations; understand row vs filter context.
+- ⛔ **AVOID:** Calculated columns for aggregations — they bloat the model and don't respond to slicers like measures do.
+
+### 4. Secure with Row-Level Security
+- ✅ **APPLY:** Define RLS roles/filters so users only see their data; test with 'View as role'.
+- ⛔ **AVOID:** Relying on hidden visuals/pages for security — the underlying data is still accessible.
+
+### 5. Choose the right refresh/storage mode
+- ✅ **APPLY:** Import for speed, DirectQuery for real-time/large sources, Incremental refresh for big historical tables.
+- ⛔ **AVOID:** Full refresh of massive datasets every time, or DirectQuery on slow sources for interactive dashboards.
+
+## Cheat Reference — concepts to remember
+
+- **Shape data in Power Query first** — Do cleaning/typing/shaping in Power Query (M) — the ETL layer — before it hits the model.
+- **Model as a star schema** — Build fact tables surrounded by dimension tables with single-direction 1-to-many relationships.
+- **Measures over calculated columns** — Use DAX measures (computed at query time, respect filter context) for aggregations; understand row vs filter context.
+- **Secure with Row-Level Security** — Define RLS roles/filters so users only see their data; test with 'View as role'.
+- **Choose the right refresh/storage mode** — Import for speed, DirectQuery for real-time/large sources, Incremental refresh for big historical tables.
+
+## Full Cheat Sheet — every concept
+
+### Components
+- Power BI Desktop (author reports), Service (cloud share/collaborate, workspaces), Mobile, Embedded, Report Server (on-prem).
+- Views: Report, Data, Model (relationships).
+
+### Power Query (ETL / M)
+- Connect to files, databases, cloud & online services; 100s of connectors.
+- Transform: filter, merge (JOIN), append (UNION), pivot/unpivot, split, typed columns.
+- Reference queries, custom M functions; applied-steps are reproducible.
+
+### Data Modeling
+- Star schema: fact + dimension tables; relationships with cardinality & single cross-filter direction.
+- Hierarchies, calculated tables, date/calendar table for time intelligence.
+
+### DAX
+- Measures (query-time) vs calculated columns (row-time); aggregations SUM/AVERAGE/COUNT.
+- CALCULATE (modify filter context), FILTER, ALL, RELATED; iterators SUMX/AVERAGEX.
+- Time intelligence: TOTALYTD, SAMEPERIODLASTYEAR, DATEADD.
+
+### Visuals & Sharing
+- Charts, tables, cards, maps, slicers; custom visuals from marketplace; drill-through & bookmarks.
+- Reports vs dashboards; publish to Service; apps & subscriptions.
+
+### Security & Refresh
+- Row-Level Security (roles + DAX filters); on-premises data gateway.
+- Refresh: Import / DirectQuery / Incremental; schedule refreshes.
+
+## Interview Questions
+
+#### Q1. Power Query vs DAX — what's each for?
+Power Query (M language) is the ETL layer: connect, clean, transform, and shape data before load. DAX (Data Analysis Expressions) computes analytics over the loaded model — measures, calculated columns, and KPIs at query time.
+
+#### Q2. Calculated column vs measure?
+A calculated column is computed per row at refresh and stored in the model (row context). A measure is computed at query time and respects the current filter context (slicers, rows/columns) — use measures for aggregations.
+
+#### Q3. What is a star schema and why use it?
+Central fact tables (events/metrics) linked to dimension tables (attributes) via one-to-many relationships. It simplifies DAX, keeps filters flowing predictably, and performs far better than a flat table.
+
+#### Q4. Import vs DirectQuery?
+Import loads data into Power BI's in-memory engine (fast, but needs refresh). DirectQuery queries the source live (real-time, handles huge data, but slower and source-dependent). Composite models mix both.
+
+#### Q5. What is row context vs filter context in DAX?
+Row context is the current row (calculated columns, iterators like SUMX). Filter context is the set of filters applied (slicers, visuals). CALCULATE modifies filter context — the key to advanced DAX.
+
+---
+
+_Curated by Ali Arsalan · https://aliarsalan177.github.io · Generated from the Engineering Guides._
+
+
+<hr>
+
+# Agent Guide — TensorFlow & Keras
+
+> Google's deep-learning framework. Build and train neural networks with the high-level Keras API, tf.data pipelines, and GPUs.
+> Category: AI & Data · Source: https://aliarsalan177.github.io/guides/tensorflow/
+
+## Purpose
+
+A field guide for **AI coding agents** (and engineers): the concepts to apply and the
+mistakes to avoid when building with TensorFlow & Keras. Load this into your agent's context so it
+keeps these concepts in mind and does **not** repeat these mistakes.
+
+## Rules — Apply / Avoid
+
+### 1. Start with the Keras high-level API
+- ✅ **APPLY:** Build models with Sequential/Functional Keras APIs; compile with optimizer + loss + metrics, then fit/evaluate/predict.
+- ⛔ **AVOID:** Hand-rolling training loops and low-level ops before you need them — Keras covers most cases cleanly.
+
+### 2. Feed data with tf.data pipelines
+- ✅ **APPLY:** Use tf.data.Dataset with batch/shuffle/prefetch/map to stream data efficiently to the GPU.
+- ⛔ **AVOID:** Loading the whole dataset into memory or feeding NumPy arrays for large data — it stalls training.
+
+### 3. Guard against overfitting
+- ✅ **APPLY:** Split train/validation/test, watch the validation curve, and use dropout, regularization, and early stopping.
+- ⛔ **AVOID:** Judging a model on training accuracy alone — it memorizes and fails to generalize.
+
+### 4. Match output layer & loss to the task
+- ✅ **APPLY:** Softmax + categorical cross-entropy for multi-class; sigmoid + binary cross-entropy for binary; linear + MSE for regression.
+- ⛔ **AVOID:** Mismatched activation/loss (e.g. softmax with MSE) — training won't converge properly.
+
+### 5. Normalize inputs & use callbacks
+- ✅ **APPLY:** Scale/normalize features; use callbacks (ModelCheckpoint, EarlyStopping, TensorBoard) to monitor and save.
+- ⛔ **AVOID:** Training on unscaled features and no checkpoints — unstable training and lost best weights.
+
+## Cheat Reference — concepts to remember
+
+- **Start with the Keras high-level API** — Build models with Sequential/Functional Keras APIs; compile with optimizer + loss + metrics, then fit/evaluate/predict.
+- **Feed data with tf.data pipelines** — Use tf.data.Dataset with batch/shuffle/prefetch/map to stream data efficiently to the GPU.
+- **Guard against overfitting** — Split train/validation/test, watch the validation curve, and use dropout, regularization, and early stopping.
+- **Match output layer & loss to the task** — Softmax + categorical cross-entropy for multi-class; sigmoid + binary cross-entropy for binary; linear + MSE for regression.
+- **Normalize inputs & use callbacks** — Scale/normalize features; use callbacks (ModelCheckpoint, EarlyStopping, TensorBoard) to monitor and save.
+
+## Full Cheat Sheet — every concept
+
+### Core
+- Tensors (n-dim arrays); eager execution by default; runs on CPU/GPU/TPU.
+- TF 2.x centers on Keras; tf.function compiles Python to a graph for speed.
+
+### Building Models (Keras)
+- Sequential([...]) linear stack; Functional API for graphs; subclass Model for full control.
+- Layers: Dense, Conv2D, MaxPooling2D, LSTM/GRU, Embedding, Dropout, BatchNormalization, Flatten.
+
+### Training
+- model.compile(optimizer, loss, metrics) → fit(x, y, epochs, batch_size, validation_data) → evaluate → predict.
+- Optimizers: Adam, SGD, RMSprop; losses: cross-entropy (class), MSE/MAE (regression).
+- epochs (passes), batch_size, learning rate; backprop + gradient descent.
+
+### Data & Regularization
+- tf.data.Dataset: from_tensor_slices, map, shuffle, batch, prefetch.
+- Normalize inputs; augment images; train/val/test split.
+- Overfitting: dropout, L1/L2, early stopping.
+
+### Tooling
+- Callbacks: ModelCheckpoint, EarlyStopping, TensorBoard, ReduceLROnPlateau.
+- Save/load: model.save() / load_model() (SavedModel/Keras format).
+- Transfer learning via tf.keras.applications; deploy with TF Serving / TFLite / TF.js.
+
+## Interview Questions
+
+#### Q1. What is a tensor?
+A multi-dimensional array (scalars=0D, vectors=1D, matrices=2D, and higher) — the core data structure that flows through a TensorFlow computation graph, typically on CPU/GPU/TPU.
+
+#### Q2. Sequential vs Functional Keras API?
+Sequential stacks layers linearly (simple models). The Functional API connects layers as a graph, supporting multiple inputs/outputs, shared layers, and branches — needed for non-linear architectures.
+
+#### Q3. How do you prevent overfitting?
+Use a validation set to detect it, then apply dropout, L1/L2 regularization, early stopping, data augmentation, and more/cleaner data — so the model generalizes instead of memorizing.
+
+#### Q4. What do optimizer, loss, and metrics do in compile()?
+The loss quantifies error to minimize (e.g. cross-entropy), the optimizer updates weights via backprop (e.g. Adam/SGD), and metrics (e.g. accuracy) are tracked for human evaluation but not optimized directly.
+
+#### Q5. What is transfer learning?
+Reusing a pretrained model (e.g. on ImageNet) as a feature extractor and fine-tuning it on your smaller dataset — faster training and better results than training from scratch.
+
+---
+
+_Curated by Ali Arsalan · https://aliarsalan177.github.io · Generated from the Engineering Guides._
+
+
+<hr>
+
+# Agent Guide — Unity (Game Dev)
+
+> Cross-platform game engine driven by C#. Think in GameObjects, Components, and the frame lifecycle — and keep the update loop cheap.
+> Category: Frontend · Source: https://aliarsalan177.github.io/guides/unity/
+
+## Purpose
+
+A field guide for **AI coding agents** (and engineers): the concepts to apply and the
+mistakes to avoid when building with Unity (Game Dev). Load this into your agent's context so it
+keeps these concepts in mind and does **not** repeat these mistakes.
+
+## Rules — Apply / Avoid
+
+### 1. Compose with GameObjects + Components
+- ✅ **APPLY:** Build behavior by attaching Components (scripts, colliders, renderers) to GameObjects — composition over inheritance.
+- ⛔ **AVOID:** Giant monolithic MonoBehaviours that do everything — hard to reuse, test, and reason about.
+
+### 2. Use the right lifecycle method
+- ✅ **APPLY:** Awake/Start for setup, Update for per-frame logic, FixedUpdate for physics; cache references in Awake.
+- ⛔ **AVOID:** Physics in Update or heavy per-frame allocation — it causes frame-rate-dependent bugs and GC spikes.
+
+### 3. Keep Update() cheap
+- ✅ **APPLY:** Cache GetComponent/Find results, pool objects, and avoid allocations in hot loops.
+- ⛔ **AVOID:** Calling GetComponent/Find or instantiating/destroying every frame — it tanks performance and triggers GC.
+
+### 4. Frame-rate-independent movement
+- ✅ **APPLY:** Multiply movement/timers by Time.deltaTime so behavior is consistent across frame rates.
+- ⛔ **AVOID:** Moving by a fixed amount per frame — speed then depends on the player's FPS.
+
+### 5. Pool instead of Instantiate/Destroy
+- ✅ **APPLY:** Reuse objects from an object pool for bullets/enemies/particles.
+- ⛔ **AVOID:** Constant Instantiate()/Destroy() at runtime — it fragments memory and stutters via garbage collection.
+
+## Cheat Reference — concepts to remember
+
+- **Compose with GameObjects + Components** — Build behavior by attaching Components (scripts, colliders, renderers) to GameObjects — composition over inheritance.
+- **Use the right lifecycle method** — Awake/Start for setup, Update for per-frame logic, FixedUpdate for physics; cache references in Awake.
+- **Keep Update() cheap** — Cache GetComponent/Find results, pool objects, and avoid allocations in hot loops.
+- **Frame-rate-independent movement** — Multiply movement/timers by Time.deltaTime so behavior is consistent across frame rates.
+- **Pool instead of Instantiate/Destroy** — Reuse objects from an object pool for bullets/enemies/particles.
+
+## Full Cheat Sheet — every concept
+
+### Core Concepts
+- GameObject + Components; Transform (position/rotation/scale); Scenes; Prefabs (reusable templates).
+- Scripting in C# via MonoBehaviour; ScriptableObjects for data assets.
+
+### Lifecycle
+- Awake → OnEnable → Start (setup); Update (per frame); FixedUpdate (physics); LateUpdate (post).
+- OnCollisionEnter/OnTriggerEnter for collisions; OnDestroy for cleanup.
+
+### Physics & Input
+- Rigidbody + Colliders; apply forces in FixedUpdate; isTrigger for overlap detection.
+- Input System (or legacy Input); raycasting; layers & tags.
+
+### Performance
+- Cache GetComponent/references; object pooling; minimize allocations & GC.
+- Time.deltaTime for frame independence; batch draw calls; use the Profiler.
+
+### Systems & Build
+- Coroutines (yield) for timed sequences; Animator/animation; UI (Canvas).
+- Render pipelines (URP/HDRP); asset bundles/Addressables; build to PC/mobile/console/WebGL.
+
+## Interview Questions
+
+#### Q1. What are GameObjects and Components?
+A GameObject is a container in the scene; Components (Transform, Rigidbody, Collider, custom MonoBehaviour scripts) attach to it to give behavior and data. Unity favors composition — you build entities by combining components.
+
+#### Q2. Update vs FixedUpdate vs LateUpdate?
+Update runs once per frame (variable timestep — gameplay/input). FixedUpdate runs at a fixed timestep (physics/Rigidbody). LateUpdate runs after all Updates (camera follow). Physics goes in FixedUpdate.
+
+#### Q3. Why multiply by Time.deltaTime?
+deltaTime is the seconds since the last frame; multiplying movement/timers by it makes behavior frame-rate independent, so speed is consistent whether running at 30 or 144 FPS.
+
+#### Q4. How do you optimize a Unity game?
+Cache component lookups, pool objects instead of Instantiate/Destroy, minimize per-frame allocations (avoid GC), batch draw calls, use the Profiler, and offload heavy work (jobs/coroutines).
+
+#### Q5. What are Prefabs and ScriptableObjects?
+Prefabs are reusable, instantiable GameObject templates. ScriptableObjects are data containers stored as assets — great for config/shared data without attaching to a scene object, reducing duplication.
 
 ---
 
