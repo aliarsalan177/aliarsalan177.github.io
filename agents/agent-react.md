@@ -89,6 +89,12 @@ keeps these concepts in mind and does **not** repeat these mistakes.
 - Context: createContext → <Provider value> → useContext to consume; good for themes/auth/locale.
 - Don't overuse context for frequently-changing values (causes wide re-renders).
 
+### Elements & Rendering
+- Fragments (<>…</> or <React.Fragment>) return siblings without an extra DOM node.
+- Conditional rendering: {cond && <A/>}, ternary {cond ? <A/> : <B/>}, or early return.
+- Inline styles are objects (style={{color:'red'}}); embedded JS in { }.
+- Error boundaries (class componentDidCatch / getDerivedStateFromError) catch render errors in the subtree.
+
 ## Interview Questions
 
 #### Q1. Why can't you mutate state directly?

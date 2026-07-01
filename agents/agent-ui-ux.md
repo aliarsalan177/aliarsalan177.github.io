@@ -49,9 +49,14 @@ keeps these concepts in mind and does **not** repeat these mistakes.
 - 12-column grids: columns, gutters, margins; responsive breakpoints ~600/768/1024/1280.
 
 ### Accessibility & Systems
-- Visible focus states, adequate touch targets (~44px), labels for screen readers.
-- Design systems (atomic): tokens → components → patterns; keep it consistent and evolving.
+- Visible focus states, adequate touch targets (~44px), labels for screen readers, assistive-tech support.
+- Design systems (Atomic Design — Brad Frost): atoms → molecules → organisms → templates → pages.
 - Avoid: over-complication, skipping user testing, inconsistent patterns, ignoring a11y.
+
+### Design Process & Deliverables
+- Flow: research → sketch → user flows / sitemaps → wireframes → prototypes → test → iterate.
+- Levels of fidelity: low (sketch/wireframe) → high (visual/prototype); get feedback early and often.
+- Motion & microinteractions to guide attention and give feedback; mobile-first considerations.
 
 ## Interview Questions
 

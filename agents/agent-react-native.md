@@ -55,6 +55,16 @@ keeps these concepts in mind and does **not** repeat these mistakes.
 - Navigation via React Navigation (native stack).
 - Use TypeScript, error boundaries, and accessibility labels.
 
+### Networking, Device & Data
+- Networking: fetch/axios; handle loading/error/offline states.
+- Device APIs: Camera, Geolocation, Clipboard, permissions (request at runtime).
+- Offline storage: AsyncStorage (key-value); animations via Animated / Reanimated.
+
+### Perf & Accessibility
+- Avoid inline/anonymous functions & object literals in render (new refs each frame).
+- Accessibility props (accessibilityLabel/Role/Hint); test with screen readers.
+- Debug with Flipper/React DevTools; write tests (Jest + RN Testing Library).
+
 ## Interview Questions
 
 #### Q1. How does React Native differ from React for web?

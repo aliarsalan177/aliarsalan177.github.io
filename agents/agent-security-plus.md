@@ -55,6 +55,12 @@ keeps these concepts in mind and does **not** repeat these mistakes.
 - Vulnerability assessment & pentesting; patch management.
 - Incident response lifecycle; logging/monitoring; backups & disaster recovery.
 
+### Key Acronyms
+- CIA, AAA, MFA, SSO, RBAC, IAM, PKI, CA, TLS/SSL, VPN, DMZ.
+- IDS/IPS, SIEM, SOC, DLP, WAF, EDR, NAC, ACL.
+- Threats: DDoS, MITM, RCE, XSS, CSRF, APT, IOC, RAT.
+- Recovery/metrics: RTO, RPO, MTTR, MTBF, BCP, DRP; CVE, CVSS.
+
 ## Interview Questions
 
 #### Q1. What is the CIA triad?

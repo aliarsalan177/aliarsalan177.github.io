@@ -60,6 +60,13 @@ keeps these concepts in mind and does **not** repeat these mistakes.
 - UNION dedupes; UNION ALL keeps duplicates.
 - Subqueries run first and feed the outer query.
 
+### DDL, Views & Expressions
+- DDL: CREATE/ALTER/DROP TABLE, CREATE DATABASE; constraints (NOT NULL, UNIQUE, CHECK, DEFAULT).
+- CREATE VIEW (saved query) and CREATE INDEX (speed reads); DROP to remove.
+- Filters: BETWEEN, IN, LIKE (wildcards % _), DISTINCT; aliases with AS.
+- CASE WHEN … THEN … ELSE … END for conditional logic; COALESCE for NULL fallback.
+- DML: INSERT, UPDATE, DELETE — always with a WHERE (or you hit every row).
+
 ## Interview Questions
 
 #### Q1. INNER JOIN vs LEFT JOIN?

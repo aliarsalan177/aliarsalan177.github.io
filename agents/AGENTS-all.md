@@ -450,6 +450,12 @@ keeps these concepts in mind and does **not** repeat these mistakes.
 - Context: createContext → <Provider value> → useContext to consume; good for themes/auth/locale.
 - Don't overuse context for frequently-changing values (causes wide re-renders).
 
+### Elements & Rendering
+- Fragments (<>…</> or <React.Fragment>) return siblings without an extra DOM node.
+- Conditional rendering: {cond && <A/>}, ternary {cond ? <A/> : <B/>}, or early return.
+- Inline styles are objects (style={{color:'red'}}); embedded JS in { }.
+- Error boundaries (class componentDidCatch / getDerivedStateFromError) catch render errors in the subtree.
+
 ## Interview Questions
 
 #### Q1. Why can't you mutate state directly?
@@ -619,6 +625,16 @@ keeps these concepts in mind and does **not** repeat these mistakes.
 - Navigation via React Navigation (native stack).
 - Use TypeScript, error boundaries, and accessibility labels.
 
+### Networking, Device & Data
+- Networking: fetch/axios; handle loading/error/offline states.
+- Device APIs: Camera, Geolocation, Clipboard, permissions (request at runtime).
+- Offline storage: AsyncStorage (key-value); animations via Animated / Reanimated.
+
+### Perf & Accessibility
+- Avoid inline/anonymous functions & object literals in render (new refs each frame).
+- Accessibility props (accessibilityLabel/Role/Hint); test with screen readers.
+- Debug with Flipper/React DevTools; write tests (Jest + RN Testing Library).
+
 ## Interview Questions
 
 #### Q1. How does React Native differ from React for web?
@@ -688,9 +704,14 @@ keeps these concepts in mind and does **not** repeat these mistakes.
 - 12-column grids: columns, gutters, margins; responsive breakpoints ~600/768/1024/1280.
 
 ### Accessibility & Systems
-- Visible focus states, adequate touch targets (~44px), labels for screen readers.
-- Design systems (atomic): tokens → components → patterns; keep it consistent and evolving.
+- Visible focus states, adequate touch targets (~44px), labels for screen readers, assistive-tech support.
+- Design systems (Atomic Design — Brad Frost): atoms → molecules → organisms → templates → pages.
 - Avoid: over-complication, skipping user testing, inconsistent patterns, ignoring a11y.
+
+### Design Process & Deliverables
+- Flow: research → sketch → user flows / sitemaps → wireframes → prototypes → test → iterate.
+- Levels of fidelity: low (sketch/wireframe) → high (visual/prototype); get feedback early and often.
+- Motion & microinteractions to guide attention and give feedback; mobile-first considerations.
 
 ## Interview Questions
 
@@ -1007,6 +1028,12 @@ keeps these concepts in mind and does **not** repeat these mistakes.
 - Context managers: `with open(...) as f:` guarantees cleanup.
 - Catch specific exceptions (except ValueError:), not bare except.
 - try/except/else/finally for full control.
+
+### Standard Library & Idioms
+- collections: Counter, namedtuple, defaultdict, OrderedDict, deque.
+- Ternary: a if cond else b; lambda for tiny anonymous functions.
+- CLI args: sys.argv / argparse; itertools & functools for functional helpers.
+- f-strings, enumerate, zip, any/all, sorted(key=...).
 
 ## Interview Questions
 
@@ -1487,8 +1514,18 @@ keeps these concepts in mind and does **not** repeat these mistakes.
 - systemctl start/stop/restart/enable; schedule with cron (crontab -e).
 
 ### Pipes, Redirection, Net
-- | pipe; > overwrite, >> append, 2>&1 merge stderr.
-- ssh, scp, curl/wget; apt install/update; man <cmd> for docs.
+- | pipe; > overwrite, >> append, 2>&1 merge stderr, < input.
+- ssh, scp, curl/wget; apt/dpkg install/update; man <cmd> for docs.
+
+### Jobs, Disk & SSH Hardening
+- Job control: cmd & (background), Ctrl+Z + bg/fg, jobs, nohup, disown.
+- Disk/system: df -h, du -sh, free -h, uname -a, top/htop, uptime.
+- SSH hardening: PermitRootLogin no, change Port, AllowUsers, key-based auth; firewall (ufw/iptables).
+
+### Bash Scripting
+- Variables ($VAR, $(cmd)), aliases, history (!!, Ctrl+R).
+- if [ cond ]; then … fi; for/while loops; test operators (-f, -d, -z, -eq).
+- cron for scheduling: `min hour dom mon dow command` (crontab -e).
 
 ## Interview Questions
 
@@ -1818,6 +1855,13 @@ keeps these concepts in mind and does **not** repeat these mistakes.
 - UNION dedupes; UNION ALL keeps duplicates.
 - Subqueries run first and feed the outer query.
 
+### DDL, Views & Expressions
+- DDL: CREATE/ALTER/DROP TABLE, CREATE DATABASE; constraints (NOT NULL, UNIQUE, CHECK, DEFAULT).
+- CREATE VIEW (saved query) and CREATE INDEX (speed reads); DROP to remove.
+- Filters: BETWEEN, IN, LIKE (wildcards % _), DISTINCT; aliases with AS.
+- CASE WHEN … THEN … ELSE … END for conditional logic; COALESCE for NULL fallback.
+- DML: INSERT, UPDATE, DELETE — always with a WHERE (or you hit every row).
+
 ## Interview Questions
 
 #### Q1. INNER JOIN vs LEFT JOIN?
@@ -1969,6 +2013,12 @@ keeps these concepts in mind and does **not** repeat these mistakes.
 ### Operations
 - Vulnerability assessment & pentesting; patch management.
 - Incident response lifecycle; logging/monitoring; backups & disaster recovery.
+
+### Key Acronyms
+- CIA, AAA, MFA, SSO, RBAC, IAM, PKI, CA, TLS/SSL, VPN, DMZ.
+- IDS/IPS, SIEM, SOC, DLP, WAF, EDR, NAC, ACL.
+- Threats: DDoS, MITM, RCE, XSS, CSRF, APT, IOC, RAT.
+- Recovery/metrics: RTO, RPO, MTTR, MTBF, BCP, DRP; CVE, CVSS.
 
 ## Interview Questions
 

@@ -22,7 +22,7 @@
     "title": "React",
     "category": "Frontend",
     "file": "/agents/agent-react.md",
-    "bytes": 6772,
+    "bytes": 7153,
     "rules": 5,
     "questions": 5
   },
@@ -40,7 +40,7 @@
     "title": "React Native",
     "category": "Frontend",
     "file": "/agents/agent-react-native.md",
-    "bytes": 3865,
+    "bytes": 4394,
     "rules": 4,
     "questions": 3
   },
@@ -49,7 +49,7 @@
     "title": "UI/UX Design",
     "category": "Frontend",
     "file": "/agents/agent-ui-ux.md",
-    "bytes": 3931,
+    "bytes": 4308,
     "rules": 4,
     "questions": 3
   },
@@ -76,7 +76,7 @@
     "title": "Python",
     "category": "Languages",
     "file": "/agents/agent-python.md",
-    "bytes": 4515,
+    "bytes": 4815,
     "rules": 4,
     "questions": 4
   },
@@ -130,7 +130,7 @@
     "title": "Linux Command Line",
     "category": "Backend & Infra",
     "file": "/agents/agent-linux.md",
-    "bytes": 3564,
+    "bytes": 4078,
     "rules": 4,
     "questions": 3
   },
@@ -166,7 +166,7 @@
     "title": "SQL",
     "category": "Backend & Infra",
     "file": "/agents/agent-sql.md",
-    "bytes": 4219,
+    "bytes": 4662,
     "rules": 4,
     "questions": 4
   },
@@ -184,7 +184,7 @@
     "title": "Security+ (Fundamentals)",
     "category": "CS & Security",
     "file": "/agents/agent-security-plus.md",
-    "bytes": 4018,
+    "bytes": 4261,
     "rules": 4,
     "questions": 4
   },

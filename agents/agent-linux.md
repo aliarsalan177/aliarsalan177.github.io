@@ -52,8 +52,18 @@ keeps these concepts in mind and does **not** repeat these mistakes.
 - systemctl start/stop/restart/enable; schedule with cron (crontab -e).
 
 ### Pipes, Redirection, Net
-- | pipe; > overwrite, >> append, 2>&1 merge stderr.
-- ssh, scp, curl/wget; apt install/update; man <cmd> for docs.
+- | pipe; > overwrite, >> append, 2>&1 merge stderr, < input.
+- ssh, scp, curl/wget; apt/dpkg install/update; man <cmd> for docs.
+
+### Jobs, Disk & SSH Hardening
+- Job control: cmd & (background), Ctrl+Z + bg/fg, jobs, nohup, disown.
+- Disk/system: df -h, du -sh, free -h, uname -a, top/htop, uptime.
+- SSH hardening: PermitRootLogin no, change Port, AllowUsers, key-based auth; firewall (ufw/iptables).
+
+### Bash Scripting
+- Variables ($VAR, $(cmd)), aliases, history (!!, Ctrl+R).
+- if [ cond ]; then … fi; for/while loops; test operators (-f, -d, -z, -eq).
+- cron for scheduling: `min hour dom mon dow command` (crontab -e).
 
 ## Interview Questions
 

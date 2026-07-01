@@ -66,6 +66,12 @@ keeps these concepts in mind and does **not** repeat these mistakes.
 - Catch specific exceptions (except ValueError:), not bare except.
 - try/except/else/finally for full control.
 
+### Standard Library & Idioms
+- collections: Counter, namedtuple, defaultdict, OrderedDict, deque.
+- Ternary: a if cond else b; lambda for tiny anonymous functions.
+- CLI args: sys.argv / argparse; itertools & functools for functional helpers.
+- f-strings, enumerate, zip, any/all, sorted(key=...).
+
 ## Interview Questions
 
 #### Q1. Why are mutable default arguments dangerous?
