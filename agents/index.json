@@ -36,6 +36,15 @@
     "questions": 4
   },
   {
+    "slug": "vue",
+    "title": "Vue 3",
+    "category": "Frontend",
+    "file": "/agents/agent-vue.md",
+    "bytes": 6455,
+    "rules": 5,
+    "questions": 6
+  },
+  {
     "slug": "react-native",
     "title": "React Native",
     "category": "Frontend",
