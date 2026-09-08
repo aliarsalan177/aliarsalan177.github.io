@@ -1,7 +1,7 @@
 # Agent Guide — Excel
 
 > The world's most-used analysis tool. Lookups, aggregation, absolute references and pivot tables — done cleanly.
-> Category: AI & Data · Source: https://aliarsalan177.github.io/guides/excel/
+> Category: AI & Data · Source: https://ali-arsalan.com/guides/excel/
 
 ## Purpose
 
@@ -67,4 +67,4 @@ Quickly summarizing, grouping, and cross-tabulating large datasets (sums, counts
 
 ---
 
-_Curated by Ali Arsalan · https://aliarsalan177.github.io · Generated from the Engineering Guides._
+_Curated by Ali Arsalan · https://ali-arsalan.com · Generated from the Engineering Guides._

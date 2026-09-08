@@ -1,7 +1,7 @@
 # Agent Guide — Vue 3
 
 > Progressive framework with a reactive core and the Composition API. Think in refs and computed state, keep props one-way, and let the template do the work.
-> Category: Frontend · Source: https://aliarsalan177.github.io/guides/vue/
+> Category: Frontend · Source: https://ali-arsalan.com/guides/vue/
 
 ## Purpose
 
@@ -93,4 +93,4 @@ Parent → child via props; child → parent via emitted events (defineEmits/$em
 
 ---
 
-_Curated by Ali Arsalan · https://aliarsalan177.github.io · Generated from the Engineering Guides._
+_Curated by Ali Arsalan · https://ali-arsalan.com · Generated from the Engineering Guides._

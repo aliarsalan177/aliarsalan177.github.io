@@ -1,7 +1,7 @@
 # Agent Guide — SQL
 
 > The language of relational data. Master joins, aggregation, indexing and NULL semantics to query correctly and fast.
-> Category: Backend & Infra · Source: https://aliarsalan177.github.io/guides/sql/
+> Category: Backend & Infra · Source: https://ali-arsalan.com/guides/sql/
 
 ## Purpose
 
@@ -83,4 +83,4 @@ NULL means 'unknown', so comparisons with it yield unknown (not true) — you mu
 
 ---
 
-_Curated by Ali Arsalan · https://aliarsalan177.github.io · Generated from the Engineering Guides._
+_Curated by Ali Arsalan · https://ali-arsalan.com · Generated from the Engineering Guides._

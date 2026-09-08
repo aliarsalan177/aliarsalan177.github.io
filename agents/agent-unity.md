@@ -1,7 +1,7 @@
 # Agent Guide — Unity (Game Dev)
 
 > Cross-platform game engine driven by C#. Think in GameObjects, Components, and the frame lifecycle — and keep the update loop cheap.
-> Category: Frontend · Source: https://aliarsalan177.github.io/guides/unity/
+> Category: Frontend · Source: https://ali-arsalan.com/guides/unity/
 
 ## Purpose
 
@@ -83,4 +83,4 @@ Prefabs are reusable, instantiable GameObject templates. ScriptableObjects are d
 
 ---
 
-_Curated by Ali Arsalan · https://aliarsalan177.github.io · Generated from the Engineering Guides._
+_Curated by Ali Arsalan · https://ali-arsalan.com · Generated from the Engineering Guides._

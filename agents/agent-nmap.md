@@ -1,7 +1,7 @@
 # Agent Guide — Nmap (Network Scanning)
 
 > The standard tool for host discovery and port scanning. Powerful for defense and recon — only ever with authorization.
-> Category: CS & Security · Source: https://aliarsalan177.github.io/guides/nmap/
+> Category: CS & Security · Source: https://ali-arsalan.com/guides/nmap/
 
 ## Purpose
 
@@ -60,4 +60,4 @@ They trade speed for stealth/accuracy: T0–T1 are slow and evasive, T3 is the d
 
 ---
 
-_Curated by Ali Arsalan · https://aliarsalan177.github.io · Generated from the Engineering Guides._
+_Curated by Ali Arsalan · https://ali-arsalan.com · Generated from the Engineering Guides._

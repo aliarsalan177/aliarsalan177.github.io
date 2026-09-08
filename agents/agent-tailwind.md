@@ -1,7 +1,7 @@
 # Agent Guide — Tailwind CSS
 
 > Utility-first CSS that scales via constraints. Compose utilities, extract components, and theme with tokens instead of writing custom CSS.
-> Category: Frontend · Source: https://aliarsalan177.github.io/guides/tailwind/
+> Category: Frontend · Source: https://ali-arsalan.com/guides/tailwind/
 
 ## Purpose
 
@@ -78,4 +78,4 @@ Tailwind trades semantic class names for utility composition and a constrained d
 
 ---
 
-_Curated by Ali Arsalan · https://aliarsalan177.github.io · Generated from the Engineering Guides._
+_Curated by Ali Arsalan · https://ali-arsalan.com · Generated from the Engineering Guides._

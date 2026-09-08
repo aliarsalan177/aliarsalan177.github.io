@@ -1,7 +1,7 @@
 # Agent Guide — Python
 
 > Readable, batteries-included, and full of sharp edges around mutability and scope. Write idiomatic, explicit Python.
-> Category: Languages · Source: https://aliarsalan177.github.io/guides/python/
+> Category: Languages · Source: https://ali-arsalan.com/guides/python/
 
 ## Purpose
 
@@ -88,4 +88,4 @@ A callable that takes a function and returns a wrapped function with added behav
 
 ---
 
-_Curated by Ali Arsalan · https://aliarsalan177.github.io · Generated from the Engineering Guides._
+_Curated by Ali Arsalan · https://ali-arsalan.com · Generated from the Engineering Guides._

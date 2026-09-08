@@ -1,7 +1,7 @@
 # Agent Guide — VBA (Excel Automation)
 
 > Automate Excel and Office with macros. Reference objects directly, declare your variables, and keep loops fast.
-> Category: AI & Data · Source: https://aliarsalan177.github.io/guides/vba/
+> Category: AI & Data · Source: https://ali-arsalan.com/guides/vba/
 
 ## Purpose
 
@@ -75,4 +75,4 @@ A block (With obj … End With) that runs multiple statements against one object
 
 ---
 
-_Curated by Ali Arsalan · https://aliarsalan177.github.io · Generated from the Engineering Guides._
+_Curated by Ali Arsalan · https://ali-arsalan.com · Generated from the Engineering Guides._

@@ -1,7 +1,7 @@
 # Agent Guide — JavaScript (Advanced Concepts)
 
 > The engine, closures, prototypes, the event loop and coercion — the fundamentals that separate framework authors from framework users.
-> Category: Languages · Source: https://aliarsalan177.github.io/guides/javascript/
+> Category: Languages · Source: https://ali-arsalan.com/guides/javascript/
 
 ## Purpose
 
@@ -245,4 +245,4 @@ Synchronous: try/catch/finally. Asynchronous: .catch() on promises or try/catch 
 
 ---
 
-_Curated by Ali Arsalan · https://aliarsalan177.github.io · Generated from the Engineering Guides._
+_Curated by Ali Arsalan · https://ali-arsalan.com · Generated from the Engineering Guides._

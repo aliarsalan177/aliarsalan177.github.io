@@ -1,7 +1,7 @@
 # Agent Guide — Go (Golang)
 
 > Built for scale and simplicity. Lightweight concurrency, explicit errors, and composition over inheritance.
-> Category: Languages · Source: https://aliarsalan177.github.io/guides/golang/
+> Category: Languages · Source: https://ali-arsalan.com/guides/golang/
 
 ## Purpose
 
@@ -73,4 +73,4 @@ Schedules a call to run when the surrounding function returns (LIFO order), idea
 
 ---
 
-_Curated by Ali Arsalan · https://aliarsalan177.github.io · Generated from the Engineering Guides._
+_Curated by Ali Arsalan · https://ali-arsalan.com · Generated from the Engineering Guides._

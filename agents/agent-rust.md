@@ -1,7 +1,7 @@
 # Agent Guide — Rust
 
 > Memory safety without a garbage collector, enforced at compile time. Learn to think in ownership, borrowing and lifetimes.
-> Category: Languages · Source: https://aliarsalan177.github.io/guides/rust/
+> Category: Languages · Source: https://ali-arsalan.com/guides/rust/
 
 ## Purpose
 
@@ -110,4 +110,4 @@ Traits for closures by how they capture: Fn borrows immutably, FnMut borrows mut
 
 ---
 
-_Curated by Ali Arsalan · https://aliarsalan177.github.io · Generated from the Engineering Guides._
+_Curated by Ali Arsalan · https://ali-arsalan.com · Generated from the Engineering Guides._

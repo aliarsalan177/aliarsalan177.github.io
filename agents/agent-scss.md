@@ -1,7 +1,7 @@
 # Agent Guide — SCSS & CSS Architecture
 
 > Sass power features plus a scalable methodology (BEM, 7-1, ITCSS). Structure styles so they stay maintainable at scale — the way design systems like ScandiPWA do.
-> Category: Frontend · Source: https://aliarsalan177.github.io/guides/scss/
+> Category: Frontend · Source: https://ali-arsalan.com/guides/scss/
 
 ## Purpose
 
@@ -78,4 +78,4 @@ Mixins (@mixin/@include) output reusable declaration blocks (can take args); fun
 
 ---
 
-_Curated by Ali Arsalan · https://aliarsalan177.github.io · Generated from the Engineering Guides._
+_Curated by Ali Arsalan · https://ali-arsalan.com · Generated from the Engineering Guides._

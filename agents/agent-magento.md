@@ -1,7 +1,7 @@
 # Agent Guide — Magento 2
 
 > Enterprise e-commerce on a modular, DI-driven PHP architecture. Extend the right way — plugins and DI, never core edits.
-> Category: Backend & Infra · Source: https://aliarsalan177.github.io/guides/magento/
+> Category: Backend & Infra · Source: https://ali-arsalan.com/guides/magento/
 
 ## Purpose
 
@@ -82,4 +82,4 @@ Production mode, Varnish full-page cache, Redis for cache/sessions, OpenSearch/E
 
 ---
 
-_Curated by Ali Arsalan · https://aliarsalan177.github.io · Generated from the Engineering Guides._
+_Curated by Ali Arsalan · https://ali-arsalan.com · Generated from the Engineering Guides._

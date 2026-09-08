@@ -1,5 +1,5 @@
 User-Agent: *
 Allow: /
 
-Host: https://aliarsalan177.github.io
-Sitemap: https://aliarsalan177.github.io/sitemap.xml
+Host: https://ali-arsalan.com
+Sitemap: https://ali-arsalan.com/sitemap.xml

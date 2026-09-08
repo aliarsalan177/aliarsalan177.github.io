@@ -1,7 +1,7 @@
 # Agent Guide — System Design & Architecture
 
 > Designing systems that scale, plus the everyday architecture that keeps a codebase sane: folder structure, naming, DB and API design.
-> Category: Architecture & Systems · Source: https://aliarsalan177.github.io/guides/system-design/
+> Category: Architecture & Systems · Source: https://ali-arsalan.com/guides/system-design/
 
 ## Purpose
 
@@ -90,4 +90,4 @@ Prefer feature/domain-based grouping (colocate component, styles, tests, logic) 
 
 ---
 
-_Curated by Ali Arsalan · https://aliarsalan177.github.io · Generated from the Engineering Guides._
+_Curated by Ali Arsalan · https://ali-arsalan.com · Generated from the Engineering Guides._

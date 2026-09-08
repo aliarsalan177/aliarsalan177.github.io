@@ -1,7 +1,7 @@
 # Agent Guide — Linux Command Line
 
 > The operator's toolkit: navigate, permission, pipe, and manage processes with confidence — carefully.
-> Category: Backend & Infra · Source: https://aliarsalan177.github.io/guides/linux/
+> Category: Backend & Infra · Source: https://ali-arsalan.com/guides/linux/
 
 ## Purpose
 
@@ -78,4 +78,4 @@ Locate it with ps aux | grep name or top, note the PID, then kill <pid> (gracefu
 
 ---
 
-_Curated by Ali Arsalan · https://aliarsalan177.github.io · Generated from the Engineering Guides._
+_Curated by Ali Arsalan · https://ali-arsalan.com · Generated from the Engineering Guides._

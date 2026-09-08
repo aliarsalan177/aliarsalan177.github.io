@@ -1,7 +1,7 @@
 # Agent Guide — Next.js (App Router)
 
 > React framework with the App Router, Server Components, and file-based routing. Default to the server, fetch on the server, ship less JS.
-> Category: Frontend · Source: https://aliarsalan177.github.io/guides/nextjs/
+> Category: Frontend · Source: https://ali-arsalan.com/guides/nextjs/
 
 ## Purpose
 
@@ -80,4 +80,4 @@ Each route segment can have layout.tsx (shared UI/state across children), page.t
 
 ---
 
-_Curated by Ali Arsalan · https://aliarsalan177.github.io · Generated from the Engineering Guides._
+_Curated by Ali Arsalan · https://ali-arsalan.com · Generated from the Engineering Guides._

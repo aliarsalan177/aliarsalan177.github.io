@@ -1,11 +1,11 @@
 # AGENTS — Engineering Guides (All Topics)
 
-> 34 topics · Curated by Ali Arsalan · https://aliarsalan177.github.io/guides/
+> 34 topics · Curated by Ali Arsalan · https://ali-arsalan.com/guides/
 
 # Agent Guide — JavaScript (Advanced Concepts)
 
 > The engine, closures, prototypes, the event loop and coercion — the fundamentals that separate framework authors from framework users.
-> Category: Languages · Source: https://aliarsalan177.github.io/guides/javascript/
+> Category: Languages · Source: https://ali-arsalan.com/guides/javascript/
 
 ## Purpose
 
@@ -249,7 +249,7 @@ Synchronous: try/catch/finally. Asynchronous: .catch() on promises or try/catch 
 
 ---
 
-_Curated by Ali Arsalan · https://aliarsalan177.github.io · Generated from the Engineering Guides._
+_Curated by Ali Arsalan · https://ali-arsalan.com · Generated from the Engineering Guides._
 
 
 <hr>
@@ -257,7 +257,7 @@ _Curated by Ali Arsalan · https://aliarsalan177.github.io · Generated from the
 # Agent Guide — TypeScript
 
 > A structural type system over JavaScript — model your data precisely, let inference work, and make illegal states unrepresentable.
-> Category: Languages · Source: https://aliarsalan177.github.io/guides/typescript/
+> Category: Languages · Source: https://ali-arsalan.com/guides/typescript/
 
 ## Purpose
 
@@ -354,7 +354,7 @@ Partial<T>, Required<T>, Readonly<T>, Pick<T,K>, Omit<T,K>, Record<K,V>, ReturnT
 
 ---
 
-_Curated by Ali Arsalan · https://aliarsalan177.github.io · Generated from the Engineering Guides._
+_Curated by Ali Arsalan · https://ali-arsalan.com · Generated from the Engineering Guides._
 
 
 <hr>
@@ -362,7 +362,7 @@ _Curated by Ali Arsalan · https://aliarsalan177.github.io · Generated from the
 # Agent Guide — React
 
 > Declarative UI from state. Master hooks, keys, memoization and effect discipline to build fast, predictable interfaces.
-> Category: Frontend · Source: https://aliarsalan177.github.io/guides/react/
+> Category: Frontend · Source: https://ali-arsalan.com/guides/react/
 
 ## Purpose
 
@@ -475,7 +475,7 @@ After render/paint, and again whenever a dependency changes; the empty array run
 
 ---
 
-_Curated by Ali Arsalan · https://aliarsalan177.github.io · Generated from the Engineering Guides._
+_Curated by Ali Arsalan · https://ali-arsalan.com · Generated from the Engineering Guides._
 
 
 <hr>
@@ -483,7 +483,7 @@ _Curated by Ali Arsalan · https://aliarsalan177.github.io · Generated from the
 # Agent Guide — Angular
 
 > A batteries-included framework: components, DI, RxJS, and (increasingly) signals. Lean on the structure, mind change detection.
-> Category: Frontend · Source: https://aliarsalan177.github.io/guides/angular/
+> Category: Frontend · Source: https://ali-arsalan.com/guides/angular/
 
 ## Purpose
 
@@ -563,7 +563,7 @@ Template-driven forms live in the template with ngModel (simple cases); reactive
 
 ---
 
-_Curated by Ali Arsalan · https://aliarsalan177.github.io · Generated from the Engineering Guides._
+_Curated by Ali Arsalan · https://ali-arsalan.com · Generated from the Engineering Guides._
 
 
 <hr>
@@ -571,7 +571,7 @@ _Curated by Ali Arsalan · https://aliarsalan177.github.io · Generated from the
 # Agent Guide — Vue 3
 
 > Progressive framework with a reactive core and the Composition API. Think in refs and computed state, keep props one-way, and let the template do the work.
-> Category: Frontend · Source: https://aliarsalan177.github.io/guides/vue/
+> Category: Frontend · Source: https://ali-arsalan.com/guides/vue/
 
 ## Purpose
 
@@ -663,7 +663,7 @@ Parent → child via props; child → parent via emitted events (defineEmits/$em
 
 ---
 
-_Curated by Ali Arsalan · https://aliarsalan177.github.io · Generated from the Engineering Guides._
+_Curated by Ali Arsalan · https://ali-arsalan.com · Generated from the Engineering Guides._
 
 
 <hr>
@@ -671,7 +671,7 @@ _Curated by Ali Arsalan · https://aliarsalan177.github.io · Generated from the
 # Agent Guide — React Native
 
 > React for native mobile. Same mental model, different primitives — think in native components, lists and platform differences.
-> Category: Frontend · Source: https://aliarsalan177.github.io/guides/react-native/
+> Category: Frontend · Source: https://ali-arsalan.com/guides/react-native/
 
 ## Purpose
 
@@ -748,7 +748,7 @@ Use the Platform module (Platform.OS / Platform.select) for small branches, or f
 
 ---
 
-_Curated by Ali Arsalan · https://aliarsalan177.github.io · Generated from the Engineering Guides._
+_Curated by Ali Arsalan · https://ali-arsalan.com · Generated from the Engineering Guides._
 
 
 <hr>
@@ -756,7 +756,7 @@ _Curated by Ali Arsalan · https://aliarsalan177.github.io · Generated from the
 # Agent Guide — UI/UX Design
 
 > Hierarchy, spacing, contrast and accessibility — the systematic rules that make interfaces feel obvious.
-> Category: Frontend · Source: https://aliarsalan177.github.io/guides/ui-ux/
+> Category: Frontend · Source: https://ali-arsalan.com/guides/ui-ux/
 
 ## Purpose
 
@@ -826,7 +826,7 @@ A base unit (e.g. 8px) and a column grid create consistent rhythm and alignment,
 
 ---
 
-_Curated by Ali Arsalan · https://aliarsalan177.github.io · Generated from the Engineering Guides._
+_Curated by Ali Arsalan · https://ali-arsalan.com · Generated from the Engineering Guides._
 
 
 <hr>
@@ -834,7 +834,7 @@ _Curated by Ali Arsalan · https://aliarsalan177.github.io · Generated from the
 # Agent Guide — AI, ML & LLM Engineering
 
 > From ML/DL foundations (models, metrics, neural nets, transformers) to prompting, RAG, tools and the agent loop. Ground your models, constrain your outputs, and budget your steps.
-> Category: AI & Data · Source: https://aliarsalan177.github.io/guides/ai-agents/
+> Category: AI & Data · Source: https://ali-arsalan.com/guides/ai-agents/
 
 ## Purpose
 
@@ -969,7 +969,7 @@ For tabular data, tree-based models (random forests, gradient boosting) are usua
 
 ---
 
-_Curated by Ali Arsalan · https://aliarsalan177.github.io · Generated from the Engineering Guides._
+_Curated by Ali Arsalan · https://ali-arsalan.com · Generated from the Engineering Guides._
 
 
 <hr>
@@ -977,7 +977,7 @@ _Curated by Ali Arsalan · https://aliarsalan177.github.io · Generated from the
 # Agent Guide — Node.js
 
 > Event-driven, non-blocking JavaScript on the server. Keep the loop free, handle every rejection, and stream big data.
-> Category: Backend & Infra · Source: https://aliarsalan177.github.io/guides/nodejs/
+> Category: Backend & Infra · Source: https://ali-arsalan.com/guides/nodejs/
 
 ## Purpose
 
@@ -1056,7 +1056,7 @@ CommonJS uses require/module.exports and loads synchronously (Node's classic sys
 
 ---
 
-_Curated by Ali Arsalan · https://aliarsalan177.github.io · Generated from the Engineering Guides._
+_Curated by Ali Arsalan · https://ali-arsalan.com · Generated from the Engineering Guides._
 
 
 <hr>
@@ -1064,7 +1064,7 @@ _Curated by Ali Arsalan · https://aliarsalan177.github.io · Generated from the
 # Agent Guide — Python
 
 > Readable, batteries-included, and full of sharp edges around mutability and scope. Write idiomatic, explicit Python.
-> Category: Languages · Source: https://aliarsalan177.github.io/guides/python/
+> Category: Languages · Source: https://ali-arsalan.com/guides/python/
 
 ## Purpose
 
@@ -1151,7 +1151,7 @@ A callable that takes a function and returns a wrapped function with added behav
 
 ---
 
-_Curated by Ali Arsalan · https://aliarsalan177.github.io · Generated from the Engineering Guides._
+_Curated by Ali Arsalan · https://ali-arsalan.com · Generated from the Engineering Guides._
 
 
 <hr>
@@ -1159,7 +1159,7 @@ _Curated by Ali Arsalan · https://aliarsalan177.github.io · Generated from the
 # Agent Guide — Rust
 
 > Memory safety without a garbage collector, enforced at compile time. Learn to think in ownership, borrowing and lifetimes.
-> Category: Languages · Source: https://aliarsalan177.github.io/guides/rust/
+> Category: Languages · Source: https://ali-arsalan.com/guides/rust/
 
 ## Purpose
 
@@ -1268,7 +1268,7 @@ Traits for closures by how they capture: Fn borrows immutably, FnMut borrows mut
 
 ---
 
-_Curated by Ali Arsalan · https://aliarsalan177.github.io · Generated from the Engineering Guides._
+_Curated by Ali Arsalan · https://ali-arsalan.com · Generated from the Engineering Guides._
 
 
 <hr>
@@ -1276,7 +1276,7 @@ _Curated by Ali Arsalan · https://aliarsalan177.github.io · Generated from the
 # Agent Guide — Solidity & Smart Contracts
 
 > Code that controls money on an immutable ledger. Security and gas are first-class concerns, not afterthoughts.
-> Category: Languages · Source: https://aliarsalan177.github.io/guides/solidity/
+> Category: Languages · Source: https://ali-arsalan.com/guides/solidity/
 
 ## Purpose
 
@@ -1356,7 +1356,7 @@ Minimize storage writes, emit events instead of storing logs, use custom errors,
 
 ---
 
-_Curated by Ali Arsalan · https://aliarsalan177.github.io · Generated from the Engineering Guides._
+_Curated by Ali Arsalan · https://ali-arsalan.com · Generated from the Engineering Guides._
 
 
 <hr>
@@ -1364,7 +1364,7 @@ _Curated by Ali Arsalan · https://aliarsalan177.github.io · Generated from the
 # Agent Guide — Data Structures & Algorithms
 
 > Pick the right structure, know the complexity, and recognize the pattern. The foundation of performant code and interviews.
-> Category: CS & Security · Source: https://aliarsalan177.github.io/guides/dsa/
+> Category: CS & Security · Source: https://ali-arsalan.com/guides/dsa/
 
 ## Purpose
 
@@ -1438,7 +1438,7 @@ Solving a problem by combining solutions to overlapping subproblems, caching res
 
 ---
 
-_Curated by Ali Arsalan · https://aliarsalan177.github.io · Generated from the Engineering Guides._
+_Curated by Ali Arsalan · https://ali-arsalan.com · Generated from the Engineering Guides._
 
 
 <hr>
@@ -1446,7 +1446,7 @@ _Curated by Ali Arsalan · https://aliarsalan177.github.io · Generated from the
 # Agent Guide — Cybersecurity
 
 > Protect confidentiality, integrity and availability. Assume breach, least privilege, and defense in depth.
-> Category: CS & Security · Source: https://aliarsalan177.github.io/guides/cybersecurity/
+> Category: CS & Security · Source: https://ali-arsalan.com/guides/cybersecurity/
 
 ## Purpose
 
@@ -1521,7 +1521,7 @@ Password hashes should be deliberately slow and salted to resist brute-force and
 
 ---
 
-_Curated by Ali Arsalan · https://aliarsalan177.github.io · Generated from the Engineering Guides._
+_Curated by Ali Arsalan · https://ali-arsalan.com · Generated from the Engineering Guides._
 
 
 <hr>
@@ -1529,7 +1529,7 @@ _Curated by Ali Arsalan · https://aliarsalan177.github.io · Generated from the
 # Agent Guide — Nmap (Network Scanning)
 
 > The standard tool for host discovery and port scanning. Powerful for defense and recon — only ever with authorization.
-> Category: CS & Security · Source: https://aliarsalan177.github.io/guides/nmap/
+> Category: CS & Security · Source: https://ali-arsalan.com/guides/nmap/
 
 ## Purpose
 
@@ -1588,7 +1588,7 @@ They trade speed for stealth/accuracy: T0–T1 are slow and evasive, T3 is the d
 
 ---
 
-_Curated by Ali Arsalan · https://aliarsalan177.github.io · Generated from the Engineering Guides._
+_Curated by Ali Arsalan · https://ali-arsalan.com · Generated from the Engineering Guides._
 
 
 <hr>
@@ -1596,7 +1596,7 @@ _Curated by Ali Arsalan · https://aliarsalan177.github.io · Generated from the
 # Agent Guide — Linux Command Line
 
 > The operator's toolkit: navigate, permission, pipe, and manage processes with confidence — carefully.
-> Category: Backend & Infra · Source: https://aliarsalan177.github.io/guides/linux/
+> Category: Backend & Infra · Source: https://ali-arsalan.com/guides/linux/
 
 ## Purpose
 
@@ -1673,7 +1673,7 @@ Locate it with ps aux | grep name or top, note the PID, then kill <pid> (gracefu
 
 ---
 
-_Curated by Ali Arsalan · https://aliarsalan177.github.io · Generated from the Engineering Guides._
+_Curated by Ali Arsalan · https://ali-arsalan.com · Generated from the Engineering Guides._
 
 
 <hr>
@@ -1681,7 +1681,7 @@ _Curated by Ali Arsalan · https://aliarsalan177.github.io · Generated from the
 # Agent Guide — Business Analytics
 
 > Turn data into decisions. Know your analytics type, clean your data, and never confuse correlation with causation.
-> Category: AI & Data · Source: https://aliarsalan177.github.io/guides/business-analytics/
+> Category: AI & Data · Source: https://ali-arsalan.com/guides/business-analytics/
 
 ## Purpose
 
@@ -1756,7 +1756,7 @@ A randomized experiment splitting users into control and variant to isolate the 
 
 ---
 
-_Curated by Ali Arsalan · https://aliarsalan177.github.io · Generated from the Engineering Guides._
+_Curated by Ali Arsalan · https://ali-arsalan.com · Generated from the Engineering Guides._
 
 
 <hr>
@@ -1764,7 +1764,7 @@ _Curated by Ali Arsalan · https://aliarsalan177.github.io · Generated from the
 # Agent Guide — Go (Golang)
 
 > Built for scale and simplicity. Lightweight concurrency, explicit errors, and composition over inheritance.
-> Category: Languages · Source: https://aliarsalan177.github.io/guides/golang/
+> Category: Languages · Source: https://ali-arsalan.com/guides/golang/
 
 ## Purpose
 
@@ -1836,7 +1836,7 @@ Schedules a call to run when the surrounding function returns (LIFO order), idea
 
 ---
 
-_Curated by Ali Arsalan · https://aliarsalan177.github.io · Generated from the Engineering Guides._
+_Curated by Ali Arsalan · https://ali-arsalan.com · Generated from the Engineering Guides._
 
 
 <hr>
@@ -1844,7 +1844,7 @@ _Curated by Ali Arsalan · https://aliarsalan177.github.io · Generated from the
 # Agent Guide — C#
 
 > A modern, statically-typed .NET language. Value vs reference semantics, LINQ, async/await and nullable reference types.
-> Category: Languages · Source: https://aliarsalan177.github.io/guides/csharp/
+> Category: Languages · Source: https://ali-arsalan.com/guides/csharp/
 
 ## Purpose
 
@@ -1921,7 +1921,7 @@ LINQ queries build an expression that isn't executed until enumerated (foreach, 
 
 ---
 
-_Curated by Ali Arsalan · https://aliarsalan177.github.io · Generated from the Engineering Guides._
+_Curated by Ali Arsalan · https://ali-arsalan.com · Generated from the Engineering Guides._
 
 
 <hr>
@@ -1929,7 +1929,7 @@ _Curated by Ali Arsalan · https://aliarsalan177.github.io · Generated from the
 # Agent Guide — SQL
 
 > The language of relational data. Master joins, aggregation, indexing and NULL semantics to query correctly and fast.
-> Category: Backend & Infra · Source: https://aliarsalan177.github.io/guides/sql/
+> Category: Backend & Infra · Source: https://ali-arsalan.com/guides/sql/
 
 ## Purpose
 
@@ -2011,7 +2011,7 @@ NULL means 'unknown', so comparisons with it yield unknown (not true) — you mu
 
 ---
 
-_Curated by Ali Arsalan · https://aliarsalan177.github.io · Generated from the Engineering Guides._
+_Curated by Ali Arsalan · https://ali-arsalan.com · Generated from the Engineering Guides._
 
 
 <hr>
@@ -2019,7 +2019,7 @@ _Curated by Ali Arsalan · https://aliarsalan177.github.io · Generated from the
 # Agent Guide — Excel
 
 > The world's most-used analysis tool. Lookups, aggregation, absolute references and pivot tables — done cleanly.
-> Category: AI & Data · Source: https://aliarsalan177.github.io/guides/excel/
+> Category: AI & Data · Source: https://ali-arsalan.com/guides/excel/
 
 ## Purpose
 
@@ -2085,7 +2085,7 @@ Quickly summarizing, grouping, and cross-tabulating large datasets (sums, counts
 
 ---
 
-_Curated by Ali Arsalan · https://aliarsalan177.github.io · Generated from the Engineering Guides._
+_Curated by Ali Arsalan · https://ali-arsalan.com · Generated from the Engineering Guides._
 
 
 <hr>
@@ -2093,7 +2093,7 @@ _Curated by Ali Arsalan · https://aliarsalan177.github.io · Generated from the
 # Agent Guide — Security+ (Fundamentals)
 
 > The baseline security body of knowledge: risk, identity, cryptography and controls — the CompTIA Security+ core.
-> Category: CS & Security · Source: https://aliarsalan177.github.io/guides/security-plus/
+> Category: CS & Security · Source: https://ali-arsalan.com/guides/security-plus/
 
 ## Purpose
 
@@ -2169,7 +2169,7 @@ Follow an IR lifecycle: preparation, identification/detection, containment, erad
 
 ---
 
-_Curated by Ali Arsalan · https://aliarsalan177.github.io · Generated from the Engineering Guides._
+_Curated by Ali Arsalan · https://ali-arsalan.com · Generated from the Engineering Guides._
 
 
 <hr>
@@ -2177,7 +2177,7 @@ _Curated by Ali Arsalan · https://aliarsalan177.github.io · Generated from the
 # Agent Guide — PHP (Modern / Vanilla)
 
 > Modern PHP 8+ is typed, fast and Composer-driven. Write strict, secure, PSR-compliant code — not the legacy stuff of old.
-> Category: Languages · Source: https://aliarsalan177.github.io/guides/php/
+> Category: Languages · Source: https://ali-arsalan.com/guides/php/
 
 ## Purpose
 
@@ -2261,7 +2261,7 @@ With password_hash() (bcrypt/argon2, salted and slow) and verified with password
 
 ---
 
-_Curated by Ali Arsalan · https://aliarsalan177.github.io · Generated from the Engineering Guides._
+_Curated by Ali Arsalan · https://ali-arsalan.com · Generated from the Engineering Guides._
 
 
 <hr>
@@ -2269,7 +2269,7 @@ _Curated by Ali Arsalan · https://aliarsalan177.github.io · Generated from the
 # Agent Guide — Laravel
 
 > Batteries-included PHP framework: Eloquent, Blade, queues, and elegant APIs. Lean on the conventions and its built-in security (aligned with OWASP).
-> Category: Backend & Infra · Source: https://aliarsalan177.github.io/guides/laravel/
+> Category: Backend & Infra · Source: https://ali-arsalan.com/guides/laravel/
 
 ## Purpose
 
@@ -2359,7 +2359,7 @@ APP_DEBUG=false, generate APP_KEY, keep CSRF + EncryptCookies middleware, set se
 
 ---
 
-_Curated by Ali Arsalan · https://aliarsalan177.github.io · Generated from the Engineering Guides._
+_Curated by Ali Arsalan · https://ali-arsalan.com · Generated from the Engineering Guides._
 
 
 <hr>
@@ -2367,7 +2367,7 @@ _Curated by Ali Arsalan · https://aliarsalan177.github.io · Generated from the
 # Agent Guide — Magento 2
 
 > Enterprise e-commerce on a modular, DI-driven PHP architecture. Extend the right way — plugins and DI, never core edits.
-> Category: Backend & Infra · Source: https://aliarsalan177.github.io/guides/magento/
+> Category: Backend & Infra · Source: https://ali-arsalan.com/guides/magento/
 
 ## Purpose
 
@@ -2448,7 +2448,7 @@ Production mode, Varnish full-page cache, Redis for cache/sessions, OpenSearch/E
 
 ---
 
-_Curated by Ali Arsalan · https://aliarsalan177.github.io · Generated from the Engineering Guides._
+_Curated by Ali Arsalan · https://ali-arsalan.com · Generated from the Engineering Guides._
 
 
 <hr>
@@ -2456,7 +2456,7 @@ _Curated by Ali Arsalan · https://aliarsalan177.github.io · Generated from the
 # Agent Guide — Next.js (App Router)
 
 > React framework with the App Router, Server Components, and file-based routing. Default to the server, fetch on the server, ship less JS.
-> Category: Frontend · Source: https://aliarsalan177.github.io/guides/nextjs/
+> Category: Frontend · Source: https://ali-arsalan.com/guides/nextjs/
 
 ## Purpose
 
@@ -2535,7 +2535,7 @@ Each route segment can have layout.tsx (shared UI/state across children), page.t
 
 ---
 
-_Curated by Ali Arsalan · https://aliarsalan177.github.io · Generated from the Engineering Guides._
+_Curated by Ali Arsalan · https://ali-arsalan.com · Generated from the Engineering Guides._
 
 
 <hr>
@@ -2543,7 +2543,7 @@ _Curated by Ali Arsalan · https://aliarsalan177.github.io · Generated from the
 # Agent Guide — SCSS & CSS Architecture
 
 > Sass power features plus a scalable methodology (BEM, 7-1, ITCSS). Structure styles so they stay maintainable at scale — the way design systems like ScandiPWA do.
-> Category: Frontend · Source: https://aliarsalan177.github.io/guides/scss/
+> Category: Frontend · Source: https://ali-arsalan.com/guides/scss/
 
 ## Purpose
 
@@ -2620,7 +2620,7 @@ Mixins (@mixin/@include) output reusable declaration blocks (can take args); fun
 
 ---
 
-_Curated by Ali Arsalan · https://aliarsalan177.github.io · Generated from the Engineering Guides._
+_Curated by Ali Arsalan · https://ali-arsalan.com · Generated from the Engineering Guides._
 
 
 <hr>
@@ -2628,7 +2628,7 @@ _Curated by Ali Arsalan · https://aliarsalan177.github.io · Generated from the
 # Agent Guide — Tailwind CSS
 
 > Utility-first CSS that scales via constraints. Compose utilities, extract components, and theme with tokens instead of writing custom CSS.
-> Category: Frontend · Source: https://aliarsalan177.github.io/guides/tailwind/
+> Category: Frontend · Source: https://ali-arsalan.com/guides/tailwind/
 
 ## Purpose
 
@@ -2705,7 +2705,7 @@ Tailwind trades semantic class names for utility composition and a constrained d
 
 ---
 
-_Curated by Ali Arsalan · https://aliarsalan177.github.io · Generated from the Engineering Guides._
+_Curated by Ali Arsalan · https://ali-arsalan.com · Generated from the Engineering Guides._
 
 
 <hr>
@@ -2713,7 +2713,7 @@ _Curated by Ali Arsalan · https://aliarsalan177.github.io · Generated from the
 # Agent Guide — System Design & Architecture
 
 > Designing systems that scale, plus the everyday architecture that keeps a codebase sane: folder structure, naming, DB and API design.
-> Category: Architecture & Systems · Source: https://aliarsalan177.github.io/guides/system-design/
+> Category: Architecture & Systems · Source: https://ali-arsalan.com/guides/system-design/
 
 ## Purpose
 
@@ -2802,7 +2802,7 @@ Prefer feature/domain-based grouping (colocate component, styles, tests, logic) 
 
 ---
 
-_Curated by Ali Arsalan · https://aliarsalan177.github.io · Generated from the Engineering Guides._
+_Curated by Ali Arsalan · https://ali-arsalan.com · Generated from the Engineering Guides._
 
 
 <hr>
@@ -2810,7 +2810,7 @@ _Curated by Ali Arsalan · https://aliarsalan177.github.io · Generated from the
 # Agent Guide — Infrastructure — Cloud to Code
 
 > The path from a git push to production: containers, CI/CD, Infrastructure as Code, environments, and observability.
-> Category: Architecture & Systems · Source: https://aliarsalan177.github.io/guides/infrastructure/
+> Category: Architecture & Systems · Source: https://ali-arsalan.com/guides/infrastructure/
 
 ## Purpose
 
@@ -2894,7 +2894,7 @@ Blue-green keeps two environments and switches traffic all at once (instant roll
 
 ---
 
-_Curated by Ali Arsalan · https://aliarsalan177.github.io · Generated from the Engineering Guides._
+_Curated by Ali Arsalan · https://ali-arsalan.com · Generated from the Engineering Guides._
 
 
 <hr>
@@ -2902,7 +2902,7 @@ _Curated by Ali Arsalan · https://aliarsalan177.github.io · Generated from the
 # Agent Guide — Power BI
 
 > Microsoft's BI platform: connect, model, and visualize data. Master Power Query (ETL), a star-schema model, and DAX.
-> Category: AI & Data · Source: https://aliarsalan177.github.io/guides/power-bi/
+> Category: AI & Data · Source: https://ali-arsalan.com/guides/power-bi/
 
 ## Purpose
 
@@ -2988,7 +2988,7 @@ Row context is the current row (calculated columns, iterators like SUMX). Filter
 
 ---
 
-_Curated by Ali Arsalan · https://aliarsalan177.github.io · Generated from the Engineering Guides._
+_Curated by Ali Arsalan · https://ali-arsalan.com · Generated from the Engineering Guides._
 
 
 <hr>
@@ -2996,7 +2996,7 @@ _Curated by Ali Arsalan · https://aliarsalan177.github.io · Generated from the
 # Agent Guide — TensorFlow & Keras
 
 > Google's deep-learning framework. Build and train neural networks with the high-level Keras API, tf.data pipelines, and GPUs.
-> Category: AI & Data · Source: https://aliarsalan177.github.io/guides/tensorflow/
+> Category: AI & Data · Source: https://ali-arsalan.com/guides/tensorflow/
 
 ## Purpose
 
@@ -3081,7 +3081,7 @@ Reusing a pretrained model (e.g. on ImageNet) as a feature extractor and fine-tu
 
 ---
 
-_Curated by Ali Arsalan · https://aliarsalan177.github.io · Generated from the Engineering Guides._
+_Curated by Ali Arsalan · https://ali-arsalan.com · Generated from the Engineering Guides._
 
 
 <hr>
@@ -3089,7 +3089,7 @@ _Curated by Ali Arsalan · https://aliarsalan177.github.io · Generated from the
 # Agent Guide — Unity (Game Dev)
 
 > Cross-platform game engine driven by C#. Think in GameObjects, Components, and the frame lifecycle — and keep the update loop cheap.
-> Category: Frontend · Source: https://aliarsalan177.github.io/guides/unity/
+> Category: Frontend · Source: https://ali-arsalan.com/guides/unity/
 
 ## Purpose
 
@@ -3171,7 +3171,7 @@ Prefabs are reusable, instantiable GameObject templates. ScriptableObjects are d
 
 ---
 
-_Curated by Ali Arsalan · https://aliarsalan177.github.io · Generated from the Engineering Guides._
+_Curated by Ali Arsalan · https://ali-arsalan.com · Generated from the Engineering Guides._
 
 
 <hr>
@@ -3179,7 +3179,7 @@ _Curated by Ali Arsalan · https://aliarsalan177.github.io · Generated from the
 # Agent Guide — VBA (Excel Automation)
 
 > Automate Excel and Office with macros. Reference objects directly, declare your variables, and keep loops fast.
-> Category: AI & Data · Source: https://aliarsalan177.github.io/guides/vba/
+> Category: AI & Data · Source: https://ali-arsalan.com/guides/vba/
 
 ## Purpose
 
@@ -3253,7 +3253,7 @@ A block (With obj … End With) that runs multiple statements against one object
 
 ---
 
-_Curated by Ali Arsalan · https://aliarsalan177.github.io · Generated from the Engineering Guides._
+_Curated by Ali Arsalan · https://ali-arsalan.com · Generated from the Engineering Guides._
 
 
 <hr>

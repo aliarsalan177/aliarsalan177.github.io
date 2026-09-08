@@ -1,7 +1,7 @@
 # Agent Guide — TypeScript
 
 > A structural type system over JavaScript — model your data precisely, let inference work, and make illegal states unrepresentable.
-> Category: Languages · Source: https://aliarsalan177.github.io/guides/typescript/
+> Category: Languages · Source: https://ali-arsalan.com/guides/typescript/
 
 ## Purpose
 
@@ -98,4 +98,4 @@ Partial<T>, Required<T>, Readonly<T>, Pick<T,K>, Omit<T,K>, Record<K,V>, ReturnT
 
 ---
 
-_Curated by Ali Arsalan · https://aliarsalan177.github.io · Generated from the Engineering Guides._
+_Curated by Ali Arsalan · https://ali-arsalan.com · Generated from the Engineering Guides._

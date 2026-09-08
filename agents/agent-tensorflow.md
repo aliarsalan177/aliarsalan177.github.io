@@ -1,7 +1,7 @@
 # Agent Guide — TensorFlow & Keras
 
 > Google's deep-learning framework. Build and train neural networks with the high-level Keras API, tf.data pipelines, and GPUs.
-> Category: AI & Data · Source: https://aliarsalan177.github.io/guides/tensorflow/
+> Category: AI & Data · Source: https://ali-arsalan.com/guides/tensorflow/
 
 ## Purpose
 
@@ -86,4 +86,4 @@ Reusing a pretrained model (e.g. on ImageNet) as a feature extractor and fine-tu
 
 ---
 
-_Curated by Ali Arsalan · https://aliarsalan177.github.io · Generated from the Engineering Guides._
+_Curated by Ali Arsalan · https://ali-arsalan.com · Generated from the Engineering Guides._

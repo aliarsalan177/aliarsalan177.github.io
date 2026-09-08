@@ -1,7 +1,7 @@
 # Agent Guide — Data Structures & Algorithms
 
 > Pick the right structure, know the complexity, and recognize the pattern. The foundation of performant code and interviews.
-> Category: CS & Security · Source: https://aliarsalan177.github.io/guides/dsa/
+> Category: CS & Security · Source: https://ali-arsalan.com/guides/dsa/
 
 ## Purpose
 
@@ -75,4 +75,4 @@ Solving a problem by combining solutions to overlapping subproblems, caching res
 
 ---
 
-_Curated by Ali Arsalan · https://aliarsalan177.github.io · Generated from the Engineering Guides._
+_Curated by Ali Arsalan · https://ali-arsalan.com · Generated from the Engineering Guides._

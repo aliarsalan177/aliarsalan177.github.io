@@ -1,7 +1,7 @@
 # Agent Guide — UI/UX Design
 
 > Hierarchy, spacing, contrast and accessibility — the systematic rules that make interfaces feel obvious.
-> Category: Frontend · Source: https://aliarsalan177.github.io/guides/ui-ux/
+> Category: Frontend · Source: https://ali-arsalan.com/guides/ui-ux/
 
 ## Purpose
 
@@ -71,4 +71,4 @@ A base unit (e.g. 8px) and a column grid create consistent rhythm and alignment,
 
 ---
 
-_Curated by Ali Arsalan · https://aliarsalan177.github.io · Generated from the Engineering Guides._
+_Curated by Ali Arsalan · https://ali-arsalan.com · Generated from the Engineering Guides._

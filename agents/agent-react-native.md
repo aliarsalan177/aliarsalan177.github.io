@@ -1,7 +1,7 @@
 # Agent Guide — React Native
 
 > React for native mobile. Same mental model, different primitives — think in native components, lists and platform differences.
-> Category: Frontend · Source: https://aliarsalan177.github.io/guides/react-native/
+> Category: Frontend · Source: https://ali-arsalan.com/guides/react-native/
 
 ## Purpose
 
@@ -78,4 +78,4 @@ Use the Platform module (Platform.OS / Platform.select) for small branches, or f
 
 ---
 
-_Curated by Ali Arsalan · https://aliarsalan177.github.io · Generated from the Engineering Guides._
+_Curated by Ali Arsalan · https://ali-arsalan.com · Generated from the Engineering Guides._

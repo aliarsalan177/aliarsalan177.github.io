@@ -1,7 +1,7 @@
 # Agent Guide — C#
 
 > A modern, statically-typed .NET language. Value vs reference semantics, LINQ, async/await and nullable reference types.
-> Category: Languages · Source: https://aliarsalan177.github.io/guides/csharp/
+> Category: Languages · Source: https://ali-arsalan.com/guides/csharp/
 
 ## Purpose
 
@@ -78,4 +78,4 @@ LINQ queries build an expression that isn't executed until enumerated (foreach, 
 
 ---
 
-_Curated by Ali Arsalan · https://aliarsalan177.github.io · Generated from the Engineering Guides._
+_Curated by Ali Arsalan · https://ali-arsalan.com · Generated from the Engineering Guides._

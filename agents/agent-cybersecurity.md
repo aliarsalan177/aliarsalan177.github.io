@@ -1,7 +1,7 @@
 # Agent Guide — Cybersecurity
 
 > Protect confidentiality, integrity and availability. Assume breach, least privilege, and defense in depth.
-> Category: CS & Security · Source: https://aliarsalan177.github.io/guides/cybersecurity/
+> Category: CS & Security · Source: https://ali-arsalan.com/guides/cybersecurity/
 
 ## Purpose
 
@@ -76,4 +76,4 @@ Password hashes should be deliberately slow and salted to resist brute-force and
 
 ---
 
-_Curated by Ali Arsalan · https://aliarsalan177.github.io · Generated from the Engineering Guides._
+_Curated by Ali Arsalan · https://ali-arsalan.com · Generated from the Engineering Guides._

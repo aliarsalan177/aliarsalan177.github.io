@@ -1,7 +1,7 @@
 # Agent Guide — React
 
 > Declarative UI from state. Master hooks, keys, memoization and effect discipline to build fast, predictable interfaces.
-> Category: Frontend · Source: https://aliarsalan177.github.io/guides/react/
+> Category: Frontend · Source: https://ali-arsalan.com/guides/react/
 
 ## Purpose
 
@@ -114,4 +114,4 @@ After render/paint, and again whenever a dependency changes; the empty array run
 
 ---
 
-_Curated by Ali Arsalan · https://aliarsalan177.github.io · Generated from the Engineering Guides._
+_Curated by Ali Arsalan · https://ali-arsalan.com · Generated from the Engineering Guides._

@@ -1,7 +1,7 @@
 # Agent Guide — Security+ (Fundamentals)
 
 > The baseline security body of knowledge: risk, identity, cryptography and controls — the CompTIA Security+ core.
-> Category: CS & Security · Source: https://aliarsalan177.github.io/guides/security-plus/
+> Category: CS & Security · Source: https://ali-arsalan.com/guides/security-plus/
 
 ## Purpose
 
@@ -77,4 +77,4 @@ Follow an IR lifecycle: preparation, identification/detection, containment, erad
 
 ---
 
-_Curated by Ali Arsalan · https://aliarsalan177.github.io · Generated from the Engineering Guides._
+_Curated by Ali Arsalan · https://ali-arsalan.com · Generated from the Engineering Guides._

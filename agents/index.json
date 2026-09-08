@@ -4,7 +4,7 @@
     "title": "JavaScript (Advanced Concepts)",
     "category": "Languages",
     "file": "/agents/agent-javascript.md",
-    "bytes": 18797,
+    "bytes": 18781,
     "rules": 13,
     "questions": 17
   },
@@ -13,7 +13,7 @@
     "title": "TypeScript",
     "category": "Languages",
     "file": "/agents/agent-typescript.md",
-    "bytes": 6218,
+    "bytes": 6202,
     "rules": 5,
     "questions": 5
   },
@@ -22,7 +22,7 @@
     "title": "React",
     "category": "Frontend",
     "file": "/agents/agent-react.md",
-    "bytes": 7153,
+    "bytes": 7137,
     "rules": 5,
     "questions": 5
   },
@@ -31,7 +31,7 @@
     "title": "Angular",
     "category": "Frontend",
     "file": "/agents/agent-angular.md",
-    "bytes": 5069,
+    "bytes": 5053,
     "rules": 4,
     "questions": 4
   },
@@ -40,7 +40,7 @@
     "title": "Vue 3",
     "category": "Frontend",
     "file": "/agents/agent-vue.md",
-    "bytes": 6455,
+    "bytes": 6439,
     "rules": 5,
     "questions": 6
   },
@@ -49,7 +49,7 @@
     "title": "React Native",
     "category": "Frontend",
     "file": "/agents/agent-react-native.md",
-    "bytes": 4394,
+    "bytes": 4378,
     "rules": 4,
     "questions": 3
   },
@@ -58,7 +58,7 @@
     "title": "UI/UX Design",
     "category": "Frontend",
     "file": "/agents/agent-ui-ux.md",
-    "bytes": 4308,
+    "bytes": 4292,
     "rules": 4,
     "questions": 3
   },
@@ -67,7 +67,7 @@
     "title": "AI, ML & LLM Engineering",
     "category": "AI & Data",
     "file": "/agents/agent-ai-agents.md",
-    "bytes": 9686,
+    "bytes": 9670,
     "rules": 5,
     "questions": 10
   },
@@ -76,7 +76,7 @@
     "title": "Node.js",
     "category": "Backend & Infra",
     "file": "/agents/agent-nodejs.md",
-    "bytes": 4674,
+    "bytes": 4658,
     "rules": 4,
     "questions": 4
   },
@@ -85,7 +85,7 @@
     "title": "Python",
     "category": "Languages",
     "file": "/agents/agent-python.md",
-    "bytes": 4815,
+    "bytes": 4799,
     "rules": 4,
     "questions": 4
   },
@@ -94,7 +94,7 @@
     "title": "Rust",
     "category": "Languages",
     "file": "/agents/agent-rust.md",
-    "bytes": 6464,
+    "bytes": 6448,
     "rules": 4,
     "questions": 7
   },
@@ -103,7 +103,7 @@
     "title": "Solidity & Smart Contracts",
     "category": "Languages",
     "file": "/agents/agent-solidity.md",
-    "bytes": 4867,
+    "bytes": 4851,
     "rules": 4,
     "questions": 4
   },
@@ -112,7 +112,7 @@
     "title": "Data Structures & Algorithms",
     "category": "CS & Security",
     "file": "/agents/agent-dsa.md",
-    "bytes": 4273,
+    "bytes": 4257,
     "rules": 4,
     "questions": 4
   },
@@ -121,7 +121,7 @@
     "title": "Cybersecurity",
     "category": "CS & Security",
     "file": "/agents/agent-cybersecurity.md",
-    "bytes": 4542,
+    "bytes": 4526,
     "rules": 4,
     "questions": 4
   },
@@ -130,7 +130,7 @@
     "title": "Nmap (Network Scanning)",
     "category": "CS & Security",
     "file": "/agents/agent-nmap.md",
-    "bytes": 3223,
+    "bytes": 3207,
     "rules": 3,
     "questions": 3
   },
@@ -139,7 +139,7 @@
     "title": "Linux Command Line",
     "category": "Backend & Infra",
     "file": "/agents/agent-linux.md",
-    "bytes": 4078,
+    "bytes": 4062,
     "rules": 4,
     "questions": 3
   },
@@ -148,7 +148,7 @@
     "title": "Business Analytics",
     "category": "AI & Data",
     "file": "/agents/agent-business-analytics.md",
-    "bytes": 4639,
+    "bytes": 4623,
     "rules": 4,
     "questions": 4
   },
@@ -157,7 +157,7 @@
     "title": "Go (Golang)",
     "category": "Languages",
     "file": "/agents/agent-golang.md",
-    "bytes": 4350,
+    "bytes": 4334,
     "rules": 4,
     "questions": 4
   },
@@ -166,7 +166,7 @@
     "title": "C#",
     "category": "Languages",
     "file": "/agents/agent-csharp.md",
-    "bytes": 4660,
+    "bytes": 4644,
     "rules": 4,
     "questions": 4
   },
@@ -175,7 +175,7 @@
     "title": "SQL",
     "category": "Backend & Infra",
     "file": "/agents/agent-sql.md",
-    "bytes": 4662,
+    "bytes": 4646,
     "rules": 4,
     "questions": 4
   },
@@ -184,7 +184,7 @@
     "title": "Excel",
     "category": "AI & Data",
     "file": "/agents/agent-excel.md",
-    "bytes": 3843,
+    "bytes": 3827,
     "rules": 4,
     "questions": 3
   },
@@ -193,7 +193,7 @@
     "title": "Security+ (Fundamentals)",
     "category": "CS & Security",
     "file": "/agents/agent-security-plus.md",
-    "bytes": 4261,
+    "bytes": 4245,
     "rules": 4,
     "questions": 4
   },
@@ -202,7 +202,7 @@
     "title": "PHP (Modern / Vanilla)",
     "category": "Languages",
     "file": "/agents/agent-php.md",
-    "bytes": 4969,
+    "bytes": 4953,
     "rules": 5,
     "questions": 5
   },
@@ -211,7 +211,7 @@
     "title": "Laravel",
     "category": "Backend & Infra",
     "file": "/agents/agent-laravel.md",
-    "bytes": 5605,
+    "bytes": 5589,
     "rules": 6,
     "questions": 5
   },
@@ -220,7 +220,7 @@
     "title": "Magento 2",
     "category": "Backend & Infra",
     "file": "/agents/agent-magento.md",
-    "bytes": 5215,
+    "bytes": 5199,
     "rules": 5,
     "questions": 5
   },
@@ -229,7 +229,7 @@
     "title": "Next.js (App Router)",
     "category": "Frontend",
     "file": "/agents/agent-nextjs.md",
-    "bytes": 5052,
+    "bytes": 5036,
     "rules": 5,
     "questions": 5
   },
@@ -238,7 +238,7 @@
     "title": "SCSS & CSS Architecture",
     "category": "Frontend",
     "file": "/agents/agent-scss.md",
-    "bytes": 5138,
+    "bytes": 5122,
     "rules": 5,
     "questions": 5
   },
@@ -247,7 +247,7 @@
     "title": "Tailwind CSS",
     "category": "Frontend",
     "file": "/agents/agent-tailwind.md",
-    "bytes": 5004,
+    "bytes": 4988,
     "rules": 5,
     "questions": 5
   },
@@ -256,7 +256,7 @@
     "title": "System Design & Architecture",
     "category": "Architecture & Systems",
     "file": "/agents/agent-system-design.md",
-    "bytes": 6202,
+    "bytes": 6186,
     "rules": 5,
     "questions": 5
   },
@@ -265,7 +265,7 @@
     "title": "Infrastructure — Cloud to Code",
     "category": "Architecture & Systems",
     "file": "/agents/agent-infrastructure.md",
-    "bytes": 5540,
+    "bytes": 5524,
     "rules": 5,
     "questions": 5
   },
@@ -274,7 +274,7 @@
     "title": "Power BI",
     "category": "AI & Data",
     "file": "/agents/agent-power-bi.md",
-    "bytes": 5499,
+    "bytes": 5483,
     "rules": 5,
     "questions": 5
   },
@@ -283,7 +283,7 @@
     "title": "TensorFlow & Keras",
     "category": "AI & Data",
     "file": "/agents/agent-tensorflow.md",
-    "bytes": 5575,
+    "bytes": 5559,
     "rules": 5,
     "questions": 5
   },
@@ -292,7 +292,7 @@
     "title": "Unity (Game Dev)",
     "category": "Frontend",
     "file": "/agents/agent-unity.md",
-    "bytes": 5236,
+    "bytes": 5220,
     "rules": 5,
     "questions": 5
   },
@@ -301,7 +301,7 @@
     "title": "VBA (Excel Automation)",
     "category": "AI & Data",
     "file": "/agents/agent-vba.md",
-    "bytes": 4311,
+    "bytes": 4295,
     "rules": 4,
     "questions": 4
   }

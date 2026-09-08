@@ -1,7 +1,7 @@
 # Agent Guide — Infrastructure — Cloud to Code
 
 > The path from a git push to production: containers, CI/CD, Infrastructure as Code, environments, and observability.
-> Category: Architecture & Systems · Source: https://aliarsalan177.github.io/guides/infrastructure/
+> Category: Architecture & Systems · Source: https://ali-arsalan.com/guides/infrastructure/
 
 ## Purpose
 
@@ -85,4 +85,4 @@ Blue-green keeps two environments and switches traffic all at once (instant roll
 
 ---
 
-_Curated by Ali Arsalan · https://aliarsalan177.github.io · Generated from the Engineering Guides._
+_Curated by Ali Arsalan · https://ali-arsalan.com · Generated from the Engineering Guides._

@@ -1,7 +1,7 @@
 # Agent Guide — PHP (Modern / Vanilla)
 
 > Modern PHP 8+ is typed, fast and Composer-driven. Write strict, secure, PSR-compliant code — not the legacy stuff of old.
-> Category: Languages · Source: https://aliarsalan177.github.io/guides/php/
+> Category: Languages · Source: https://ali-arsalan.com/guides/php/
 
 ## Purpose
 
@@ -85,4 +85,4 @@ With password_hash() (bcrypt/argon2, salted and slow) and verified with password
 
 ---
 
-_Curated by Ali Arsalan · https://aliarsalan177.github.io · Generated from the Engineering Guides._
+_Curated by Ali Arsalan · https://ali-arsalan.com · Generated from the Engineering Guides._

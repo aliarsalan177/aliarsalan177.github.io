@@ -1,7 +1,7 @@
 # Agent Guide — Business Analytics
 
 > Turn data into decisions. Know your analytics type, clean your data, and never confuse correlation with causation.
-> Category: AI & Data · Source: https://aliarsalan177.github.io/guides/business-analytics/
+> Category: AI & Data · Source: https://ali-arsalan.com/guides/business-analytics/
 
 ## Purpose
 
@@ -76,4 +76,4 @@ A randomized experiment splitting users into control and variant to isolate the 
 
 ---
 
-_Curated by Ali Arsalan · https://aliarsalan177.github.io · Generated from the Engineering Guides._
+_Curated by Ali Arsalan · https://ali-arsalan.com · Generated from the Engineering Guides._

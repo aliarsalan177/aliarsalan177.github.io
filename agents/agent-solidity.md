@@ -1,7 +1,7 @@
 # Agent Guide — Solidity & Smart Contracts
 
 > Code that controls money on an immutable ledger. Security and gas are first-class concerns, not afterthoughts.
-> Category: Languages · Source: https://aliarsalan177.github.io/guides/solidity/
+> Category: Languages · Source: https://ali-arsalan.com/guides/solidity/
 
 ## Purpose
 
@@ -81,4 +81,4 @@ Minimize storage writes, emit events instead of storing logs, use custom errors,
 
 ---
 
-_Curated by Ali Arsalan · https://aliarsalan177.github.io · Generated from the Engineering Guides._
+_Curated by Ali Arsalan · https://ali-arsalan.com · Generated from the Engineering Guides._

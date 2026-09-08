@@ -1,7 +1,7 @@
 # Agent Guide — AI, ML & LLM Engineering
 
 > From ML/DL foundations (models, metrics, neural nets, transformers) to prompting, RAG, tools and the agent loop. Ground your models, constrain your outputs, and budget your steps.
-> Category: AI & Data · Source: https://aliarsalan177.github.io/guides/ai-agents/
+> Category: AI & Data · Source: https://ali-arsalan.com/guides/ai-agents/
 
 ## Purpose
 
@@ -136,4 +136,4 @@ For tabular data, tree-based models (random forests, gradient boosting) are usua
 
 ---
 
-_Curated by Ali Arsalan · https://aliarsalan177.github.io · Generated from the Engineering Guides._
+_Curated by Ali Arsalan · https://ali-arsalan.com · Generated from the Engineering Guides._

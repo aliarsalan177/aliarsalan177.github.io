@@ -1,7 +1,7 @@
 # Agent Guide — Angular
 
 > A batteries-included framework: components, DI, RxJS, and (increasingly) signals. Lean on the structure, mind change detection.
-> Category: Frontend · Source: https://aliarsalan177.github.io/guides/angular/
+> Category: Frontend · Source: https://ali-arsalan.com/guides/angular/
 
 ## Purpose
 
@@ -81,4 +81,4 @@ Template-driven forms live in the template with ngModel (simple cases); reactive
 
 ---
 
-_Curated by Ali Arsalan · https://aliarsalan177.github.io · Generated from the Engineering Guides._
+_Curated by Ali Arsalan · https://ali-arsalan.com · Generated from the Engineering Guides._

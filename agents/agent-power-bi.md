@@ -1,7 +1,7 @@
 # Agent Guide — Power BI
 
 > Microsoft's BI platform: connect, model, and visualize data. Master Power Query (ETL), a star-schema model, and DAX.
-> Category: AI & Data · Source: https://aliarsalan177.github.io/guides/power-bi/
+> Category: AI & Data · Source: https://ali-arsalan.com/guides/power-bi/
 
 ## Purpose
 
@@ -87,4 +87,4 @@ Row context is the current row (calculated columns, iterators like SUMX). Filter
 
 ---
 
-_Curated by Ali Arsalan · https://aliarsalan177.github.io · Generated from the Engineering Guides._
+_Curated by Ali Arsalan · https://ali-arsalan.com · Generated from the Engineering Guides._
