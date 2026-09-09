@@ -1,0 +1,1 @@
+import"./magnetic.BgjUHT51.js";
